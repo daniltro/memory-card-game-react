@@ -1,0 +1,130 @@
+.hero-section {
+  padding: 75px 0 128px;
+  position: relative;
+}
+
+.hero-section::after {
+  content: "";
+  background: url(../../public/images/hero-Linebg.png) no-repeat;
+  background-size: cover;
+  inline-size: 100%;
+  block-size: 100%;
+  position: absolute;
+  top: 50px;
+  z-index: -1;
+}
+
+.hero--container {
+  display: flex;
+  gap: 40px;
+  justify-content: space-between;
+  margin-bottom: 120px;
+}
+
+.hero-section__image {
+  position: relative;
+  inline-size: 480px;
+  block-size: 560px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.hero-section__image img {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  object-position: 100% 90%;
+  mask-image: url(../../public/images/hero-mask-Img.png);
+}
+
+.hero-section__sticker {
+  content: "";
+  inline-size: 180px;
+  block-size: 180px;
+  background: url(../../public/images/hero-Stickers.png) no-repeat;
+  position: absolute;
+  left: 417px;
+  transition: transform 0.5s ease;
+  cursor: pointer;
+}
+
+.hero-section__sticker:hover {
+  animation: rotate 3s linear;
+}
+
+.hero-section__content {
+  padding-top: 45px;
+}
+
+.hero-section__tags {
+  display: flex;
+}
+
+.hero-section__tag {
+  color: #94ac23;
+  margin-bottom: 18px;
+  font-family: var(--first-font);
+  padding: 8px 0;
+  margin-right: 10px;
+}
+
+.hero-section__tag:first-child {
+  color: #1b1f21;
+  background: #bedb39;
+  padding: 8px 18px;
+  margin-right: 15px;
+}
+
+.hero-section__title {
+  font-family: var(--second-font);
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 120%;
+  color: #1b1f21;
+  margin-bottom: 16px;
+}
+
+.hero-section__description {
+  font-family: var(--first-font);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 160%;
+  color: #757778;
+  margin-bottom: 16px;
+  max-inline-size: 480px;
+}
+
+.hero-section__button {
+  margin-top: 57px;
+  border-radius: 40px;
+  padding: 15px 0px;
+  width: 232px;
+  height: 59px;
+  background: #bedb39;
+  font-family: var(--first-font);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 160%;
+  color: #1b1f21;
+  outline: 1.5px solid #1b1f21;
+  outline-offset: -5px;
+}
+
+.hero-section__button:hover,
+.hero-section__button:active {
+  background: #1b1f21;
+  color: #fcfaf9;
+}
+
+.hero-section__button:disabled {
+  opacity: 0.6;
+}
+
+.hero-section__button:focus-visible {
+  outline: 2px solid #1b1f21;
+  outline-offset: 0;
+}
+
+.creeping-line--hero {
+  background-color: #acd6de;
+}

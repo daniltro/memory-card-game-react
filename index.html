@@ -1,13 +1,294 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <link rel="stylesheet" href="src/styles/main.css" />
+    <title>Document</title>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="src/main.js"></script>
+    <header class="header">
+      <div class="container header--container">
+        <div class="header__logo">
+          <img src="./images/Logo-ebac.svg" alt="logotipo de la empresa" />
+        </div>
+        <nav class="header__menu">
+          <ul class="header__list">
+            <li class="header__list-item add--transition diseno--link">
+              <a class="header__link" href="#">Diseño</a>
+            </li>
+            <li class="header__list-item add--transition programacion--link">
+              <a class="header__link" href="#">Programación & Data</a>
+            </li>
+            <li class="header__list-item add--transition gaming--link">
+              <a class="header__link" href="#"> Gaming </a>
+            </li>
+            <li class="header__list-item add--transition marketing--link">
+              <a class="header__link" href="#"> Marketing</a>
+            </li>
+            <li class="header__list-item add--transition software--link">
+              <a class="header__link" href="#"> Software</a>
+            </li>
+            <li class="header__list-item add--transition carrera-link">
+              <a class="header__link" href="#">Carrera </a>
+            </li>
+          </ul>
+        </nav>
+        <div class="header__search">
+          <button class="header__search-button"></button>
+          <a class="header__search-link" href="#">EBAC</a>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <section class="hero-section">
+        <div class="container hero--container">
+          <div class="hero-section__image">
+            <img
+              src="./public/images/hero-Img.jpg"
+              alt="La niña está sentada con las piernas cruzadas con una laptop frente a una pared y una ventana."
+            />
+          </div>
+          <div class="hero-section__sticker"></div>
+          <div class="hero-section__content">
+            <div class="hero-section__tags">
+              <a class="hero-section__tag section-tag add--transition">
+                Gaming
+              </a>
+              <a class="hero-section__tag section-tag add--transition">
+                Artículo
+              </a>
+              <a class="hero-section__tag section-tag add--transition">
+                Niños
+              </a>
+              <a class="hero-section__tag section-tag add--transition">
+                Proyecto
+              </a>
+            </div>
+            <h1 class="hero-section__title">
+              El Artista Técnico, cuando la programación y el diseño de juegos
+              se juntan
+            </h1>
+            <p class="hero-section__description">
+              ¡Es posible unir la pasión por los dos universos! ¿Habías
+              escuchado este término antes? Si no te suena de nada, no te
+              sientas mal, el concepto es nuevo. ¡Nosotros te lo explicamos!
+            </p>
+            <div class="hero-section__meta meta">
+              <span class="meta-date">2 de junio de 2022</span>
+              <span class="meta-time">10 min</span>
+            </div>
+            <button class="hero-section__button add--transition">
+              Leer el artículo
+            </button>
+          </div>
+        </div>
+      </section>
+      <section class="popular-articles">
+        <div class="creeping-line creeping-line--hero">
+          <div class="creeping-line__content">
+            <span class="creeping-line__icon"></span>
+            <span class="creeping-line__text">Artículos populares</span>
+            <span class="creeping-line__icon"></span>
+            <span class="creeping-line__text">Artículos populares</span>
+
+            <span class="creeping-line__icon"></span>
+            <span class="creeping-line__text">Artículos populares</span>
+            <span class="creeping-line__icon"></span>
+            <span class="creeping-line__text">Artículos populares</span>
+          </div>
+        </div>
+        <div class="container popular-articles--container">
+          <div class="popular-articles__cards-wrapper">
+            <article class="popular-articles__card">
+              <div class="popular-articles__card-image">
+                <img
+                  class="first--image"
+                  src="./public/images/article-fashion-img.jpg"
+                  alt="Una chica con un vestido verde está haciéndose un selfie"
+                />
+              </div>
+              <div class="popular-article__stiker fashion--sticker"></div>
+              <div class="popular-articles__tags">
+                <a class="section-tag fashion--tag add--transition">
+                  Fashion
+                </a>
+                <a class="section-tag fashion--tag add--transition">
+                  Artículo
+                </a>
+                <a class="section-tag fashion--tag add--transition"> Niños </a>
+                <a class="section-tag fashion--tag add--transition">
+                  Proyecto
+                </a>
+              </div>
+              <h3 class="popular-articles__card-title">
+                ¿Cómo hacer el cambio de carrera a Diseño de Productos
+                Digitales?
+              </h3>
+              <p class="popular-articles__card-description">
+                ¿Quieres saber qué se estudia para ser paisajista y formar parte
+                de uno de los gremios que están en auge a nivel laboral? Sigue
+                leyendo.
+              </p>
+              <div class="popular-articles__meta meta">
+                <span class="meta-date">2 de junio de 2022</span>
+                <span class="meta-time">10 min</span>
+              </div>
+            </article>
+            <article class="popular-articles__card">
+              <div class="popular-articles__card-image">
+                <img
+                  class="second--image"
+                  src="./public/images/article-design-img.jpg"
+                  alt="Una mano sostiene una videocámara sobre un fondo azul."
+                />
+              </div>
+              <div class="popular-article__stiker design--sticker"></div>
+
+              <div class="popular-articles__tags tags--design">
+                <a class="section-tag tag--design add--transition"> Diseño </a>
+                <a class="section-tag tag--design add--transition">
+                  Artículo
+                </a>
+                <a class="section-tag tag--design add--transition"> Niños </a>
+                <a class="section-tag tag--design add--transition">
+                  Proyecto
+                </a>
+              </div>
+              <h3 class="popular-articles__card-title">
+                ¿Qué hace un paisajista y cuánto gana?
+              </h3>
+              <p class="popular-articles__card-description">
+                ¿Quieres saber qué se estudia para ser paisajista y formar parte
+                de uno de los gremios que están en auge a nivel laboral? Sigue
+                leyendo.
+              </p>
+              <div class="popular-articles__meta meta">
+                <span class="meta-date">2 de junio de 2022</span>
+                <span class="meta-time">10 min</span>
+              </div>
+            </article>
+            <article class="popular-articles__card">
+              <div class="popular-articles__card-image card-image--large">
+                <img
+                  src="./public/images/article-design-img-2.jpg"
+                  alt="Una chica con un sombrero está escribiendo en un cuaderno mientras está sentada en una mesa de madera."
+                />
+              </div>
+              <div class="popular-article__stiker design--sticker-2"></div>
+              <div class="popular-article__content">
+                <div class="popular-articles__tags tags--design">
+                  <div class="tags-design-wrapper">
+                    <a class="section-tag tag--design add--transition">
+                      Diseño
+                    </a>
+                    <div class="tags-design__inner-wrapper">
+                      <a
+                        class="section-tag tag--design tags-design--another add--transition"
+                      >
+                        Artículo
+                      </a>
+                      <a class="section-tag tag--design add--transition">
+                        Niños
+                      </a>
+                      <a class="section-tag tag--design add--transition">
+                        Proyecto
+                      </a>
+                    </div>
+                  </div>
+                  <div class="popular-articles__meta meta meta--design">
+                    <span class="meta-date meta-date--design"
+                      >2 de junio de 2022</span
+                    >
+                    <span class="meta-time meta-time--design">10 min</span>
+                  </div>
+                </div>
+                <div class="popular-article__text-content">
+                  <h3 class="popular-articles__card-title card-title--accent">
+                    Todo lo que querías saber sobre Diseño UX / UI
+                  </h3>
+                  <p class="popular-articles__card-description">
+                    Aunque los conceptos de experiencia de usuario y desarrollo
+                    de interfaces han estado presentes durante décadas en
+                    numerosas industrias, muchas personas aún tienen dudas sobre
+                    lo que realmente hace un profesional en este campo.
+                  </p>
+                </div>
+              </div>
+            </article>
+            <article class="popular-articles__card">
+              <div class="popular-articles__card-image">
+                <img
+                  class="fourth-image"
+                  src="./public/images/article-marketing-img.jpg"
+                  alt="Un estudiante con gafas está sentado a una mesa con un portátil y sonríe."
+                />
+              </div>
+              <div class="popular-article__stiker marketing--sticker"></div>
+
+              <div class="popular-articles__tags tags--marketing">
+                <a class="section-tag tag--marketing add--transition">
+                  Marketing
+                </a>
+                <a class="section-tag tag--marketing add--transition">
+                  Artículo
+                </a>
+                <a class="section-tag tag--marketing add--transition">
+                  Niños
+                </a>
+                <a class="section-tag tag--marketing add--transition">
+                  Proyecto
+                </a>
+              </div>
+              <h3 class="popular-articles__card-title">
+                Por qué algunas marcas fallan en el rebranding
+              </h3>
+              <p class="popular-articles__card-description">
+                As falhas de grandes marcas como Gap e Coca Cola explicadas.
+              </p>
+              <div class="popular-articles__meta meta">
+                <span class="meta-date">2 de junio de 2022</span>
+                <span class="meta-time">10 min</span>
+              </div>
+            </article>
+            <article class="popular-articles__card">
+              <div class="popular-articles__card-image">
+                <img
+                class="fifth--image"
+                  src="./public/images/article-software-img.jpg"
+                  alt="Un joven mira pensativamente su portátil."
+                />
+              </div>
+              <div class="popular-article__stiker software--sticker"></div>
+
+              <div class="popular-articles__tags tags--software">
+                <a class="section-tag tag--software add--transition">
+                  Software
+                </a>
+                <a class="section-tag tag--software add--transition">
+                  Artículo
+                </a>
+                <a class="section-tag tag--software add--transition"> Niños </a>
+                <a class="section-tag tag--software add--transition">
+                  Proyecto
+                </a>
+              </div>
+              <h3 class="popular-articles__card-title">
+                ¿Qué es AutoCAD y para qué sirve?
+              </h3>
+              <p class="popular-articles__card-description">
+                Unity te ofrece un gran abanico de posibilidades para
+                desarrollar tu juego, darlo a conocer en todo el mundo,
+                monetizar y triunfar por todo lo alto.
+              </p>
+              <div class="popular-articles__meta meta">
+                <span class="meta-date">2 de junio de 2022</span>
+                <span class="meta-time">10 min</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
   </body>
 </html>

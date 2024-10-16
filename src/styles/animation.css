@@ -1,0 +1,17 @@
+@keyframes creeping-line {
+  0% {
+    transform: translateX(-50%); 
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

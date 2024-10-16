@@ -1,0 +1,75 @@
+.header--container {
+  display: flex;
+  gap: 145px;
+}
+.header {
+  padding: 16px 0;
+}
+
+.header__list {
+  display: flex;
+  gap: 9px;
+}
+.header__list-item {
+  list-style: none;
+  border: 1.2px solid #e8e8e8;
+  border-radius: 20px;
+  padding: 8px 18px;
+}
+
+.header__link {
+  font-family: var(--first-font);
+  font-size: 15px;
+  color: #1b1f21;
+}
+
+.diseno--link:hover {
+  background: #ec95b1;
+}
+.programacion--link:hover {
+  background: #a4ccfe;
+}
+.gaming--link:hover {
+  background: #bedb39;
+}
+
+.marketing--link:hover {
+  background: #ffad20;
+}
+
+.software--link:hover {
+  background: #acd6de;
+}
+
+.carrera-link:hover {
+  background: #aedfd6;
+}
+
+.header__search {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.header__search-button {
+  border: none;
+  inline-size: 20px;
+  block-size: 20px;
+  background: url(../../public/images/search-Icon.svg) no-repeat;
+  margin-left: 6px;
+  margin-bottom: 7px;
+}
+.header__search-link {
+  color: #1b1f21;
+  position: relative;
+  margin-bottom: 7px;
+}
+
+.header__search-link::after {
+  content: "";
+  inline-size: 16px;
+  block-size: 16px;
+  background: url(../../public/images/arrow-Icon.svg) no-repeat;
+  position: absolute;
+  right: -23px;
+  top: 3px;
+}

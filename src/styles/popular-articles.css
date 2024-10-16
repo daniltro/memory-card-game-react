@@ -1,0 +1,230 @@
+.popular-articles--container {
+  padding-top: 200px;
+  padding-bottom: 136px;
+}
+.popular-articles__cards-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.popular-articles__card {
+  position: relative;
+}
+
+.popular-articles__card:first-child {
+  margin-right: 40px;
+}
+
+.popular-article__stiker {
+  content: "";
+  inline-size: 180px;
+  block-size: 180px;
+  position: absolute;
+  top: -47px;
+  left: -40px;
+  transition: transform 0.5s ease;
+  cursor: pointer;
+}
+
+.popular-article__stiker:hover {
+  animation: rotate 3s linear;
+}
+
+.fashion--sticker {
+  background: url(../../public/images/fashion-sticker.png) no-repeat;
+}
+.design--sticker {
+  background: url(../../public/images/design-sticker.png) no-repeat;
+  left: 445px;
+}
+.design--sticker-2 {
+  background: url(../../public/images/design-sticker.png) no-repeat;
+  left: 1068px;
+}
+.marketing--sticker {
+  background: url(../../public/images/marketing-sticker.png) no-repeat;
+  inline-size: 250px;
+  left: -55px;
+  top: -75px;
+}
+.software--sticker {
+  background: url(../../public/images/software-sticker.png) no-repeat;
+  left: 443px;
+  top: -37px;
+}
+
+.popular-articles__card:nth-child(3) {
+  margin-top: 135px;
+  grid-column: span 2;
+}
+
+.popular-articles__card-image {
+  inline-size: 584px;
+  block-size: 328px;
+  margin-bottom: 40px;
+  overflow: hidden;
+}
+
+.card-image--large {
+  inline-size: 1208px;
+  block-size: 520px;
+  margin-bottom: 48px;
+}
+
+.popular-articles__card-image img {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  object-position: 100% 45%;
+}
+
+.first--image {
+  mask-image: url(../../public/images/fashion-mask.png);
+}
+
+.second--image {
+  mask-image: url(../../public/images/design-mask.png);
+}
+
+.card-image--large img {
+  mask-image: url(../../public/images/design-2-mask.png);
+}
+
+.fourth-image {
+  mask-image: url(../../public/images/marketing-mask.png);
+}
+.fifth--image {
+  mask-image: url(../../public/images/software-mask.png);
+}
+
+.popular-article__content {
+  padding-left: 200px;
+  display: flex;
+  margin-bottom: 120px;
+}
+
+.popular-article__text-content {
+  margin-top: 2px;
+  margin-left: 9px;
+}
+.popular-articles__tags {
+  margin-bottom: 25px;
+}
+
+.tab-button--accent {
+  inline-size: 84px;
+  block-size: 37px;
+}
+.fashion--tag {
+  color: #22c98b;
+  margin-right: 6px;
+}
+
+.fashion--tag:first-child {
+  color: #1b1f21;
+  background: #90eecb;
+  padding: 8px 16px;
+  margin-right: 17px;
+}
+
+.tags--design {
+  margin-top: 20px;
+}
+
+.tag--design {
+  color: #da3369;
+  padding: 8px 0;
+  margin-right: 11px;
+}
+
+.tag--design:first-child {
+  padding: 8px 18px;
+  background: #ec95b1;
+  color: #1b1f21;
+  align-self: flex-end;
+  margin-bottom: 3px;
+}
+
+.tags-design-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.tags-design__inner-wrapper {
+  display: flex;
+}
+
+.tags-design__inner-wrapper .tag--design:first-child {
+  background: initial;
+  color: #da3369;
+  padding: 8px 0;
+  margin-right: 10px;
+  margin-left: 3px;
+}
+
+.popular-articles__card-title {
+  font-family: var(--second-font);
+  font-weight: 400;
+  font-size: 30px;
+  color: #1b1f21;
+  margin-bottom: 15px;
+  line-height: 120%;
+}
+.card-title--accent {
+  font-size: 36px;
+  padding-right: 130px;
+  margin-bottom: 5px;
+}
+.popular-articles__card-description {
+  font-family: var(--first-font);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 160%;
+  color: #757778;
+  padding-right: 120px;
+  margin-bottom: 18px;
+}
+
+.meta--design {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  position: relative;
+  right: 34px;
+  margin-top: 15px;
+}
+
+.meta--design .meta-date:before {
+  left: 133px;
+}
+
+.meta--design .meta-time:before {
+  top: 3px;
+  left: 51px;
+}
+
+.meta-date--design {
+  margin-bottom: 9px;
+}
+
+.tag--marketing {
+  color: #ef9700;
+  padding: 8px 0;
+  margin-right: 10px;
+}
+.tag--marketing:first-child {
+  padding: 8px 18px;
+  color: #1b1f21;
+  background: #ffad20;
+}
+
+.tag--software {
+  color: #57acbc;
+  padding: 8px 0;
+  margin-right: 10px;
+}
+.tag--software:first-child {
+  padding: 8px 18px;
+  color: #1b1f21;
+  background: #acd6de;
+}
