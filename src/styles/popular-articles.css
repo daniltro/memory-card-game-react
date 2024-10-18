@@ -1,6 +1,21 @@
+.popular-articles {
+  position: relative;
+}
+
+.popular-articles::after {
+  content: "";
+  background: url(../../public/images/popular-articles-Linebg.png) no-repeat;
+  inline-size: 100%;
+  block-size: 100%;
+  position: absolute;
+  left: 0;
+  top: 162px;
+  z-index: -1;
+}
+
 .popular-articles--container {
-  padding-top: 200px;
-  padding-bottom: 136px;
+  padding-top: 203px;
+  padding-bottom: 156px;
 }
 .popular-articles__cards-wrapper {
   display: grid;
@@ -50,7 +65,7 @@
 .software--sticker {
   background: url(../../public/images/software-sticker.png) no-repeat;
   left: 443px;
-  top: -37px;
+  top: -46px;
 }
 
 .popular-articles__card:nth-child(3) {
@@ -105,7 +120,7 @@
 
 .popular-article__text-content {
   margin-top: 2px;
-  margin-left: 9px;
+  margin-left: 8px;
 }
 .popular-articles__tags {
   margin-bottom: 25px;
@@ -117,14 +132,13 @@
 }
 .fashion--tag {
   color: #22c98b;
-  margin-right: 6px;
 }
 
 .fashion--tag:first-child {
   color: #1b1f21;
   background: #90eecb;
-  padding: 8px 16px;
-  margin-right: 17px;
+  padding: 8px 16px 8px 19px;
+  margin-right: 14px;
 }
 
 .tags--design {
@@ -134,15 +148,20 @@
 .tag--design {
   color: #da3369;
   padding: 8px 0;
-  margin-right: 11px;
 }
 
 .tag--design:first-child {
-  padding: 8px 18px;
+  padding: 8px 16px 8px 18px;
   background: #ec95b1;
   color: #1b1f21;
   align-self: flex-end;
   margin-bottom: 3px;
+  margin-right: 15px;
+}
+
+.tag--design.tag-design--another {
+  padding-right: 19px;
+  margin-right: 12px;
 }
 
 .tags-design-wrapper {
@@ -159,30 +178,40 @@
   color: #da3369;
   padding: 8px 0;
   margin-right: 10px;
-  margin-left: 3px;
+  margin-left: 5px;
+}
+
+.tags-design__inner-wrapper .tag--design {
+  margin-right: 11px;
 }
 
 .popular-articles__card-title {
-  font-family: var(--second-font);
-  font-weight: 400;
-  font-size: 30px;
+  font-family: var(--heading-font);
+  font-weight: var(--regular-font-weight);
+  font-size: var(--h4-font-size);
   color: #1b1f21;
   margin-bottom: 15px;
-  line-height: 120%;
+  line-height: var(--h4-line-height);
 }
 .card-title--accent {
-  font-size: 36px;
+  font-size: var(--h3-font-size);
+  line-height: var(--h3-line-height);
   padding-right: 130px;
-  margin-bottom: 5px;
+  margin-bottom: 7px;
 }
+
 .popular-articles__card-description {
-  font-family: var(--first-font);
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 160%;
+  font-family: var(--text-font);
+  font-weight: var(--regular-font-weight);
+  font-size: var(--text-18-font-size);
+  line-height: var(--text-18-line-height);
   color: #757778;
   padding-right: 120px;
   margin-bottom: 18px;
+}
+
+.card-description--accent {
+  padding-right: 125px;
 }
 
 .meta--design {
@@ -195,7 +224,8 @@
 }
 
 .meta--design .meta-date:before {
-  left: 133px;
+  top: 3px;
+  left: 134px;
 }
 
 .meta--design .meta-time:before {
@@ -204,16 +234,20 @@
 }
 
 .meta-date--design {
-  margin-bottom: 9px;
+  margin-right: 3px;
+  margin-bottom: 7px;
 }
 
+.meta-time--design {
+  margin-right: 3px;
+}
 .tag--marketing {
   color: #ef9700;
   padding: 8px 0;
-  margin-right: 10px;
 }
 .tag--marketing:first-child {
   padding: 8px 18px;
+  margin-right: 14px;
   color: #1b1f21;
   background: #ffad20;
 }
@@ -221,9 +255,9 @@
 .tag--software {
   color: #57acbc;
   padding: 8px 0;
-  margin-right: 10px;
 }
 .tag--software:first-child {
+  margin-right: 14px;
   padding: 8px 18px;
   color: #1b1f21;
   background: #acd6de;

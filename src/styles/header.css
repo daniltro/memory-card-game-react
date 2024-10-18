@@ -18,9 +18,10 @@
 }
 
 .header__link {
-  font-family: var(--first-font);
-  font-size: 15px;
+  font-family: var(--text-font);
+  font-size: var(--text-15-font-size);
   color: #1b1f21;
+  font-weight: var(--medium-font-weight);
 }
 
 .diseno--link:hover {

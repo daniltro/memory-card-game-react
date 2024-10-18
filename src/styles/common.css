@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  font-family: var(--font-family);
+}
+
+.main {
+  position: relative;
+  overflow: hidden;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+.section-tag {
+  font-family: var(--text-font);
+  border-radius: 20px;
+  background: transparent;
+  font-size: var(--text-15-font-size);
+  line-height: var(--text-15-line-height);
+  cursor: pointer;
+  margin-right: 7px;
+}
+
+.section-tag:active {
+  opacity: 0.7;
+}
+
+.section-tag:hover {
+  opacity: 0.7;
+}
+
+.container {
+  max-inline-size: 1208px;
+  margin: 0 auto;
+}
+
+.add--transition {
+  transition: background 0.5s, color 0.5s;
+}
+
+.meta {
+  font-family: var(--text-font);
+  font-weight: var(--regular-font-weight);
+  font-size: var(--text-15-font-size);
+  line-height: var(--text-15-line-height);
+  color: #aeaeae;
+}
+
+.meta-date {
+  margin-left: 25px;
+  position: relative;
+}
+
+.meta-date::before {
+  content: "";
+  inline-size: 17px;
+  block-size: 17px;
+  background: url(../../public/images/meta-date-Icon.svg) no-repeat;
+  position: absolute;
+  left: -25px;
+}
+
+.meta-time {
+  margin-left: 46px;
+  position: relative;
+}
+
+.meta-time::before {
+  content: "";
+  inline-size: 25px;
+  block-size: 25px;
+  background: url(../../public/images/meta-time-Icon.svg) no-repeat;
+  position: absolute;
+  left: -28px;
+}
+
+.creeping-line {
+  block-size: 117px;
+  font-family: var(--second-font);
+  letter-spacing: 0.01em;
+  transform: rotate(-4deg) scale(1.01);
+  border: none;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.creeping-line__content {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  animation: creeping-line 10s linear infinite;
+}
+
+.creeping-line__text {
+  font-family: var(--heading-font);
+  font-weight: var(--regular-font-weight);
+  font-size: var(--h1-font-size);
+  line-height: var(--h1-line-height);
+  color: #1b1f21;
+  margin-right: 43px;
+}
+
+.creeping-line__icon {
+  background: url(../../public/images/decor-separator-Icon.svg) no-repeat center
+    center;
+  background-size: cover;
+  inline-size: 40px;
+  block-size: 40px;
+  margin-right: 10px;
+  margin-right: 43px;
+}
