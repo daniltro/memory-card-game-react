@@ -26,13 +26,13 @@
 .creeping-line--webinars {
   transform: rotate(-3deg) scale(1.01);
   background: #ffad20;
-  bottom: 898px;
+  bottom: 1763px;
 }
 
 .creeping-line.creeping-line--subscribe {
   background: #fe6d44;
   transform: rotate(2deg) scale(1.01);
-  bottom: -65px;
+  bottom: 797px;
 }
 .creeping-line__content {
 }
@@ -83,7 +83,7 @@
   block-size: 432px;
   border-radius: 32px;
   display: flex;
-  flex-direction: column;  
+  flex-direction: column;
 }
 
 .webinars__card-item:nth-child(2) {
@@ -97,7 +97,6 @@
 .webinars__card-item:nth-child(3) .webinars__card-description {
   margin-bottom: 97px;
 }
-
 
 .webinars__card-header {
   display: flex;

@@ -36,13 +36,13 @@ button {
   margin-right: 7px;
 }
 
-.section-tag:active {
+/* .section-tag:active {
   opacity: 0.7;
 }
 
 .section-tag:hover {
   opacity: 0.7;
-}
+} */
 
 .container {
   max-inline-size: 1208px;

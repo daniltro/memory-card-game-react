@@ -1,9 +1,13 @@
-.header--container {
-  display: flex;
-  gap: 145px;
-}
 .header {
   padding: 16px 0;
+  padding-inline: 116px;
+}
+
+.header--container {
+  display: flex;
+  gap: 143px;
+  /* max-inline-size: 1440px; */
+  /* justify-content: space-between; */
 }
 
 .header__list {
@@ -49,14 +53,14 @@
 .header__search {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 25px;
 }
 .header__search-button {
   border: none;
   inline-size: 20px;
   block-size: 20px;
   background: url(../../public/images/search-Icon.svg) no-repeat;
-  margin-left: 6px;
+  margin-left: 3px;
   margin-bottom: 7px;
 }
 .header__search-link {
