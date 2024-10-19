@@ -98,7 +98,7 @@ button {
   display: flex;
   align-items: center;
   overflow: hidden;
-  position: relative;
+  position: absolute;
 }
 
 .creeping-line__content {

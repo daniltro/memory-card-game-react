@@ -1,5 +1,6 @@
 .popular-articles {
   position: relative;
+  background-color: #fff;
 }
 
 .popular-articles::after {
@@ -10,12 +11,12 @@
   position: absolute;
   left: 0;
   top: 162px;
-  z-index: -1;
+  z-index: -2;
 }
 
 .popular-articles--container {
-  padding-top: 203px;
-  padding-bottom: 156px;
+  padding-top: 327px;
+  padding-bottom: 197px;
 }
 .popular-articles__cards-wrapper {
   display: grid;

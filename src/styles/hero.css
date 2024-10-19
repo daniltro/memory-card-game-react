@@ -1,5 +1,5 @@
 .hero-section {
-  padding: 75px 0 9px;
+  padding: 75px 0 0;
   position: relative;
 }
 
@@ -19,10 +19,10 @@
   gap: 40px;
   justify-content: space-between;
   margin-bottom: 120px;
+  position: relative;
 }
 
 .hero-section__image {
-  position: relative;
   inline-size: 480px;
   block-size: 560px;
   flex-shrink: 0;
@@ -43,7 +43,7 @@
   block-size: 180px;
   background: url(../../public/images/hero-Stickers.png) no-repeat;
   position: absolute;
-  left: 417px;
+  left: 300px;
   transition: transform 0.5s ease;
   cursor: pointer;
 }
@@ -126,4 +126,5 @@
 
 .creeping-line--hero {
   background-color: #acd6de;
+  top: 710px;
 }
