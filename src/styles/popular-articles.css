@@ -1,11 +1,12 @@
 .popular-articles {
   position: relative;
+  z-index: -1;
   background-color: #fff;
 }
 
 .popular-articles::after {
   content: "";
-  background: url(../../public/images/popular-articles-Linebg.png) no-repeat;
+  background: url(./images/popular-articles-Linebg.png) no-repeat;
   inline-size: 100%;
   block-size: 100%;
   position: absolute;
@@ -47,24 +48,24 @@
 }
 
 .fashion--sticker {
-  background: url(../../public/images/fashion-sticker.png) no-repeat;
+  background: url(./images/fashion-sticker.png) no-repeat;
 }
 .design--sticker {
-  background: url(../../public/images/design-sticker.png) no-repeat;
+  background: url(./images/design-sticker.png) no-repeat;
   left: 445px;
 }
 .design--sticker-2 {
-  background: url(../../public/images/design-sticker.png) no-repeat;
+  background: url(./images/design-sticker.png) no-repeat;
   left: 1068px;
 }
 .marketing--sticker {
-  background: url(../../public/images/marketing-sticker.png) no-repeat;
+  background: url(./images/marketing-sticker.png) no-repeat;
   inline-size: 250px;
   left: -55px;
   top: -75px;
 }
 .software--sticker {
-  background: url(../../public/images/software-sticker.png) no-repeat;
+  background: url(./images/software-sticker.png) no-repeat;
   left: 443px;
   top: -46px;
 }
@@ -95,22 +96,22 @@
 }
 
 .first--image {
-  mask-image: url(../../public/images/fashion-mask.png);
+  mask-image: url(./images/fashion-mask.png);
 }
 
 .second--image {
-  mask-image: url(../../public/images/design-mask.png);
+  mask-image: url(./images/design-mask.png);
 }
 
 .card-image--large img {
-  mask-image: url(../../public/images/design-2-mask.png);
+  mask-image: url(./images/design-2-mask.png);
 }
 
 .fourth-image {
-  mask-image: url(../../public/images/marketing-mask.png);
+  mask-image: url(./images/marketing-mask.png);
 }
 .fifth--image {
-  mask-image: url(../../public/images/software-mask.png);
+  mask-image: url(./images/software-mask.png);
 }
 
 .popular-article__content {

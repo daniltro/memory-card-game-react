@@ -59,7 +59,7 @@
   border: none;
   inline-size: 20px;
   block-size: 20px;
-  background: url(../../public/images/search-Icon.svg) no-repeat;
+  background: url(./images/search-Icon.svg) no-repeat;
   margin-left: 3px;
   margin-bottom: 7px;
 }
@@ -73,7 +73,7 @@
   content: "";
   inline-size: 16px;
   block-size: 16px;
-  background: url(../../public/images/arrow-Icon.svg) no-repeat;
+  background: url(./images/arrow-Icon.svg) no-repeat;
   position: absolute;
   right: -23px;
   top: 3px;

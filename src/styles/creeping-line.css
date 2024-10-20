@@ -1,0 +1,69 @@
+.creeping-line {
+  block-size: 117px;
+  font-family: var(--second-font);
+  letter-spacing: 0.01em;
+  transform: rotate(-4deg) scale(1.01);
+  border: none;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: absolute;
+}
+
+.creeping-line__content {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  animation: creeping-line 10s linear infinite;
+}
+
+.creeping-line__text {
+  font-family: var(--heading-font);
+  font-weight: var(--regular-font-weight);
+  font-size: var(--h1-font-size);
+  line-height: var(--h1-line-height);
+  color: #1b1f21;
+  margin-right: 43px;
+}
+
+.creeping-line__icon {
+  background: url(./images/decor-separator-Icon.svg) no-repeat center center;
+  background-size: cover;
+  inline-size: 40px;
+  block-size: 40px;
+  margin-right: 10px;
+  margin-right: 43px;
+}
+
+.creeping-line--hero {
+  background-color: #acd6de;
+  top: 706px;
+  z-index: 1;
+}
+
+.creeping-line--webinars {
+  transform: rotate(-3deg) scale(1.01);
+  background: #ffad20;
+  top: 2678px;
+}
+
+.creeping-line.creeping-line--subscribe {
+  background: #fe6d44;
+  transform: rotate(2deg) scale(1.01);
+  top: -55px;
+}
+
+.creeping-line--footer {
+  background: #da3369;
+  transform: rotate(0);
+  top: -41px;
+}
+
+.creeping-line--footer .creeping-line__text {
+  color: #f2f2f2;
+}
+
+.creeping-line--footer .creeping-line__icon {
+  background: url(./images/footer-creeping-line-Icon.png) no-repeat center
+    center;
+}
