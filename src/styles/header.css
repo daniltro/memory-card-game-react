@@ -1,13 +1,10 @@
 .header {
-  padding: 16px 0;
-  padding-inline: 116px;
+  padding: 16px 116px;
 }
 
 .header--container {
   display: flex;
   gap: 143px;
-  /* max-inline-size: 1440px; */
-  /* justify-content: space-between; */
 }
 
 .header__list {
