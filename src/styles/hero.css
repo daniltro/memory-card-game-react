@@ -5,12 +5,13 @@
 
 .hero-section::after {
   content: "";
-  background: url(./images/hero-Linebg.png) no-repeat;
-  background-size: cover;
-  inline-size: 100%;
+  background: url(./images/hero-Linebg.png);
+  background-size: contain;
+  inline-size: 115%;
   block-size: 162%;
   position: absolute;
-  top: 52px;
+  top: 50px;
+  left: -164px;
 }
 
 .hero--container {

@@ -6,7 +6,7 @@
 
 .popular-articles::after {
   content: "";
-  background: url(./images/popular-articles-Linebg.png) no-repeat;
+  background: url(./images/popular-articles-Linebg.png);
   inline-size: 100%;
   block-size: 100%;
   position: absolute;
@@ -17,7 +17,7 @@
 
 .popular-articles--container {
   padding-top: 327px;
-  padding-bottom: 197px;
+  padding-bottom: 170px;
 }
 .popular-articles__cards-wrapper {
   display: grid;
@@ -41,6 +41,7 @@
   left: -40px;
   transition: transform 0.5s ease;
   cursor: pointer;
+  z-index: 1;
 }
 
 .popular-article__stiker:hover {
@@ -83,7 +84,7 @@
 }
 
 .card-image--large {
-  inline-size: 1208px;
+  inline-size: 100%;
   block-size: 520px;
   margin-bottom: 48px;
 }
@@ -93,25 +94,32 @@
   block-size: 100%;
   object-fit: cover;
   object-position: 100% 45%;
+  mask-size: 100% 100%;
+
 }
 
 .first--image {
   mask-image: url(./images/fashion-mask.png);
+
 }
 
 .second--image {
   mask-image: url(./images/design-mask.png);
+
 }
 
 .card-image--large img {
   mask-image: url(./images/design-2-mask.png);
+
 }
 
 .fourth-image {
   mask-image: url(./images/marketing-mask.png);
+
 }
 .fifth--image {
   mask-image: url(./images/software-mask.png);
+
 }
 
 .popular-article__content {

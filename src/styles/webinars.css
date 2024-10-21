@@ -1,25 +1,27 @@
 .webinars {
   background-color: #1b1f21;
   position: relative;
-  padding-top: 118px;
-  padding-bottom: 100px;
+  padding-top: 142px;
+  padding-bottom: 104px;
   z-index: -2;
+  clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 90%);
 }
+/* clip-path: polygon(0 21%, 100% 0, 100% 100%, 0 85%); */
 
 .webinars::after {
   content: "";
   background: url(./images/webinars-Line-bg.png);
   position: absolute;
-  top: -60px;
+  top: -40px;
   left: 0;
   bottom: 0;
   right: 0;
   z-index: -1;
 }
 
-
-
 .webinars__content {
+  inline-size: 100%;
+
   padding-top: 48px;
 }
 .webinars__up {
@@ -48,7 +50,10 @@
 }
 
 .webinars__card-list {
+  inline-size: 100%;
   display: flex;
+
+  flex-wrap: wrap;
   gap: 40px;
   margin-bottom: 82px;
   justify-content: center;
@@ -63,6 +68,35 @@
   border-radius: 32px;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+.webinars__card-item::after {
+  content: "";
+  background: url(./images/webinars-card-linebg.png) no-repeat center center;
+  background-size: contain;
+  position: absolute;
+  top: 110px;
+  left: 88px;
+  inline-size: 100%;
+  block-size: 90%;
+}
+
+.webinars__card-item:nth-child(2)::after {
+  background: url(./images/webinars-card-linebg2.png);
+  inline-size: 100%;
+  block-size: 120%;
+  top: -54px;
+  left: 45px;
+}
+
+.webinars__card-item:nth-child(3)::after {
+  background: url(./images/webinars-card-linebg3.png) no-repeat center center;;
+  inline-size: 100%;
+  block-size: 120%;
+  top: -50px;
+  left: -85px;
 }
 
 .webinars__card-item:nth-child(2) {
@@ -116,6 +150,7 @@
   line-height: var(--h5-line-height);
   margin-bottom: 5px;
 }
+
 .webinars__card-position {
   font-family: var(--text-font);
   font-size: var(--text-15-font-size);
@@ -126,8 +161,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.webinars__card-body {
-}
+
 .webinars__card-description {
   font-family: var(--heading-font);
   font-size: var(--h4-font-size);
@@ -136,8 +170,6 @@
   margin-bottom: 42px;
 }
 
-.webinars__card-footer {
-}
 .webinars__card-tags {
   display: flex;
   gap: 28px;
@@ -147,8 +179,7 @@
   line-height: var(--text-15-line-height);
   margin-bottom: 12px;
 }
-.webinars__card-tag {
-}
+
 .webinars__card-date-time {
   display: flex;
   justify-content: space-between;

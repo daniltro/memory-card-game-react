@@ -2,11 +2,17 @@
   .header {
     padding-inline: 32px;
   }
+
+  .container {
+    margin: 0 auto;
+    inline-size: 704px;
+  }
+
   .header--container {
     display: grid;
     grid-template-columns: 1fr auto;
     gap: 16px;
-    /* align-items: center; */
+    align-items: center;
   }
 
   .header__logo {
@@ -33,13 +39,22 @@
     justify-self: end;
     margin-right: 25px;
   }
-  /* ---------------- */
 
   .hero-section {
     padding: 48px 32px;
   }
+
+  .hero-section::after {
+    left: 0px;
+    transform: rotate(180deg);
+    inline-size: 100%;
+    block-size: 75%;
+    scale: 2;
+    top: -50px;
+    left: 115px;
+  }
   .hero--container {
-    display: initial;
+    display: block;
   }
 
   .hero-section__content {
@@ -48,13 +63,13 @@
 
   .hero-section__image {
     margin: 0 auto;
-    inline-size: 704px;
+    inline-size: 100%;
     block-size: 320px;
     position: relative;
   }
 
   .hero-section__image img {
-    mask-image: url(../../public/images/hero-mask-tablet.png);
+    mask-image: url(./images/hero-mask-tablet.png);
     object-position: 100% 50%;
   }
 
@@ -66,43 +81,40 @@
 
   .hero-section__content {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr; /* Две колонки одинаковой ширины */
-    grid-template-rows: auto auto auto; /* Три строки для корректного размещения */
-    gap: 6px 16px; /* Меньший вертикальный отступ между строками, больше между колонками */
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 6px 16px;
   }
 
   .hero-section__tags {
-    grid-column: 1 / 2; /* Первая колонка */
-    grid-row: 1 / 2; /* Первая строка */
-    align-self: start; /* Размещение сверху */
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    align-self: start;
     justify-self: end;
   }
 
   .hero-section__title {
-    grid-column: 2 / 4; /* Вторая колонка */
-    grid-row: 1 / 2; /* Первая строка */
-    align-self: start; /* Размещение сверху */
+    grid-column: 2 / 4;
+    grid-row: 1 / 2;
+    align-self: start;
   }
 
   .hero-section__meta {
-    grid-column: 1 / 2; /* Первая колонка */
-    grid-row: 2 / 3; /* Вторая строка */
-    align-self: start; /* Размещение сразу под .hero-section__tags */
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    align-self: start;
   }
 
   .hero-section__description {
-    grid-column: 2 / 4; /* Вторая колонка */
-    grid-row: 2 / 3; /* Вторая строка */
-    align-self: start; /* Размещение сверху */
+    grid-column: 2 / 4;
+    grid-row: 2 / 3;
+    align-self: start;
   }
 
   .hero-section__button {
-    grid-column: 1 / 3; /* Кнопка на всю ширину */
-    grid-row: 3 / 4; /* Кнопка в третьей строке */
-    justify-self: center; /* Центрирование кнопки */
-  }
-
-  .hero-section__tags {
+    grid-column: 1 / 3;
+    grid-row: 3 / 4;
+    justify-self: center;
   }
 
   .main--hero-tag {
@@ -165,5 +177,371 @@
     margin-left: 54%;
     margin-top: 25px;
     align-self: center;
+  }
+
+  .creeping-line__text {
+    font-size: 30px;
+  }
+
+  .creeping-line {
+    block-size: 80px;
+  }
+
+  .creeping-line--hero {
+    top: 772px;
+    left: 0;
+    transform: rotate(-3deg);
+  }
+
+  /* -------------- */
+
+  .popular-articles::after {
+    top: 406px;
+    background: url(./images/tablet-articles-linebg.png) no-repeat;
+  }
+
+  .popular-articles--container {
+    padding-top: 272px;
+  }
+
+  .popular-articles__card:first-child {
+    margin-right: 24px;
+  }
+
+  .popular-articles__card-image:not(.card-image--large) {
+    inline-size: 340px;
+    block-size: 224px;
+    margin-bottom: 31px;
+  }
+
+  .fashion--sticker,
+  .design--sticker,
+  .software--sticker {
+    top: -31px;
+    left: 190px;
+    scale: 0.59;
+  }
+
+  .design--sticker-2 {
+    top: -22px;
+    left: 546px;
+    scale: 0.67;
+  }
+
+  .marketing--sticker {
+    top: -47px;
+    left: 131px;
+    scale: 0.59;
+    rotate: 15deg;
+  }
+
+  .card-image--large {
+    block-size: 320px;
+    margin-bottom: 23px;
+  }
+
+  .popular-articles__card-title {
+    font-size: 24px;
+    line-height: var(--text-18-line-height);
+  }
+
+  .popular-articles__card-description {
+    padding-right: 0;
+    margin-bottom: 16px;
+  }
+  .popular-articles__card:nth-child(3) {
+    margin-top: 101px;
+  }
+
+  .popular-article__content:nth-child(3) {
+    padding-left: 0;
+    margin-bottom: 90px;
+  }
+  .accent--text-content {
+    margin-left: 13px;
+  }
+
+  .tags-design--accent {
+    margin-top: 3px;
+    margin-left: 41px;
+  }
+
+  .meta--design {
+    margin-top: 13px;
+  }
+  .meta--design .meta-time::before {
+    left: 55px;
+  }
+
+  .card-title--accent {
+    padding-right: 0;
+    font-size: 26px;
+    line-height: 31.2px;
+  }
+  /* ---------------- */
+
+  .creeping-line--webinars {
+    top: 2337px;
+  }
+
+  .webinars {
+    margin-top: 60px;
+    padding-top: 120px;
+    padding-bottom: 48px;
+    padding-inline: 32px;
+    clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 100%);
+  }
+
+  .webinars::after {
+    background: url(./images/tablet-webinars-linebg.png);
+    background-size: cover;
+    top: 95px;
+  }
+
+  .webinars__up {
+    margin-bottom: 65px;
+  }
+
+  .webinars__content {
+    padding-top: 33px;
+  }
+
+  .webinars__title {
+    padding-top: 15px;
+    font-size: 28px;
+    line-height: 33.6px;
+  }
+
+  .webinars__card-position {
+    overflow: visible;
+  }
+
+  .webinars__card-list {
+    gap: 24px;
+  }
+
+  .webinars__card-item {
+    inline-size: 340px;
+    block-size: 401px;
+    padding: 22px 24px 24px;
+  }
+
+  .webinars__card-item::after {
+    top: 81px;
+    block-size: 100%;
+  }
+
+  .webinars__card-item:nth-child(2)::after {
+    transform: scaleX(-1);
+    rotate: 194deg;
+    top: 0;
+    left: 73px;
+    block-size: 130%;
+  }
+
+  .webinars__card-item:nth-child(3)::after {
+    background: url(./images/tablet-webinars-linebg3.png) no-repeat;
+    top: -130px;
+    left: 20px;
+    inline-size: 100%;
+    block-size: 150%;
+  }
+
+  .webinars__card-item:nth-child(n + 3) {
+    inline-size: 100%;
+    block-size: 272px;
+  }
+
+  .webinars__card-header {
+    block-size: fit-content;
+  }
+
+  .webinars__card-body {
+    flex-grow: 1;
+  }
+
+  .webinars__card-description--small-width {
+    margin-right: 35px;
+  }
+
+  .webinars__card-description {
+    font-size: 24px;
+    line-height: var(--text-18-line-height);
+  }
+
+  .webinars__card-footer {
+    margin-top: -10px;
+  }
+
+  .footer--position {
+    margin-top: -35px;
+  }
+
+  .webinars__card-date {
+    max-inline-size: 200px;
+  }
+  .date--max-width {
+    max-inline-size: 100%;
+  }
+  .creeping-line.creeping-line--subscribe {
+    top: -27px;
+    rotate: 1deg;
+  }
+
+  .subscribe {
+    padding-bottom: 151px;
+    padding-top: 173px;
+  }
+
+  .subscribe--container {
+    inline-size: 704px;
+  }
+
+  .subscribe::after {
+    content: "";
+    inline-size: 100%;
+    block-size: 20px;
+    background-color: #fff;
+    position: absolute;
+    top: -46px;
+    rotate: 2.8deg;
+
+    z-index: -1;
+  }
+
+  .subscribe-wrapper {
+    background: #57acbc;
+    padding: 40px 24px;
+    inline-size: 530px;
+    border-radius: 30px;
+    block-size: 498px;
+  }
+
+  .subscribe-wrapper:after {
+    top: 0;
+    right: 102px;
+    rotate: 7deg;
+    inline-size: 120%;
+  }
+
+  .subscribe-wrapper::before {
+    background: url(./images/tablet-form-illustration.png) no-repeat;
+    top: 0;
+    right: -302px;
+  }
+  .subscribe__title {
+    font-size: 26px;
+    line-height: 31.2px;
+    inline-size: 368px;
+  }
+  .subscribe__description {
+    inline-size: 368px;
+    margin-bottom: 64px;
+    padding-right: 0;
+  }
+  .subscribe-form__controls {
+    flex-direction: column;
+  }
+  .subscribe-form__checkbox-wrapper {
+    inline-size: 360px;
+  }
+  .subscribe-form__checkbox-info {
+    font-size: var(--text-13-font-size);
+    line-height: var(--text-13-sls-line-height);
+  }
+
+  .subscribe-form__success-submit-wrapper {
+    margin-top: 115px;
+  }
+
+  .subscribe-form__success-submit {
+    inline-size: 280px;
+    border-radius: 24px;
+    block-size: 114px;
+    padding-top: 29px;
+    padding-right: 85px;
+  }
+
+  .subscribe-form__success-submit.active::before {
+    top: -40px;
+    right: -30px;
+    scale: 0.86;
+  }
+
+  /* --------------- */
+
+  .creeping-line--footer .creeping-line__text {
+    font-size: 44px;
+  }
+
+  .footer__content {
+    flex-direction: column;
+  }
+
+  .footer__content-left {
+    display: flex;
+  }
+
+  .footer--container {
+    grid-column: repeat(3, 1fr);
+    padding-top: 103px;
+  }
+  .footer__logo {
+    grid-column: 1 /2;
+  }
+
+  .footer__logo-icon {
+    inline-size: 174px;
+  }
+  .footer__logo-image {
+    inline-size: 64px;
+    block-size: 64px;
+  }
+  .footer__subscribe {
+    margin-left: 72px;
+    margin-top: 0;
+    grid-row: 1/2;
+    grid-column: 2 / 3;
+  }
+
+  .footer__subscribe-input {
+    margin-bottom: 16px;
+  }
+
+  .footer__contnet-menu {
+    margin-top: -36px;
+    margin-left: 0;
+    grid-column: 1/3;
+    grid-row: 2/3;
+  }
+  .footer__links:nth-child(1) {
+    margin-right: 97px;
+  }
+  .footer__links:nth-child(2) {
+    margin-right: 74px;
+  }
+  .footer__links:nth-child(3) {
+    margin-right: 96px;
+  }
+
+  .footer__contacts-list {
+    margin-top: 78px;
+  }
+
+  .footer__contacts-socials {
+    margin-top: -158px;
+    margin-left: 0;
+    grid-column: 1/2;
+    grid-row: 2;
+  }
+
+  .footer__contacts-confidentiality {
+    margin-top: -19px;
+    gap: 25px;
+  }
+
+  .footer__contacts-confidentiality::before {
+    top: -26px;
+    inline-size: 100%;
   }
 }
