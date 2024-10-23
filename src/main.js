@@ -26,7 +26,7 @@ submitButton.addEventListener("click", (e) => {
     }
   }
 });
-
+ 
 // ------------------------------------------
 
 const contentArr = Array.from(
