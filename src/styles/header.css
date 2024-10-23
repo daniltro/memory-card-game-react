@@ -1,5 +1,6 @@
 .header {
-  padding: 16px 116px;
+  /* padding: 16px 116px; */
+  padding: 16px 0;
   position: fixed;
   top: 0;
   inline-size: 100%;
