@@ -35,6 +35,7 @@
   height: 49px;
   background-color: transparent;
   margin-bottom: 8px;
+  color: #fcfaf9;
 }
 
 .footer__subscribe-input::placeholder {

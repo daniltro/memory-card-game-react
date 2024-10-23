@@ -292,7 +292,8 @@
 
   .webinars {
     padding-top: 70px;
-    padding-bottom: 109px;
+    /* padding-bottom: 109px; */
+    padding-bottom: 119px;
     padding-inline: 8px;
   }
 
@@ -351,14 +352,15 @@
   }
 
   .marquee-line.marquee-line--subscribe {
-    top: -15px;
+    top: -25px;
     rotate: 2deg;
     scale: 1.01;
   }
   /* ------------------------------------ */
 
   .subscribe {
-    padding-top: 147px;
+    /* padding-top: 147px;  */
+    padding-top: 137px; 
     margin-bottom: 269px;
   }
 
