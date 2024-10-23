@@ -19,6 +19,7 @@ body {
 .main {
   position: relative;
   overflow: hidden;
+  background-color: #fcfaf9;
 }
 
 button {
@@ -35,7 +36,6 @@ button {
   cursor: pointer;
   margin-right: 7px;
 }
-
 
 .container {
   max-inline-size: 1208px;
@@ -80,4 +80,36 @@ button {
   background: url(./images/meta-time-Icon.svg) no-repeat;
   position: absolute;
   left: -28px;
+}
+
+.button-dark-bg,
+.button-light-bg {
+  transition: background-color 0.3s ease, color 0.3s ease; /* Плавный переход для фона и цвета */
+}
+
+.button-light-bg:hover,
+.button-light-bg:active {
+  background: #1b1f21;
+  color: #fcfaf9;
+}
+
+.button-light-bg:disabled {
+  opacity: 0.6;
+}
+.button-light-bg:focus-visible {
+  outline: 2px solid #1b1f21;
+  outline-offset: 0;
+}
+
+.button-dark-bg:hover,
+.button-dark-bg:active {
+  background-color: #da3369;
+}
+
+.button-dark-bg:disabled {
+  opacity: 0.6;
+}
+
+.button-dark-bg:focus-visible {
+  outline: 2px solid #fcfaf9;
 }

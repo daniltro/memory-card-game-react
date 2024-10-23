@@ -1,7 +1,6 @@
 :root {
   --text-font: "Nunito", sans-serif;
   --heading-font: "Archivo Black", sans-serif;
-
   --h1-font-size: 58px;
   --h1-line-height: 69.6px;
   --h2-font-size: 46px;
@@ -12,16 +11,13 @@
   --h4-line-height: 36px;
   --h5-font-size: 26px;
   --h5-line-height: 31.2px;
-
   --text-21-font-size: 21px;
   --text-18-font-size: 18px;
   --text-15-font-size: 15px;
   --text-13-font-size: 13px;
-
   --regular-font-weight: 400;
   --medium-font-weight: 500;
   --bold-font-weight: 700;
-
   --text-21-line-height: 33.6px;
   --text-18-line-height: 28.8px;
   --text-15-line-height: 21px;

@@ -3,10 +3,8 @@
   position: relative;
   padding-top: 142px;
   padding-bottom: 104px;
-  z-index: -2;
   clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 90%);
 }
-/* clip-path: polygon(0 21%, 100% 0, 100% 100%, 0 85%); */
 
 .webinars::after {
   content: "";
@@ -21,21 +19,27 @@
 
 .webinars__content {
   inline-size: 100%;
-
-  padding-top: 48px;
+  padding-top: 40px;
 }
 .webinars__up {
   display: flex;
   justify-content: space-between;
   margin-bottom: 80px;
 }
+
 .webinars__title {
+  display: inline-block;
+  margin-right: 447px;
+  margin-bottom: 93px;
   font-family: var(--heading-font);
   font-size: var(--h2-font-size);
   font-weight: var(--regular-font-weight);
   line-height: var(--h2-line-height);
   color: #fcfaf9;
+  position: relative;
+  top: 8px;
 }
+
 .webinars__button {
   border-radius: 40px;
   padding: 15px 0px;
@@ -52,7 +56,6 @@
 .webinars__card-list {
   inline-size: 100%;
   display: flex;
-
   flex-wrap: wrap;
   gap: 40px;
   margin-bottom: 82px;
@@ -92,7 +95,7 @@
 }
 
 .webinars__card-item:nth-child(3)::after {
-  background: url(./images/webinars-card-linebg3.png) no-repeat center center;;
+  background: url(./images/webinars-card-linebg3.png) no-repeat center center;
   inline-size: 100%;
   block-size: 120%;
   top: -50px;
@@ -117,6 +120,7 @@
   margin-bottom: 16px;
   block-size: 93px;
 }
+
 .webinars__card-image-wrapper {
   min-inline-size: 64px;
   block-size: 64px;
@@ -125,6 +129,7 @@
   align-items: center;
   margin-right: 20px;
 }
+
 .webinars__card-image {
   inline-size: 100%;
   block-size: 100%;
@@ -137,12 +142,15 @@
   min-inline-size: 64px;
   block-size: 64px;
 }
+
 .webinars__card-image--position {
   object-position: 100% 10%;
 }
+
 .webinars__card-title {
   margin-top: 7px;
 }
+
 .webinars__card-name {
   font-family: var(--heading-font);
   font-size: var(--h5-font-size);
@@ -189,10 +197,12 @@
   font-weight: var(--medium-font-weight);
   line-height: var(--text-15-line-height);
 }
+
 .webinars__card-date {
   padding: 0 25px;
   position: relative;
 }
+
 .webinars__card-date::after {
   content: "";
   inline-size: 25px;
@@ -202,9 +212,11 @@
   left: 0;
   top: 0;
 }
+
 .webinars__card-time {
   position: relative;
 }
+
 .webinars__card-time::after {
   content: "";
   inline-size: 25px;
