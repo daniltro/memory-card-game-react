@@ -58,7 +58,7 @@
   }
 
   .hero-section__image img {
-    mask-image: url(./images/mobile-hero-mask.png);
+    mask-image: url(/images/mobile-hero-mask.png);
     inline-size: 100%;
     block-size: 100%;
     object-position: 100% 90%;
@@ -167,17 +167,17 @@
   }
 
   .popular-articles__card-image .first--image {
-    mask-image: url(./images/mobile-articles-card-mask-1.png);
+    mask-image: url(/images/mobile-articles-card-mask-1.png);
     object-position: 50% 45%;
   }
 
   .popular-articles__card-image .second--image {
-    mask-image: url(./images/mobile-articles-card-mask-2.png);
+    mask-image: url(/images/mobile-articles-card-mask-2.png);
     object-position: 22% 45%;
   }
 
   .popular-articles__card-image .third--image {
-    mask-image: url(./images/mobile-articles-card-mask-3.png);
+    mask-image: url(/images/mobile-articles-card-mask-3.png);
     object-position: 50% 45%;
   }
 
@@ -270,12 +270,12 @@
   }
 
   .popular-articles__card-image .fourth-image {
-    mask-image: url(./images/mobile-articles-card-mask-4.png);
+    mask-image: url(/images/mobile-articles-card-mask-4.png);
     object-position: 50% 45%;
   }
 
   .popular-articles__card-image .fifth--image {
-    mask-image: url(./images/mobile-articles-card-mask-5.png);
+    mask-image: url(/images/mobile-articles-card-mask-5.png);
     object-position: 6% 45%;
   }
   .marquee-line--webinars {
@@ -363,7 +363,7 @@
   }
 
   .subscribe-wrapper {
-    background: url(./images/mobile-form-bg.png) no-repeat;
+    background: url(/images/mobile-form-bg.png) no-repeat;
     block-size: fit-content;
     inline-size: 100%;
     padding-top: 62px;
@@ -371,7 +371,7 @@
   }
 
   .subscribe-wrapper::after {
-    background: url(./images/mobile-form-line-bg.png) no-repeat;
+    background: url(/images/mobile-form-line-bg.png) no-repeat;
     top: -32px;
     right: -60px;
     rotate: 0deg;
@@ -379,7 +379,7 @@
   }
 
   .subscribe-wrapper::before {
-    background: url(./images/mobile-form-img.png) no-repeat;
+    background: url(/images/mobile-form-img.png) no-repeat;
     left: 0;
     top: 700px;
   }
@@ -515,7 +515,7 @@
 
   .footer__column-title::after {
     content: "";
-    background: url(./images/open-accordeon.svg);
+    background: url(/images/open-accordeon.svg);
     position: absolute;
     right: 53px;
     top: 15px;
@@ -528,7 +528,7 @@
   }
 
   .footer__column-title.active::after {
-    background: url(./images/close-accordeon.svg);
+    background: url(/images/close-accordeon.svg);
   }
 
   .footer__links.active .footer__links-item {

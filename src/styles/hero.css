@@ -6,7 +6,7 @@
 
 .hero-section::after {
   content: "";
-  background: url(./images/hero-Linebg.png);
+  background: url(/images/hero-Linebg.png);
   background-size: contain;
   inline-size: 115%;
   block-size: 162%;
@@ -36,14 +36,14 @@
   block-size: 100%;
   object-fit: cover;
   object-position: 100% 90%;
-  mask-image: url(./images/hero-mask-Img.png);
+  mask-image: url(/images/hero-mask-Img.png);
 }
 
 .hero-section__sticker {
   content: "";
   inline-size: 180px;
   block-size: 180px;
-  background: url(./images/hero-Stickers.png) no-repeat;
+  background: url(/images/hero-Stickers.png) no-repeat;
   position: absolute;
   top: 0;
   left: 300px;

@@ -63,7 +63,7 @@ button {
   content: "";
   inline-size: 17px;
   block-size: 17px;
-  background: url(./images/meta-date-Icon.svg) no-repeat;
+  background: url(/images/meta-date-Icon.svg) no-repeat;
   position: absolute;
   left: -25px;
 }
@@ -77,7 +77,7 @@ button {
   content: "";
   inline-size: 25px;
   block-size: 25px;
-  background: url(./images/meta-time-Icon.svg) no-repeat;
+  background: url(/images/meta-time-Icon.svg) no-repeat;
   position: absolute;
   left: -28px;
 }

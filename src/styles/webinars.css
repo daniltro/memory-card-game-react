@@ -8,7 +8,7 @@
 
 .webinars::after {
   content: "";
-  background: url(./images/webinars-Line-bg.png);
+  background: url(/images/webinars-Line-bg.png);
   position: absolute;
   top: -40px;
   left: 0;
@@ -77,7 +77,7 @@
 
 .webinars__card-item::after {
   content: "";
-  background: url(./images/webinars-card-linebg.png) no-repeat center center;
+  background: url(/images/webinars-card-linebg.png) no-repeat center center;
   background-size: contain;
   position: absolute;
   top: 110px;
@@ -87,7 +87,7 @@
 }
 
 .webinars__card-item:nth-child(2)::after {
-  background: url(./images/webinars-card-linebg2.png);
+  background: url(/images/webinars-card-linebg2.png);
   inline-size: 100%;
   block-size: 120%;
   top: -54px;
@@ -95,7 +95,7 @@
 }
 
 .webinars__card-item:nth-child(3)::after {
-  background: url(./images/webinars-card-linebg3.png) no-repeat center center;
+  background: url(/images/webinars-card-linebg3.png) no-repeat center center;
   inline-size: 100%;
   block-size: 120%;
   top: -50px;
@@ -134,7 +134,7 @@
   inline-size: 100%;
   block-size: 100%;
   object-fit: cover;
-  mask-image: url(./images/webinars-card-mask.svg);
+  mask-image: url(/images/webinars-card-mask.svg);
 }
 
 .webinars__card-image--ufo {
@@ -207,7 +207,7 @@
   content: "";
   inline-size: 25px;
   block-size: 25px;
-  background: url(./images/meta-date-Icon-webinars.svg) no-repeat;
+  background: url(/images/meta-date-Icon-webinars.svg) no-repeat;
   position: absolute;
   left: 0;
   top: 0;
@@ -221,7 +221,7 @@
   content: "";
   inline-size: 25px;
   block-size: 25px;
-  background: url(./images/meta-time-Icon-webinars.svg) no-repeat;
+  background: url(/images/meta-time-Icon-webinars.svg) no-repeat;
   position: absolute;
   top: 3px;
   left: -25px;

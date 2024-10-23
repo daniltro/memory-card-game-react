@@ -6,7 +6,7 @@
 }
 
 .subscribe-wrapper {
-  background: url(./images/form-bg.png) no-repeat center center;
+  background: url(/images/form-bg.png) no-repeat center center;
   background-size: contain;
   inline-size: 100%;
   block-size: 518px;
@@ -17,7 +17,7 @@
 
 .subscribe-wrapper::after {
   content: "";
-  background: url(./images/form-Line-bg.png) no-repeat;
+  background: url(/images/form-Line-bg.png) no-repeat;
   inline-size: 100%;
   block-size: 110%;
   position: absolute;
@@ -28,7 +28,7 @@
 
 .subscribe-wrapper::before {
   content: "";
-  background: url(./images/form-illustration.png);
+  background: url(/images/form-illustration.png);
   inline-size: 416px;
   block-size: 518px;
   position: absolute;
@@ -100,13 +100,13 @@
 
 .subscribe-form__input:invalid:not(:placeholder-shown) {
   border: 1.5px solid #ffad20;
-  background: url(./images/invalid-input-icon.svg) no-repeat right 16px center;
+  background: url(/images/invalid-input-icon.svg) no-repeat right 16px center;
   background-size: 25px;
 }
 
 .subscribe-form__input:valid:not(:placeholder-shown) {
   border: 1.5px solid #bedb39;
-  background: url(./images/valid-input-icon.svg) no-repeat right 16px center;
+  background: url(/images/valid-input-icon.svg) no-repeat right 16px center;
   background-size: 25px;
 }
 
@@ -192,7 +192,7 @@
 }
 
 .subscribe-form__input-checkbox:checked + .subscribe-form__custom-checkbox {
-  background: url(./images/checkbox-checked-icon.svg) no-repeat center center;
+  background: url(/images/checkbox-checked-icon.png) no-repeat center center;
   background-size: 14px 9px;
   background-color: #fcfaf9;
   border: none;
@@ -228,7 +228,7 @@
   content: "";
   inline-size: 120px;
   block-size: 120px;
-  background: url(./images/form-success-submit-sticker.png);
+  background: url(/images/form-success-submit-sticker.png);
   position: absolute;
   top: -60px;
   right: 65px;

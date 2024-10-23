@@ -75,7 +75,7 @@
   }
 
   .hero-section__image img {
-    mask-image: url(./images/hero-mask-tablet.png);
+    mask-image: url(/images/hero-mask-tablet.png);
     object-position: 100% 50%;
   }
 
@@ -218,7 +218,7 @@
 
   .popular-articles::after {
     top: 406px;
-    background: url(./images/tablet-articles-linebg.png) no-repeat;
+    background: url(/images/tablet-articles-linebg.png) no-repeat;
   }
 
   .popular-articles--container {
@@ -326,7 +326,7 @@
   }
 
   .webinars::after {
-    background: url(./images/tablet-webinars-linebg.png);
+    background: url(/images/tablet-webinars-linebg.png);
     background-size: cover;
     top: 95px;
   }
@@ -377,7 +377,7 @@
   }
 
   .webinars__card-item:nth-child(3)::after {
-    background: url(./images/tablet-webinars-linebg3.png) no-repeat;
+    background: url(/images/tablet-webinars-linebg3.png) no-repeat;
     top: -130px;
     left: 20px;
     inline-size: 100%;
@@ -452,7 +452,7 @@
   }
 
   .subscribe-wrapper::before {
-    background: url(./images/tablet-form-illustration.png) no-repeat;
+    background: url(/images/tablet-form-illustration.png) no-repeat;
     top: 0;
     right: -302px;
   }
@@ -561,7 +561,7 @@
   .footer__links:nth-child(2) {
     margin-right: 74px;
   }
-  
+
   .footer__links:nth-child(3) {
     margin-right: 96px;
   }
