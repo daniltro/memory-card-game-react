@@ -63,20 +63,34 @@
   display: flex;
 }
 
+.section-tags-list {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* .hero-section__tags-list {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+} */
+.hero-section__tags-item {
+}
+
 .hero-section__tags-wrapper {
   display: flex;
 }
 
-.hero-section__tags-inner-wrapper {
+/* .hero-section__tags-inner-wrapper {
   display: flex;
   align-items: center;
-}
+} */
 
 .hero-section__tag {
   color: #94ac23;
   margin-bottom: 18px;
   padding: 8px 0;
-  margin-right: 10px;
+  /* margin-right: 10px; */
 }
 
 .main--hero-tag {

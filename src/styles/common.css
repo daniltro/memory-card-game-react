@@ -27,6 +27,12 @@ button {
   cursor: pointer;
 }
 
+.section-tags-list {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .section-tag {
   display: inline-block;
   font-family: var(--text-font);
@@ -35,7 +41,7 @@ button {
   font-size: var(--text-15-font-size);
   line-height: var(--text-15-line-height);
   cursor: pointer;
-  margin-right: 7px;
+  /* margin-right: 7px; */
 }
 
 .container {

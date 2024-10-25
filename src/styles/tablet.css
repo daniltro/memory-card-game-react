@@ -284,17 +284,13 @@
     margin-left: 13px;
   }
 
-  .tags-design--accent {
+  .tags--design.tags-design--accent {
     margin-top: 3px;
-    margin-left: 41px;
+    margin-left: 47px;
   }
 
   .tags--design {
     margin-bottom: 15px;
-  }
-
-  .tag--design.tag-design--another {
-    margin-right: 10px;
   }
 
   .tags-design__inner-wrapper .tag--design:first-child {
@@ -302,7 +298,7 @@
   }
 
   .meta--design {
-    margin-top: 14px;
+    margin-top: 16px;
   }
 
   .meta--design .meta-time::before {
@@ -324,7 +320,7 @@
 
   .webinars {
     margin-top: 60px;
-    padding-top: 114px;
+    padding-top: 120px;
     padding-bottom: 73px;
     padding-inline: 32px;
     clip-path: polygon(0 4%, 100% 0, 100% 100%, 0 100%);
@@ -333,7 +329,8 @@
   .webinars::after {
     background: url(/images/tablet-webinars-linebg.png);
     background-size: cover;
-    top: 95px;
+    top: 97px;
+    left: -5px;
   }
 
   .webinars__up {

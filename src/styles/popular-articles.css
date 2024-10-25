@@ -1,5 +1,5 @@
 .popular-articles {
-  background-color: #FCFAF9;
+  background-color: #fcfaf9;
 }
 
 .popular-articles::after {
@@ -51,12 +51,11 @@
 }
 
 .popular-article__stiker:hover {
-  transform: rotate(360deg); /* Вращение при наведении */
+  transform: rotate(360deg);
 }
 
 .fashion--sticker {
   background: url(/images/fashion-sticker.png) no-repeat;
-  
 }
 
 .design--sticker {
@@ -97,7 +96,7 @@
 .card-image--large {
   inline-size: 100%;
   block-size: 520px;
-  margin-bottom: 43px;
+  margin-bottom: 46px;
 }
 
 .popular-articles__card-image img {
@@ -140,7 +139,8 @@
 }
 
 .popular-articles__tags {
-  margin-bottom: 18px;
+  display: flex;
+  margin-bottom: 16px;
 }
 
 .tab-button--accent {
@@ -152,15 +152,16 @@
   color: #22c98b;
 }
 
-.fashion--tag:first-child {
+.fashion-tag--main {
   color: #1b1f21;
   background: #90eecb;
   padding: 8px 16px 8px 19px;
-  margin-right: 14px;
+  margin-right: 17px;
 }
 
-.tags--design {
-  margin-top: 20px;
+.tags--design.tags-design--accent {
+  flex-direction: column;
+  margin: 22px 12px 18px 3px;
 }
 
 .tag--design {
@@ -168,18 +169,18 @@
   padding: 8px 0;
 }
 
-.tag--design:first-child {
+.tag-design--main {
   padding: 8px 16px 8px 18px;
   background: #ec95b1;
   color: #1b1f21;
   align-self: flex-end;
   margin-bottom: 3px;
+  padding-right: 19px;
   margin-right: 15px;
 }
 
-.tag--design.tag-design--another {
-  padding-right: 19px;
-  margin-right: 12px;
+.tag-design--another {
+  margin-right: 0;
 }
 
 .tags-design-wrapper {
@@ -189,14 +190,6 @@
 
 .tags-design__inner-wrapper {
   display: flex;
-}
-
-.tags-design__inner-wrapper .tag--design:first-child {
-  background: initial;
-  color: #da3369;
-  padding: 8px 0;
-  margin-right: 10px;
-  margin-left: 5px;
 }
 
 .tags-design__inner-wrapper .tag--design {
@@ -238,7 +231,7 @@
   flex-direction: column;
   align-items: end;
   position: relative;
-  right: 34px;
+  right: 22px;
   margin-top: 15px;
 }
 
@@ -249,7 +242,7 @@
 
 .meta--design .meta-time:before {
   top: 3px;
-  left: 51px;
+  left: 56px;
 }
 
 .meta-date--design {
@@ -266,9 +259,9 @@
   padding: 8px 0;
 }
 
-.tag--marketing:first-child {
+.tag-marketing-main {
   padding: 8px 18px;
-  margin-right: 14px;
+  margin-right: 16px;
   color: #1b1f21;
   background: #ffad20;
 }
@@ -278,8 +271,8 @@
   padding: 8px 0;
 }
 
-.tag--software:first-child {
-  margin-right: 14px;
+.tag-software--main {
+  margin-right: 16px;
   padding: 8px 18px;
   color: #1b1f21;
   background: #acd6de;
