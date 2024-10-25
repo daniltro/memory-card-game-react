@@ -48,6 +48,13 @@
     margin-top: 125px;
   }
 
+  .hero-section::after {
+    background: url(/images/mobile-hero-linebg.svg) no-repeat;
+    top: 0;
+    left: 0;
+    z-index: 0;
+  }
+
   .hero-section__content {
     padding-top: 17px;
     display: block;
@@ -68,6 +75,10 @@
     top: -31px;
     left: 156px;
     scale: 0.575;
+  }
+
+  .hero-section__tags {
+    justify-self: start;
   }
 
   .hero-section__tags-wrapper {
@@ -129,11 +140,27 @@
   }
 
   .marquee-line--hero {
-    top: 950px;
+    top: 1074px;
     transform: rotate(-4deg);
   }
 
   /* ------------------- */
+
+  .popular-articles::after {
+    top: 279px;
+    left: 0;
+    background: url(/images/mobile-articles-linebg.svg) no-repeat;
+  }
+
+  .popular-articles::before {
+    content: "";
+    inline-size: 100%;
+    block-size: 100%;
+    position: absolute;
+    top: 2095px;
+    left: 0;
+    background: url(/images/mobile-articles-linebg2.svg) no-repeat;
+  }
 
   .popular-articles--container {
     padding-top: 256px;
@@ -163,7 +190,7 @@
   .popular-articles__card .popular-articles__card-image {
     inline-size: 100%;
     block-size: 352px;
-    margin-bottom: 26px;
+    margin-bottom: 19px;
   }
 
   .popular-articles__card-image .first--image {
@@ -225,6 +252,10 @@
   .tags-design-wrapper {
     display: flex;
     flex-direction: row;
+  }
+
+  .tags--design {
+    margin-bottom: 12px;
   }
 
   .tags-design--accent {
@@ -360,7 +391,7 @@
 
   .subscribe {
     /* padding-top: 147px;  */
-    padding-top: 137px; 
+    padding-top: 137px;
     margin-bottom: 269px;
   }
 

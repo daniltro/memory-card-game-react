@@ -1,24 +1,28 @@
 .popular-articles {
-  position: relative;
-  z-index: 0;
   background-color: #FCFAF9;
 }
 
 .popular-articles::after {
   content: "";
-  background: url(/images/popular-articles-Linebg.png);
-  inline-size: 100%;
+  background: url(/images/articles-linebg.svg) no-repeat;
+  inline-size: 150%;
   block-size: 100%;
   position: absolute;
-  left: 0;
-  top: 162px;
+  top: 1000px;
+  left: -670px;
+}
+
+@media (min-width: 1981px) and (max-width: 3840px) {
+  .popular-articles::after {
+    background-size: contain;
+  }
 }
 
 .popular-articles--container {
   padding-top: 327px;
   padding-bottom: 170px;
   position: relative;
-  z-index: 1;
+  /* z-index: 1; */
 }
 
 .popular-articles__cards-wrapper {
@@ -28,6 +32,7 @@
 
 .popular-articles__card {
   position: relative;
+  z-index: 1;
 }
 
 .popular-articles__card:first-child {
@@ -85,14 +90,14 @@
 .popular-articles__card-image {
   inline-size: 584px;
   block-size: 328px;
-  margin-bottom: 40px;
+  margin-bottom: 32px;
   overflow: hidden;
 }
 
 .card-image--large {
   inline-size: 100%;
   block-size: 520px;
-  margin-bottom: 48px;
+  margin-bottom: 43px;
 }
 
 .popular-articles__card-image img {
@@ -135,7 +140,7 @@
 }
 
 .popular-articles__tags {
-  margin-bottom: 25px;
+  margin-bottom: 18px;
 }
 
 .tab-button--accent {

@@ -8,13 +8,21 @@
 
 .webinars::after {
   content: "";
-  background: url(/images/webinars-Line-bg.png);
+  background: url(/images/webinars-linebg.svg);
   position: absolute;
-  top: -40px;
-  left: 0;
+  top: -584px;
+  left: -213px;
   bottom: 0;
   right: 0;
   z-index: -1;
+}
+
+@media (min-width: 1981px) and (max-width: 3840px) {
+  .webinars::after {
+    background: url(/images/webinars-4k-linebg.svg);
+    top: -541px;
+    left: -850px;
+  }
 }
 
 .webinars__content {

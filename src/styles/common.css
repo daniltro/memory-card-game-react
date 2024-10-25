@@ -28,6 +28,7 @@ button {
 }
 
 .section-tag {
+  display: inline-block;
   font-family: var(--text-font);
   border-radius: 20px;
   background: transparent;
@@ -84,7 +85,7 @@ button {
 
 .button-dark-bg,
 .button-light-bg {
-  transition: background-color 0.3s ease, color 0.3s ease; /* Плавный переход для фона и цвета */
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .button-light-bg:hover,

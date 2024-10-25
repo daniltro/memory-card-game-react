@@ -46,13 +46,9 @@
   }
 
   .hero-section::after {
-    left: 0px;
-    transform: rotate(180deg);
-    inline-size: 100%;
-    block-size: 75%;
-    scale: 2;
-    top: -50px;
-    left: 115px;
+    background: url(/images/tablet-hero-linebg.svg) no-repeat;
+    top: -184px;
+    left: -322px;
   }
 
   .hero--container {
@@ -209,15 +205,20 @@
   }
 
   .marquee-line--hero {
-    top: 772px;
+    top: 905px;
     left: 0;
     transform: rotate(-3deg);
   }
 
   /* -------------- */
 
+  .popular-articles {
+    position: relative;
+  }
+
   .popular-articles::after {
     top: 406px;
+    left: 0;
     background: url(/images/tablet-articles-linebg.png) no-repeat;
   }
 
@@ -232,7 +233,7 @@
   .popular-articles__card-image:not(.card-image--large) {
     inline-size: 340px;
     block-size: 224px;
-    margin-bottom: 31px;
+    margin-bottom: 24px;
   }
 
   .fashion--sticker,
@@ -288,6 +289,10 @@
     margin-left: 41px;
   }
 
+  .tags--design {
+    margin-bottom: 15px;
+  }
+
   .tag--design.tag-design--another {
     margin-right: 10px;
   }
@@ -319,7 +324,7 @@
 
   .webinars {
     margin-top: 60px;
-    padding-top: 117px;
+    padding-top: 114px;
     padding-bottom: 73px;
     padding-inline: 32px;
     clip-path: polygon(0 4%, 100% 0, 100% 100%, 0 100%);
@@ -504,7 +509,7 @@
 
   .marquee-line--footer {
     top: -41px;
-}
+  }
 
   .marquee-line--footer .marquee-line__text {
     font-size: 44px;

@@ -1,18 +1,18 @@
 .hero-section {
   padding: 75px 0 0;
-  position: relative;
   margin-top: 78px;
 }
 
 .hero-section::after {
   content: "";
-  background: url(/images/hero-Linebg.png);
+  background: url(/images/hero-linebg.svg) no-repeat;
   background-size: contain;
   inline-size: 115%;
-  block-size: 162%;
+  block-size: 100%;
   position: absolute;
-  top: 50px;
-  left: -164px;
+  top: 126px;
+  left: -167px;
+  z-index: 1;
 }
 
 .hero--container {
@@ -21,7 +21,7 @@
   justify-content: space-between;
   margin-bottom: 120px;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .hero-section__image {
