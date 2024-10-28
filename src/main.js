@@ -11,22 +11,32 @@ const afterSubmitBlock = document.querySelector(
 );
 const errorMessage = document.querySelector(".error-message");
 
+submitButton.setAttribute("disabled", "true");
+
+function toggleSubmitButton() {
+  if (emailInput.validity.valid && checkboxInput.checked) {
+    submitButton.removeAttribute("disabled");
+  } else {
+    submitButton.setAttribute("disabled", "true");
+  }
+}
+
+emailInput.addEventListener("input", toggleSubmitButton);
+checkboxInput.addEventListener("change", toggleSubmitButton);
+
 submitButton.addEventListener("click", (e) => {
   e.preventDefault();
-
+  console.log("click");
   if (emailInput.checkValidity() && checkboxInput.checked) {
     beforeSubmitBlock.classList.add("inactive");
     afterSubmitBlock.classList.add("active");
   } else {
     if (!checkboxInput.checked) {
-      errorMessage.textContent =
-        "Por favor, acepte los términos y la política de privacidad.";
-
       errorMessage.style.display = "block";
     }
   }
 });
- 
+
 // ------------------------------------------
 
 const contentArr = Array.from(
@@ -54,12 +64,11 @@ window.addEventListener("scroll", () => {
     header.classList.remove("header--hidden");
   }
 
-  lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Ограничиваем значение, чтобы не было отрицательного
+  lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
 });
 
 // ------------------------------------------------
 
-document.addEventListener("DOMContentLoaded", function () {
   const accordions = document.querySelectorAll(".accordion");
 
   accordions.forEach((accordion) => {
@@ -70,4 +79,3 @@ document.addEventListener("DOMContentLoaded", function () {
       content.classList.toggle("active");
     });
   });
-});
