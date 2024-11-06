@@ -10,7 +10,8 @@
     "lint": "eslint \"src/**/*.{ts,tsx}\"",
     "lint:fix": "eslint \"src/**/*.{ts,tsx}\" --fix",
     "prettier": "prettier --check \"src/**/*.{ts,tsx}\"",
-    "prettier:fix": "prettier --write \"src/**/*.{ts,tsx}\""
+    "prettier:fix": "prettier --write \"src/**/*.{ts,tsx}\"",
+     "json-server": "json-server --watch db.json --port 5000"
   },
   "devDependencies": {
     "@types/react": "^18.3.12",
@@ -28,6 +29,7 @@
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "json-server": "^1.0.0-beta.3",
     "prettier": "^3.3.3",
     "typescript": "^4.9.4",
     "vite": "^5.4.8"
