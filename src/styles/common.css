@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  font-family: var(--text-font);
+}
+
+.main {
+  position: relative;
+  overflow: hidden;
+  background-color: #fcfaf9;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+.section-tags-list {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-tag {
+  display: inline-block;
+  font-family: var(--text-font);
+  border-radius: 20px;
+  background: transparent;
+  font-size: var(--text-15-font-size);
+  line-height: var(--text-15-line-height);
+  cursor: pointer;
+}
+
+.container {
+  max-inline-size: 1208px;
+  margin: 0 auto;
+}
+
+.add--transition {
+  transition:
+    background 0.5s,
+    color 0.5s;
+}
+
+.meta {
+  font-family: var(--text-font);
+  font-weight: var(--regular-font-weight);
+  font-size: var(--text-15-font-size);
+  line-height: var(--text-15-line-height);
+  color: #aeaeae;
+}
+
+.meta-date {
+  margin-left: 25px;
+  position: relative;
+}
+
+.meta-date::before {
+  content: '';
+  inline-size: 17px;
+  block-size: 17px;
+  background: url(/images/meta-icon/meta-date-Icon.svg) no-repeat;
+  position: absolute;
+  left: -25px;
+}
+
+.meta-time {
+  margin-left: 50px;
+  position: relative;
+}
+
+.meta-time::before {
+  content: '';
+  inline-size: 25px;
+  block-size: 25px;
+  background: url(/images/meta-icon/meta-time-Icon.svg) no-repeat;
+  position: absolute;
+  left: -25px;
+}
+
+.button-dark-bg,
+.button-light-bg {
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.button-light-bg:hover,
+.button-light-bg:active {
+  background: #1b1f21;
+  color: #fcfaf9;
+}
+
+.button-light-bg:disabled {
+  opacity: 0.6;
+}
+.button-light-bg:focus-visible {
+  outline: 2px solid #1b1f21;
+  outline-offset: 0;
+}
+
+.button-dark-bg:hover,
+.button-dark-bg:active {
+  background-color: #da3369;
+}
+
+.button-dark-bg:disabled {
+  opacity: 0.6;
+}
+
+.button-dark-bg:focus-visible {
+  outline: 2px solid #fcfaf9;
+}

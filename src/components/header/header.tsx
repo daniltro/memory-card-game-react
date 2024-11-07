@@ -1,73 +1,32 @@
-import { useEffect, useState } from 'react';
+import React from 'react';
+import { HeaderProps } from '../../types/types';
+import { headerLinkClasses } from '../../types/constants';
 
-export const Header = () => {
-  const [logoUrl, setLogoUrl] = useState(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const logoResponse = await fetch('http://localhost:5000/menu');
-
-        if (logoResponse.ok) {
-          const logoData = await logoResponse.json();
-          setLogoUrl(logoData.logo);
-        } else {
-          console.error('Ошибка при получении данных');
-        }
-      } catch (error) {
-        console.error('Ошибка запроса:', error);
-      }
-    };
-
-    fetchData();
-  }, []);
-
+const Header: React.FC<HeaderProps> = ({ menuData }) => {
   return (
     <header className="header">
       <div className="container header--container">
         <div className="header__logo">
-          {logoUrl ? (
-            <a href="#">
-              <img src={logoUrl} alt="EBAC Logo" />
-            </a>
-          ) : (
-            'Загрузка...'
-          )}
+          <a href="#">
+            <img src={menuData.logo} alt="EBAC Logo" />
+          </a>
         </div>
+
         <nav className="header__menu">
           <ul className="header__list">
-            <li className="header__list-item diseno--link">
-              <a className="header__link" href="#">
-                Diseño
-              </a>
-            </li>
-            <li className="header__list-item programacion--link">
-              <a className="header__link" href="#">
-                Programación & Data
-              </a>
-            </li>
-            <li className="header__list-item gaming--link">
-              <a className="header__link" href="#">
-                Gaming
-              </a>
-            </li>
-            <li className="header__list-item marketing--link">
-              <a className="header__link" href="#">
-                Marketing
-              </a>
-            </li>
-            <li className="header__list-item software--link">
-              <a className="header__link" href="#">
-                Software
-              </a>
-            </li>
-            <li className="header__list-item carrera-link">
-              <a className="header__link" href="#">
-                Carrera
-              </a>
-            </li>
+            {menuData.header.map((item, index) => (
+              <li
+                key={index}
+                className={`header__list-item ${headerLinkClasses[index]}`}
+              >
+                <a className="header__link" href={item.url}>
+                  {item.label}
+                </a>
+              </li>
+            ))}
           </ul>
         </nav>
+
         <div className="header__search">
           <button className="header__search-button"></button>
           <a className="header__search-link" href="#">

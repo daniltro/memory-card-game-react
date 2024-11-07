@@ -108,13 +108,13 @@
           "title": "El Artista Técnico, cuando la programación y el diseño de juegos se juntan",
           "text": "¡Es posible unir la pasión por los dos universos! ¿Habías escuchado este término antes? Si no te suena de nada, no te sientas mal, el concepto es nuevo. ¡Nosotros te lo explicamos!",
           "accent": "#bedb39",
-          "date": "02.06.2022",
+          "date": "2 de junio de 2022",
           "duration": 10,
           "browse-text": "Leer el artículo",
           "size": "full-size",
           "tags": ["Gaming", "Artículo", "Niños", "Proyecto"],
           "img": {
-            "url": "/img/sections/main/1.jpg",
+            "url": "/images/sections/hero/hero-Img.jpg",
             "shape": "arch"
           },
           "stamp": {
@@ -124,7 +124,10 @@
           }
         }
       ],
-      "ticker": { "text": "Artículos populares", "color:": "#acd6de" }
+      "ticker": {
+        "text": "Artículos populares",
+        "color":"#acd6de"
+      }
     },
     "content": {
       "items": [
