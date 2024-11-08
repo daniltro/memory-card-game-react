@@ -8,8 +8,7 @@
   display: flex;
   align-items: center;
   overflow: hidden;
-  position: absolute;
-  z-index: 2;
+  /* z-index: 2; */
 }
 
 .marquee-line__content {
@@ -30,18 +29,12 @@
 }
 
 .marquee-line__icon {
-  background: url(/images/decor-separator-Icon.svg) no-repeat center center;
+  background: url(/images/star-icon-black.svg) no-repeat center center;
   background-size: cover;
   inline-size: 40px;
   block-size: 40px;
   margin-right: 10px;
   margin-right: 43px;
-}
-
-.marquee-line--hero {
-  background-color: #acd6de;
-  top: 841px;
-  z-index: 2;
 }
 
 @keyframes marquee {

@@ -25,8 +25,6 @@ export interface HeaderProps {
   };
 }
 
-// -----------------------
-
 export interface ISections {
   main: {
     items: ISectionItem[];
@@ -101,4 +99,47 @@ export interface IHeroProps {
 export interface IMarqueeLineProps {
   text: string;
   backgroundColor: string;
+  className: string;
+  isAccent?: boolean;
+}
+
+export interface IMetaInfoProps {
+  date: string;
+  duration: number;
+  className?: string;
+  dateClassName?: string;
+  durationClassName?: string;
+}
+
+export interface StickerOption {
+  stampWord: string;
+  stickerUrl: string;
+  modifierClass: string;
+}
+
+export interface IArticlesProps {
+  content: {
+    items: {
+      accent: string;
+      date: string;
+      duration: number;
+      img: {
+        url: string;
+        shape: string;
+      };
+      size: string;
+      stamp: {
+        word: string;
+        type: string;
+        position: string;
+      };
+      tags: string[];
+      text: string;
+      title: string;
+    }[];
+  };
+  contentTicker?: {
+    text: string;
+    color: string;
+  };
 }

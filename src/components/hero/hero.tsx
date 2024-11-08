@@ -1,24 +1,30 @@
 import React from 'react';
 import { IHeroProps } from '../../types/types';
 import { ImageWithMask } from '../image-with-mask/image-with-mask';
+import MetaInfo from '../meta-info/meta-info';
+import { getMaskUrl, getStickerOption } from '../../types/utils';
 
-const Hero: React.FC<IHeroProps> = ({ mainSectionData, ticker }) => {
+const Hero: React.FC<IHeroProps> = ({ mainSectionData}) => {
   const itemsData = mainSectionData.items[0]; // Берем первый элемент
+
+  const maskUrl = getMaskUrl(itemsData.img.shape);
+
+  const stickerOption = getStickerOption(itemsData.stamp.word);
+  const stickerUrl = stickerOption?.stickerUrl ?? '';
+  const modifierClass = stickerOption?.modifierClass ?? '';
 
   return (
     <section className="hero-section">
       <div className="container hero--container">
-        {/* <div className="hero-section__image"> */}
-          <ImageWithMask
-            src={itemsData.img.url}
-            maskUrl="/images/sections/hero/hero-mask-Img.png"
-            stickerUrl="/images/sections/hero/hero-Stickers.png"
-            wrapperClassName="hero-section__image-wrapper"
-            maskClassName="hero-section__mask "
-            stickerClassName="hero-section__sticker"
-            imageClassName="hero-section__image"
-          />
-        {/* </div> */}
+        <ImageWithMask
+          src={itemsData.img.url}
+          maskUrl={maskUrl}
+          stickerUrl={stickerUrl}
+          wrapperClassName="hero-section__image-wrapper"
+          maskClassName="hero-section__mask "
+          stickerClassName={modifierClass}
+          imageClassName="hero-section__image"
+        />
         <div className="hero-section__content">
           <div className="hero-section__tags">
             <div className="hero-section__tags-wrapper">
@@ -46,14 +52,13 @@ const Hero: React.FC<IHeroProps> = ({ mainSectionData, ticker }) => {
           </div>
           <h3 className="hero-section__title">{itemsData.title}</h3>
           <p className="hero-section__description">{itemsData.text}</p>
-          <div className="hero-section__meta meta">
-            <span className="hero-section--meta-date meta-date">
-              {itemsData.date}
-            </span>
-            <span className="hero-section--meta-time meta-time">
-              {`${itemsData.duration} min`}
-            </span>
-          </div>
+          <MetaInfo
+            date={itemsData.date}
+            duration={itemsData.duration}
+            className="hero-section__meta"
+            dateClassName="hero-section--meta-date"
+            durationClassName="hero-section--meta-time"
+          />
           <button className="hero-section__button button-light-bg">
             {itemsData['browse-text']}
           </button>

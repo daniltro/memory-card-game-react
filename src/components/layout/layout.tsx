@@ -5,6 +5,7 @@ import Header from '../header/header';
 import Hero from '../hero/hero';
 import { fetchSectionsData, fetchMenuData } from '../../api/api';
 import MarqueeLine from '../marqueeLine/marqueeLine';
+import PopularArticles from '../articles/popular-articles';
 
 const Layout: React.FC = () => {
   const [menuData, setMenuData] = useState<IMenu | null>(null);
@@ -17,8 +18,6 @@ const Layout: React.FC = () => {
 
       setMenuData(menu);
       setSectionsData(sections);
-
-      console.log('sections:', sections);
     };
 
     fetchData();
@@ -30,9 +29,7 @@ const Layout: React.FC = () => {
 
     // Извлекаем тикеры для каждой секции
     const mainTicker = main?.ticker;
-
-    console.log('mainTicker', mainTicker);
-
+    console.log('content', sectionsData.content);
     const contentTicker = content?.ticker;
     const proposalsTicker = proposals?.ticker;
     const subscriptionTicker = subscription?.ticker;
@@ -45,8 +42,10 @@ const Layout: React.FC = () => {
             <MarqueeLine
               text={mainTicker.text}
               backgroundColor={mainTicker.color}
+              className="marquee-line--hero"
             />
           )}
+          <PopularArticles content={content} contentTicker={contentTicker} />
         </main>
       </>
     );

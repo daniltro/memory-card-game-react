@@ -1,0 +1,31 @@
+.popular-articles {
+  background-color: #fcfaf9;
+}
+
+/* .popular-articles::after {
+  content: '';
+  background: url(/images/articles-linebg.svg) no-repeat;
+  inline-size: 150%;
+  block-size: 100%;
+  position: absolute;
+  top: 1000px;
+  left: -670px;
+} */
+
+@media (min-width: 1981px) and (max-width: 3840px) {
+  .popular-articles::after {
+    background-size: contain;
+  }
+}
+
+.popular-articles--container {
+  padding-top: 203px;
+  padding-bottom: 170px;
+  position: relative;
+}
+
+.popular-articles__cards-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 115px 40px;
+}

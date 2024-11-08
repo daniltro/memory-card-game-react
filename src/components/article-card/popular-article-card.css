@@ -1,0 +1,229 @@
+.popular-articles__card {
+  position: relative;
+  z-index: 1;
+}
+
+.popular-article-card__image-wrapper {
+  inline-size: 584px;
+  block-size: 328px;
+  margin-bottom: 32px;
+  position: relative;
+}
+
+.popular-article-card__mask {
+  inline-size: 100%;
+  block-size: 100%;
+  overflow: visible;
+  position: relative;
+}
+
+.popular-article-card__image {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  object-position: 100% 45%;
+}
+
+.popular-articles__card:first-child {
+  margin-right: 40px;
+}
+
+.popular-article__stiker {
+  inline-size: 180px;
+  block-size: 180px;
+  position: absolute;
+  top: -47px;
+  left: -40px;
+  cursor: pointer;
+  z-index: 1;
+  transition: transform 3s ease;
+}
+
+.popular-article__stiker:hover {
+  transform: rotate(360deg);
+}
+
+.popular-article__tags {
+  display: flex;
+  margin-bottom: 16px;
+}
+
+.popular-article__card-title {
+  font-family: var(--heading-font);
+  font-weight: var(--regular-font-weight);
+  font-size: var(--h4-font-size);
+  color: #1b1f21;
+  margin-bottom: 15px;
+  line-height: var(--h4-line-height);
+}
+
+.tag--fashion-main {
+  color: #1b1f21;
+  background: #90eecb;
+  padding: 8px 16px 8px 19px;
+  margin-right: 5px;
+}
+
+.tag--fashion {
+  color: #22c98b;
+}
+
+.tag--design-main {
+  padding: 8px 16px 8px 18px;
+  background: #ec95b1;
+  color: #1b1f21;
+  align-self: flex-end;
+  margin-bottom: 3px;
+  padding-right: 19px;
+  margin-right: 5px;
+}
+
+.tag--design {
+  color: #da3369;
+  padding: 8px 0;
+}
+
+.tag--marketing-main {
+  padding: 8px 18px;
+  margin-right: 5px;
+  color: #1b1f21;
+  background: #ffad20;
+}
+
+.tag--marketing {
+  color: #ef9700;
+  padding: 8px 0;
+}
+
+.tag--software-main {
+  margin-right: 5px;
+  padding: 8px 18px;
+  color: #1b1f21;
+  background: #acd6de;
+}
+
+.tag--software {
+  color: #57acbc;
+  padding: 8px 0;
+}
+
+.popular-article__card-description {
+  font-family: var(--text-font);
+  font-weight: var(--regular-font-weight);
+  font-size: var(--text-18-font-size);
+  line-height: var(--text-18-line-height);
+  color: #757778;
+  padding-right: 120px;
+  margin-bottom: 18px;
+}
+
+.card--full-image {
+  inline-size: 100%;
+  grid-column: span 2;
+  margin-top: 20px;
+}
+
+.card--full-image .popular-article-card__image-wrapper {
+  margin-bottom: 48px;
+}
+.card--full-image .popular-article__content {
+  display: grid;
+  grid-template-columns: 393px 1fr 1fr;
+}
+
+.card--full-image .popular-article__tags {
+  grid-row: 1/2;
+  grid-column: 1/2;
+  justify-self: end;
+  margin-top: 18px;
+  margin-right: 5px;
+  margin-bottom: 7px;
+}
+
+.card--full-image .popular-article__tags-list {
+  display: grid;
+  grid-template-columns: repeat(3, min-content);
+  /* grid-row: 1fr 1fr; */
+}
+
+.card--full-image .popular-article__tags-item:first-child {
+  grid-column: 2/4;
+  justify-self: end;
+  margin-right: 6px;
+}
+
+.card--full-image .popular-article__tags-item:last-child {
+  margin-right: 15px;
+}
+
+.card--full-image .popular-article__tags-list {
+  gap: 10px 5px;
+}
+
+.card--full-image .popular-article__tags-item {
+  justify-self: end;
+}
+
+.card--full-image .popular-article__card-title {
+  font-size: var(--h3-font-size);
+  line-height: var(--h3-line-height);
+  margin-bottom: 0;
+  grid-column: 2/4;
+}
+
+.card--full-image .popular-article__card-description {
+  grid-row: 2/3;
+  grid-column: 2/4;
+  padding-right: 140px;
+}
+
+.card--full-image .popular-articles__meta {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-self: end;
+  margin-top: 17px;
+  margin-right: 45px;
+  gap: 8px;
+}
+
+.card--full-image .popular-articles--meta-time::before {
+  left: 55px;
+  top: 2px;
+}
+
+.card--full-image .popular-articles--meta-date::before {
+  left: 135px;
+  top: 2px;
+}
+
+.card--full-image .popular-article-card__image-wrapper {
+  inline-size: 100%;
+  block-size: 520px;
+  /* grid-column: span 3; */
+}
+
+.fashion--sticker {
+  top: -48px;
+  left: -40px;
+}
+
+.design--sticker {
+  top: -48px;
+  left: 442px;
+}
+
+.card--full-image .design--sticker {
+  left: 1067px;
+}
+
+.marketing--sticker {
+  inline-size: 250px;
+  left: -55px;
+  top: -75px;
+}
+
+.software--sticker {
+  left: 443px;
+  top: -46px;
+}

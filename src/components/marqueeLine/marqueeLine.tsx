@@ -1,28 +1,22 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { IMarqueeLineProps } from '../../types/types';
+import { TextWithIcon } from './text-with-icon';
 
 const MarqueeLine: React.FC<IMarqueeLineProps> = ({
   text,
   backgroundColor,
+  className,
 }) => {
-  const contentRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const content = contentRef.current;
-    if (content) {
-      const screenWidth = window.innerWidth;
-
-      // Дублируем текст до тех пор, пока он не займет минимум в два раза больше ширины экрана
-      while (content.offsetWidth < screenWidth * 2) {
-        content.innerHTML += content.innerHTML;
-      }
-    }
-  }, [text]);
-
   return (
-    <div className="marquee-line" style={{ background: backgroundColor }}>
-      <div className="marquee-line__content" ref={contentRef}>
-        <span className="marquee-line__text">{text}</span>
+    <div
+      className={`marquee-line ${className}`}
+      style={{ background: backgroundColor }}
+    >
+      <div className="marquee-line__content">
+        <TextWithIcon text={text} />
+        <TextWithIcon text={text} />
+        <TextWithIcon text={text} />
+        <TextWithIcon text={text} />
       </div>
     </div>
   );

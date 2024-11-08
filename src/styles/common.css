@@ -30,7 +30,7 @@ button {
 .section-tags-list {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 .section-tag {
