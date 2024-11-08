@@ -8,13 +8,17 @@ const Hero: React.FC<IHeroProps> = ({ mainSectionData, ticker }) => {
   return (
     <section className="hero-section">
       <div className="container hero--container">
-        <div className="hero-section__image">
+        {/* <div className="hero-section__image"> */}
           <ImageWithMask
             src={itemsData.img.url}
-            maskUrl="/images/sections/hero/hero-mask-Img.png" // Маска может быть передана динамически
+            maskUrl="/images/sections/hero/hero-mask-Img.png"
+            stickerUrl="/images/sections/hero/hero-Stickers.png"
+            wrapperClassName="hero-section__image-wrapper"
+            maskClassName="hero-section__mask "
+            stickerClassName="hero-section__sticker"
+            imageClassName="hero-section__image"
           />
-          <div className="hero-section__sticker" />
-        </div>
+        {/* </div> */}
         <div className="hero-section__content">
           <div className="hero-section__tags">
             <div className="hero-section__tags-wrapper">

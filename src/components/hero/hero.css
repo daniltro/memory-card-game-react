@@ -24,18 +24,24 @@
   z-index: 2;
 }
 
-.hero-section__image {
+/* ------------------------------------ */
+
+.hero-section__image-wrapper {
+  position: relative;
+  flex-shrink: 0; 
+  overflow: visible;
   inline-size: 480px;
   block-size: 560px;
-  flex-shrink: 0;
-  overflow: hidden;
 }
 
 .hero-section__mask {
+  inline-size: 100%;
   block-size: 100%;
+  overflow: visible;
+  position: relative;
 }
 
-.hero-section__image img {
+.hero-section__image {
   inline-size: 100%;
   block-size: 100%;
   object-fit: cover;
@@ -46,13 +52,14 @@
   content: '';
   inline-size: 180px;
   block-size: 180px;
-  background: url(/images/sections/hero/hero-Stickers.png) no-repeat;
   position: absolute;
   top: 0;
   left: 300px;
   transition: transform 2s ease;
   cursor: pointer;
+  z-index: 1;
 }
+
 .hero-section__sticker:hover {
   transform: rotate(360deg);
 }
