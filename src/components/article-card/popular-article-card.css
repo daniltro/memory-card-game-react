@@ -1,6 +1,6 @@
 .popular-articles__card {
   position: relative;
-  z-index: 1;
+  /* z-index: 1; */
 }
 
 .popular-article-card__image-wrapper {
@@ -14,7 +14,7 @@
   inline-size: 100%;
   block-size: 100%;
   overflow: visible;
-  position: relative;
+  /* position: relative; */
 }
 
 .popular-article-card__image {
@@ -35,7 +35,7 @@
   top: -47px;
   left: -40px;
   cursor: pointer;
-  z-index: 1;
+  /* z-index: 1; */
   transition: transform 3s ease;
 }
 
@@ -143,7 +143,6 @@
 .card--full-image .popular-article__tags-list {
   display: grid;
   grid-template-columns: repeat(3, min-content);
-  /* grid-row: 1fr 1fr; */
 }
 
 .card--full-image .popular-article__tags-item:first-child {

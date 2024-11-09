@@ -1,6 +1,7 @@
 import React from 'react';
 import ArticleCard from '../article-card/popular-article-card';
 import { IArticlesProps } from '../../types/types';
+import BackgroundLine from '../background-line/background-line';
 
 const PopularArticles: React.FC<IArticlesProps> = ({
   content,
@@ -29,6 +30,13 @@ const PopularArticles: React.FC<IArticlesProps> = ({
           ))}
         </div>
       </div>
+      <BackgroundLine
+            imageUrl="/images/sections/line-bg/articles-line-bg.svg"
+            top="396px"
+            left="-10px"
+            scale={1}
+            zIndex={-1}
+          />
     </section>
   );
 };

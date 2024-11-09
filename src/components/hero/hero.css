@@ -3,25 +3,12 @@
   margin-top: 78px;
 }
 
-/* .hero-section::after {
-  content: '';
-  background: url(/images/hero-linebg.svg) no-repeat;
-  background-size: contain;
-  inline-size: 115%;
-  block-size: 100%;
-  position: absolute;
-  top: 126px;
-  left: -167px;
-  z-index: 1;
-} */
-
 .hero--container {
   display: flex;
   gap: 40px;
   justify-content: space-between;
   margin-bottom: 127px;
   position: relative;
-  z-index: 2;
 }
 
 /* ------------------------------------ */
@@ -57,7 +44,6 @@
   left: 300px;
   transition: transform 2s ease;
   cursor: pointer;
-  z-index: 1;
 }
 
 .hero-section__sticker:hover {

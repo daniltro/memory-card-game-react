@@ -12,27 +12,27 @@ export const headerLinkClasses = [
 export const maskOptions = [
   {
     shape: 'arch',
-    maskUrl: '/images/sections/masks/hero-mask.png',
+    maskUrl: '/images/sections/masks/hero-mask.svg',
   },
   {
     shape: 'semi-squared-rounded',
-    maskUrl: '/images/sections/masks/fashion-mask.png',
+    maskUrl: '/images/sections/masks/fashion-mask.svg',
   },
   {
     shape: 'semi-squared-cloud',
-    maskUrl: '/images/sections/masks/design-mask.png',
+    maskUrl: '/images/sections/masks/design-mask.svg',
   },
   {
     shape: 'cloud',
-    maskUrl: '/images/sections/masks/design-2-mask.png',
+    maskUrl: '/images/sections/masks/design-2-mask.svg',
   },
   {
     shape: 'corner-squared-cloud',
-    maskUrl: '/images/sections/masks/marketing-mask.png',
+    maskUrl: '/images/sections/masks/marketing-mask.svg',
   },
   {
     shape: 'corner-squared-rounded',
-    maskUrl: '/images/sections/masks/software-mask.png',
+    maskUrl: '/images/sections/masks/software-mask.svg',
   },
 ];
 

@@ -6,6 +6,7 @@ import Hero from '../hero/hero';
 import { fetchSectionsData, fetchMenuData } from '../../api/api';
 import MarqueeLine from '../marqueeLine/marqueeLine';
 import PopularArticles from '../articles/popular-articles';
+import BackgroundLine from '../background-line/background-line';
 
 const Layout: React.FC = () => {
   const [menuData, setMenuData] = useState<IMenu | null>(null);
@@ -38,6 +39,7 @@ const Layout: React.FC = () => {
         <Header menuData={{ logo, header }} />{' '}
         <main className="main">
           <Hero mainSectionData={main} ticker={mainTicker} />
+
           {mainTicker && (
             <MarqueeLine
               text={mainTicker.text}

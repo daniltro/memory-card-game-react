@@ -1,16 +1,8 @@
 .popular-articles {
   background-color: #fcfaf9;
+  position: relative;
+  z-index: 0;
 }
-
-/* .popular-articles::after {
-  content: '';
-  background: url(/images/articles-linebg.svg) no-repeat;
-  inline-size: 150%;
-  block-size: 100%;
-  position: absolute;
-  top: 1000px;
-  left: -670px;
-} */
 
 @media (min-width: 1981px) and (max-width: 3840px) {
   .popular-articles::after {
@@ -21,7 +13,7 @@
 .popular-articles--container {
   padding-top: 203px;
   padding-bottom: 170px;
-  position: relative;
+  /* position: relative; */
 }
 
 .popular-articles__cards-wrapper {
