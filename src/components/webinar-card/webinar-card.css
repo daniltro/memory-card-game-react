@@ -1,0 +1,118 @@
+.webinars__card {
+  position: relative;
+}
+
+.webinars__card-header {
+  display: flex;
+  margin-bottom: 16px;
+  block-size: 93px;
+}
+
+.webinars__card-description {
+  font-family: var(--heading-font);
+  font-size: var(--h4-font-size);
+  font-weight: var(--regular-font-weight);
+  line-height: var(--h4-line-height);
+  margin-bottom: 42px;
+}
+
+.webinars__card-item--3 .webinars__card-description {
+  margin-bottom: 96px;
+}
+
+.webinars__card-image-mask-wrapper {
+  min-inline-size: 64px;
+  block-size: 64px;
+  margin-right: 20px;
+}
+
+.webinars__card-image-mask {
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.webinars__card-image {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+}
+
+.webinars__card-image--3 {
+  object-position: 100% -25%;
+  scale: 1.8;
+}
+
+.webinars__card-title {
+  margin-top: 7px;
+}
+
+.webinars__card-name {
+  font-family: var(--heading-font);
+  font-size: var(--h5-font-size);
+  font-weight: var(--regular-font-weight);
+  line-height: var(--h5-line-height);
+  margin-bottom: 5px;
+}
+
+.webinars__card-position {
+  font-family: var(--text-font);
+  font-size: var(--text-15-font-size);
+  font-weight: var(--medium-font-weight);
+  line-height: var(--text-15-line-height);
+  inline-size: 195px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.webinars__card-tags {
+  display: flex;
+  gap: 28px;
+  font-family: var(--text-font);
+  font-size: var(--text-15-font-size);
+  font-weight: var(--medium-font-weight);
+  line-height: var(--text-15-line-height);
+  margin-bottom: 12px;
+}
+
+.webinars__card-date-time {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  font-family: var(--text-font);
+  font-size: var(--text-15-font-size);
+  font-weight: var(--medium-font-weight);
+  line-height: var(--text-15-line-height);
+  color: #fcfaf9;
+}
+
+.webinars__card-date {
+  padding: 0 25px;
+  position: relative;
+  display: inline-block;
+  margin-left: 0;
+}
+
+.webinars__card-date::before {
+  content: '';
+  inline-size: 25px;
+  block-size: 25px;
+  background: url(/images/meta-icon/meta-date-Icon-webinar.svg) no-repeat;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.webinars__card-time {
+  position: relative;
+}
+
+.webinars__card-time::before {
+  content: '';
+  inline-size: 25px;
+  block-size: 25px;
+  background: url(/images/meta-icon/meta-time-Icon-webinar.svg) no-repeat;
+  position: absolute;
+  top: 3px;
+  left: -25px;
+}

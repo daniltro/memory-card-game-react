@@ -1,14 +1,5 @@
 import React from 'react';
-
-interface ImageWithMaskProps {
-  src: string;
-  maskUrl: string;
-  stickerUrl?: string; // URL изображения для стикера
-  wrapperClassName?: string; // Класс для обертки
-  maskClassName?: string; // Класс для маски
-  stickerClassName?: string;
-  imageClassName?: string; // Класс для изображения
-}
+import { ImageWithMaskProps } from '../../types/types';
 
 export const ImageWithMask: React.FC<ImageWithMaskProps> = ({
   src,

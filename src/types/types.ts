@@ -93,7 +93,7 @@ export interface ITicker {
 
 export interface IHeroProps {
   mainSectionData: ISections['main'];
-  ticker: ITicker;
+  ticker?: ITicker;
 }
 
 export interface IMarqueeLineProps {
@@ -105,7 +105,7 @@ export interface IMarqueeLineProps {
 
 export interface IMetaInfoProps {
   date: string;
-  duration: number;
+  duration: number | string;
   className?: string;
   dateClassName?: string;
   durationClassName?: string;
@@ -142,4 +142,62 @@ export interface IArticlesProps {
     text: string;
     color: string;
   };
+}
+
+export interface ImageWithMaskProps {
+  src: string;
+  maskUrl: string;
+  stickerUrl?: string;
+  wrapperClassName?: string;
+  maskClassName?: string;
+  stickerClassName?: string;
+  imageClassName?: string;
+}
+
+export interface IWebinarsProps {
+  title: string;
+  browseAllText: string;
+  items: {
+    background: string;
+    author: {
+      img: string;
+      name: string;
+      position: string;
+    };
+    text: string;
+    tags: string[];
+    date_from: string;
+    date_to: string;
+    time: string;
+  }[];
+  ticker?: {
+    text: string;
+    color: string;
+  };
+}
+
+export interface IBackgroundLineProps {
+  imageUrl: string;
+  top?: string;
+  left?: string;
+  scale?: number;
+  zIndex?: number;
+}
+
+export interface IWebinarCardProps {
+  cardData: {
+    background: string;
+    author: {
+      img: string;
+      name: string;
+      position: string;
+    };
+    text: string;
+    tags: string[];
+    date_from: string;
+    date_to: string;
+    time: string;
+  };
+  backgroundLine?: IBackgroundLineProps;
+  index: number;
 }

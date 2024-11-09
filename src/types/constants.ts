@@ -1,4 +1,4 @@
-import { StickerOption } from './types';
+import { IBackgroundLineProps, StickerOption } from './types';
 
 export const headerLinkClasses = [
   'diseno--link',
@@ -86,3 +86,43 @@ export const tagClasses = {
     tagClass: 'tag--software',
   },
 } as const;
+
+export const monthNames = [
+  'enero',
+  'febrero',
+  'marzo',
+  'abril',
+  'mayo',
+  'junio',
+  'julio',
+  'agosto',
+  'septiembre',
+  'octubre',
+  'noviembre',
+  'diciembre',
+];
+
+// Массив настроек для фона карточек
+export const backgroundLines: IBackgroundLineProps[] = [
+  {
+    imageUrl: '/images/sections/line-bg/webinar-card-line-1-bg.svg',
+    top: '100px',
+    left: '95px',
+    scale: 1,
+    zIndex: 0,
+  },
+  {
+    imageUrl: '/images/sections/line-bg/webinar-card-line-2-bg.svg',
+    top: '-15px',
+    left: '40px',
+    scale: 1.2,
+    zIndex: 0,
+  },
+  {
+    imageUrl: '/images/sections/line-bg/webinar-card-line-3-bg.svg',
+    top: '-5px',
+    left: '-85px',
+    scale: 1,
+    zIndex: 0,
+  },
+];

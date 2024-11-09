@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { formatDate } from '../../types/utils';
+import { formatDate } from '../../types/utils'; // Обновленная функция
 import { IMetaInfoProps } from '../../types/types';
 
 const MetaInfo: React.FC<IMetaInfoProps> = React.memo(
@@ -13,7 +13,7 @@ const MetaInfo: React.FC<IMetaInfoProps> = React.memo(
         </span>
         <span
           className={`meta-time ${durationClassName || ''}`}
-        >{`${duration} min`}</span>
+        >{`${duration}`}</span>
       </div>
     );
   }

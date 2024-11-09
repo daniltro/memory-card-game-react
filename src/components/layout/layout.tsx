@@ -6,7 +6,7 @@ import Hero from '../hero/hero';
 import { fetchSectionsData, fetchMenuData } from '../../api/api';
 import MarqueeLine from '../marqueeLine/marqueeLine';
 import PopularArticles from '../articles/popular-articles';
-import BackgroundLine from '../background-line/background-line';
+import Webinars from '../webinars/webinars';
 
 const Layout: React.FC = () => {
   const [menuData, setMenuData] = useState<IMenu | null>(null);
@@ -30,16 +30,15 @@ const Layout: React.FC = () => {
 
     // Извлекаем тикеры для каждой секции
     const mainTicker = main?.ticker;
-    console.log('content', sectionsData.content);
     const contentTicker = content?.ticker;
     const proposalsTicker = proposals?.ticker;
     const subscriptionTicker = subscription?.ticker;
+
     return (
       <>
         <Header menuData={{ logo, header }} />{' '}
         <main className="main">
-          <Hero mainSectionData={main} ticker={mainTicker} />
-
+          {main && <Hero mainSectionData={main} />}
           {mainTicker && (
             <MarqueeLine
               text={mainTicker.text}
@@ -47,7 +46,31 @@ const Layout: React.FC = () => {
               className="marquee-line--hero"
             />
           )}
-          <PopularArticles content={content} contentTicker={contentTicker} />
+          {content && <PopularArticles content={content} />}
+
+          {contentTicker && (
+            <MarqueeLine
+              text={contentTicker.text}
+              backgroundColor={contentTicker.color}
+              className="marquee-line--webinars"
+            />
+          )}
+
+          {proposals && (
+            <Webinars
+              title={proposals.title}
+              browseAllText={proposals['browse-all-text']}
+              items={proposals.items}
+            />
+          )}
+
+          {proposalsTicker && (
+            <MarqueeLine
+              text={proposalsTicker.text}
+              backgroundColor={proposalsTicker.color}
+              className="marquee-line--subscribe"
+            />
+          )}
         </main>
       </>
     );

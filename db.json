@@ -222,7 +222,7 @@
           }
         }
       ],
-      "ticker": { "text": "Webinars", "color:": "#ffad20" }
+      "ticker": { "text": "Webinars", "color": "#ffad20" }
     },
     "proposals": {
       "title": "Webinars gratuitos",
@@ -231,7 +231,7 @@
         {
           "background": "#57acbc",
           "author": {
-            "img": "/img/proposals/authors/1.jpg",
+            "img": "/images/sections/webinars/card-avatar-1.jpg",
             "name": "Julia Alvarez",
             "position": "Programador, consultor"
           },
@@ -242,14 +242,14 @@
           "time": "19:00"
         },
         {
-          "background": "#57acbc",
+          "background": "#fe6d44",
           "author": {
-            "img": "/img/proposals/authors/1.jpg",
-            "name": "Julia Alvarez",
-            "position": "Programador, consultor"
+            "img": "/images/sections/webinars/card-avatar-2.jpg",
+            "name": "Diego Xochihuila",
+            "position": "Diseñadora, editora"
           },
-          "text": "Cómo iniciar el calendario de publicaciones de tu marca",
-          "tags": ["Próximamente", "Webinar"],
+          "text": "Cloud Computing: Qué es y cuáles son sus ventajas en la industria",
+          "tags": ["Próximamente", "Workshop"],
           "date_from": "31.05.2024",
           "date_to": "02.06.2024",
           "time": "19:00"
@@ -257,7 +257,8 @@
         {
           "background": "#ef9700",
           "author": {
-            "img": "/img/proposals/authors/2.jpg",
+            "img": "/images/sections/webinars/card-avatar-3.jpg",
+
             "name": "Consuela Zacatelco",
             "position": "Empresario graduado de la Universidad de Harvard"
           },
@@ -268,7 +269,7 @@
           "time": "19:00"
         }
       ],
-      "ticker": { "text": "Suscríbete", "color:": "#fe6d44" }
+      "ticker": { "text": "Suscríbete", "color": "#fe6d44" }
     },
     "subscription": {
       "title": "Suscríbete a nuestra newsletter para no perderte nada nuevo",

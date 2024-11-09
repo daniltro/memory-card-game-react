@@ -38,6 +38,17 @@
   margin-right: 43px;
 }
 
+.marquee-line--webinars {
+  transform: rotate(-3deg) scale(1.01);
+  top: 160px;
+}
+
+.marquee-line--subscribe {
+  transform: rotate(2deg) scale(1.01);
+  position: relative;
+  bottom: 77px;
+}
+
 @keyframes marquee {
   0% {
     transform: translateX(0);

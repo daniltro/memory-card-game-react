@@ -4,6 +4,7 @@ import { ImageWithMask } from '../image-with-mask/image-with-mask';
 import MetaInfo from '../meta-info/meta-info';
 import { getMaskUrl, getStickerOption } from '../../types/utils';
 import BackgroundLine from '../background-line/background-line';
+import MarqueeLine from '../marqueeLine/marqueeLine';
 
 const Hero: React.FC<IHeroProps> = ({ mainSectionData }) => {
   const itemsData = mainSectionData.items[0]; // Берем первый элемент
@@ -53,13 +54,15 @@ const Hero: React.FC<IHeroProps> = ({ mainSectionData }) => {
           </div>
           <h3 className="hero-section__title">{itemsData.title}</h3>
           <p className="hero-section__description">{itemsData.text}</p>
+
           <MetaInfo
             date={itemsData.date}
-            duration={itemsData.duration}
+            duration={`${itemsData.duration} min`}
             className="hero-section__meta"
             dateClassName="hero-section--meta-date"
             durationClassName="hero-section--meta-time"
           />
+
           <button className="hero-section__button button-light-bg">
             {itemsData['browse-text']}
           </button>
@@ -68,9 +71,9 @@ const Hero: React.FC<IHeroProps> = ({ mainSectionData }) => {
 
       <BackgroundLine
         imageUrl="/images/sections/line-bg/hero-line-bg.svg"
-        top="130px"
-        left="-10px"
-        scale={1}
+        top="274px"
+        left="-70px"
+        scale={1.7}
         zIndex={-1}
       />
     </section>

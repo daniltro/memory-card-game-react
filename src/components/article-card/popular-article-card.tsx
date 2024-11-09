@@ -37,7 +37,6 @@ const ArticleCard: React.FC<IArticleCardProps> = ({ article }) => {
   const tagClass = tagClasses[stamp.word as keyof typeof tagClasses] || {};
   const { mainTagClass, tagClass: tagClassName } = tagClass;
 
-  console.log(mainTagClass, tagClassName);
 
   return (
     <article className={`popular-articles__card" card--${size}`}>
@@ -84,7 +83,7 @@ const ArticleCard: React.FC<IArticleCardProps> = ({ article }) => {
         <p className="popular-article__card-description">{text}</p>
         <MetaInfo
           date={date}
-          duration={duration}
+          duration={`${duration} min`}
           className="popular-articles__meta"
           dateClassName="popular-articles--meta-date"
           durationClassName="popular-articles--meta-time"
