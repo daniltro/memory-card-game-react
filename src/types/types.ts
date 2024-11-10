@@ -93,7 +93,10 @@ export interface ITicker {
 
 export interface IHeroProps {
   mainSectionData: ISections['main'];
-  ticker?: ITicker;
+  ticker?: {
+    text: string;
+    color: string;
+  };
 }
 
 export interface IMarqueeLineProps {
@@ -138,7 +141,7 @@ export interface IArticlesProps {
       title: string;
     }[];
   };
-  contentTicker?: {
+  ticker?: {
     text: string;
     color: string;
   };
@@ -152,6 +155,7 @@ export interface ImageWithMaskProps {
   maskClassName?: string;
   stickerClassName?: string;
   imageClassName?: string;
+  children?: React.ReactNode;
 }
 
 export interface IWebinarsProps {
@@ -201,3 +205,16 @@ export interface IWebinarCardProps {
   backgroundLine?: IBackgroundLineProps;
   index: number;
 }
+
+// export interface SubscriptionData {
+//   title: string;
+//   text: string;
+//   'email-placeholder': string;
+//   'submit-text': string;
+//   'agreement-text': string;
+//   ticker?: { text: string; color: string };
+// }
+
+// export interface SubscribeProps {
+//   data: SubscriptionData;
+// }

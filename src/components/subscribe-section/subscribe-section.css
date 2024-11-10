@@ -1,0 +1,51 @@
+.subscribe {
+  /* display: flex; */
+  background-color: #f2f2f2;
+  padding: 57px 0 136px;
+  position: relative;
+  /* z-index: 1; */
+  /* clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%); */
+
+}
+
+.subscribe-wrapper {
+  background: #57acbc;
+  background-size: contain;
+  inline-size: 100%;
+  block-size: 518px;
+  padding: 64px 480px 64px 104px;
+  position: relative;
+  /* z-index: 0; */
+  mask-image: url(/images/sections/masks/subscribe-form-mask.svg);
+}
+
+
+.subscribe-wrapper::before {
+  content: '';
+  background: url(/images/sections/subscribe-section/subscribe-form-illustration.png);
+  inline-size: 416px;
+  block-size: 518px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  /* z-index: 1; */
+}
+
+.subscribe__title {
+  font-family: var(--heading-font);
+  font-size: var(--h3-font-size);
+  line-height: var(--h3-line-height);
+  font-weight: var(--regular-font-weight);
+  color: #fcfaf9;
+  margin-bottom: 8px;
+}
+
+.subscribe__description {
+  font-family: var(--text-font);
+  font-size: var(--text-18-font-size);
+  font-weight: var(--regular-font-weight);
+  line-height: var(--text-18-line-height);
+  color: #fcfaf9;
+  margin-bottom: 88px;
+  padding-right: 30px;
+}

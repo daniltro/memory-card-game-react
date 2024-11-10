@@ -7,6 +7,8 @@ import { fetchSectionsData, fetchMenuData } from '../../api/api';
 import MarqueeLine from '../marqueeLine/marqueeLine';
 import PopularArticles from '../articles/popular-articles';
 import Webinars from '../webinars/webinars';
+import Subscribe from '../subscribe-section/subscribe-section';
+import SubscribeSection from '../subscribe-section/subscribe-section';
 
 const Layout: React.FC = () => {
   const [menuData, setMenuData] = useState<IMenu | null>(null);
@@ -28,6 +30,7 @@ const Layout: React.FC = () => {
     const { logo, header } = menuData;
     const { main, content, proposals, subscription } = sectionsData;
 
+    console.log(subscription);
     // Извлекаем тикеры для каждой секции
     const mainTicker = main?.ticker;
     const contentTicker = content?.ticker;
@@ -39,6 +42,7 @@ const Layout: React.FC = () => {
         <Header menuData={{ logo, header }} />{' '}
         <main className="main">
           {main && <Hero mainSectionData={main} />}
+
           {mainTicker && (
             <MarqueeLine
               text={mainTicker.text}
@@ -46,6 +50,7 @@ const Layout: React.FC = () => {
               className="marquee-line--hero"
             />
           )}
+
           {content && <PopularArticles content={content} />}
 
           {contentTicker && (
@@ -69,6 +74,24 @@ const Layout: React.FC = () => {
               text={proposalsTicker.text}
               backgroundColor={proposalsTicker.color}
               className="marquee-line--subscribe"
+            />
+          )}
+
+          {subscription && (
+            <SubscribeSection
+              title={subscription.title}
+              text={subscription.text}
+              emailPlaceholder={subscription['email-placeholder']}
+              submitText={subscription['submit-text']}
+              agreementText={subscription['agreement-text']}
+            />
+          )}
+
+          {subscriptionTicker && (
+            <MarqueeLine
+              text={subscriptionTicker.text}
+              backgroundColor={subscriptionTicker.color}
+              className="marquee-line--footer"
             />
           )}
         </main>

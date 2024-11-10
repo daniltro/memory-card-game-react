@@ -4,7 +4,6 @@ import { ImageWithMask } from '../image-with-mask/image-with-mask';
 import MetaInfo from '../meta-info/meta-info';
 import { getMaskUrl, getStickerOption } from '../../types/utils';
 import BackgroundLine from '../background-line/background-line';
-import MarqueeLine from '../marqueeLine/marqueeLine';
 
 const Hero: React.FC<IHeroProps> = ({ mainSectionData }) => {
   const itemsData = mainSectionData.items[0]; // Берем первый элемент
@@ -68,7 +67,6 @@ const Hero: React.FC<IHeroProps> = ({ mainSectionData }) => {
           </button>
         </div>
       </div>
-
       <BackgroundLine
         imageUrl="/images/sections/line-bg/hero-line-bg.svg"
         top="274px"

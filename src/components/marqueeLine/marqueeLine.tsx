@@ -28,6 +28,7 @@ const MarqueeLine: React.FC<IMarqueeLineProps> = ({
         <TextWithIcon text={text} />
         <TextWithIcon text={text} />
         <TextWithIcon text={text} />
+ 
       </div>
     </div>
   );

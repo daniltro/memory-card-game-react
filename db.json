@@ -277,7 +277,7 @@
       "email-placeholder": "Su correo electrónico",
       "submit-text": "Enviar",
       "agreement-text": "Confirmo que he leído, acepto y entiendo los términos y condiciones, así como el aviso de privacidad",
-      "ticker": { "text": "Descuento para cursos 20%", "color:": "#da3369" }
+      "ticker": { "text": "Descuento para cursos 20%", "color": "#da3369" }
     }
   },
   "contacts": {

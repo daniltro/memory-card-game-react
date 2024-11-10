@@ -7,7 +7,6 @@
   border: none;
   display: flex;
   align-items: center;
-  overflow: hidden;
   position: relative;
   z-index: 1;
 }
@@ -46,14 +45,38 @@
 .marquee-line--subscribe {
   transform: rotate(2deg) scale(1.01);
   position: relative;
-  bottom: 77px;
+  bottom: 75px;
+}
+
+.marquee-line--subscribe::after {
+  clip-path: polygon(0 10%, 100% 0, 100% 50%, 0 100%);
+
+  content: '';
+  inline-size: 100%;
+  block-size: 140px;
+  top: 120px;
+  position: absolute;
+  background-color: #f2f2f2;
+  z-index: -2;
+}
+
+.marquee-line--footer {
+  transform: rotate(0deg) scale(1.01);
+}
+
+.marquee-line--footer .marquee-line__text {
+  color: #f2f2f2;
+}
+
+.marquee-line--footer .marquee-line__icon {
+  background: url(/images/star-icon-white.svg) no-repeat center center;
 }
 
 @keyframes marquee {
   0% {
-    transform: translateX(0);
+    transform: translateX(-50%);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(0);
   }
 }

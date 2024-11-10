@@ -1,0 +1,207 @@
+.subscribe__form {
+  padding-right: 47px;
+}
+
+.subscribe-form__controls {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.subscribe-form__input-label {
+  display: block;
+}
+
+.subscribe-form__input {
+  border: 1.5px solid #fcfaf9;
+  border-radius: 88px;
+  padding: 10px 24px;
+  width: 280px;
+  height: 49px;
+  background-color: transparent;
+  font-family: var(--text-font);
+  font-weight: var(--medium-font-weight);
+  font-size: var(--text-18-font-size);
+  line-height: var(--text-18-line-height);
+  color: #fcfaf9;
+}
+
+.subscribe-form__input:focus {
+  border: none;
+  outline: none;
+}
+
+.subscribe-form__input:focus-visible {
+  outline: none;
+  border: 1.5px solid #1b1f21;
+}
+
+.subscribe-form__input:disabled {
+  opacity: 0.6;
+}
+
+.subscribe-form__input::placeholder {
+  font-family: var(--text-font);
+  font-size: var(--text-18-font-size);
+  font-weight: var(--medium-font-weight);
+  line-height: var(--text-18-line-height);
+  color: #e8e8e8;
+}
+
+.subscribe-form__input:hover.subscribe-form__input::placeholder {
+  color: #fcfaf9;
+}
+
+.error-message {
+  display: none;
+  font-family: var(--text-font);
+  font-weight: var(--medium-font-weight);
+  font-size: var(--text-13-font-size);
+  line-height: var(--text-13-sls-line-height);
+  text-align: center;
+  color: #fff;
+  max-inline-size: 280px;
+}
+
+.subscribe-form__button {
+  inline-size: 280px;
+  block-size: 49px;
+  background-color: #fe6d44;
+  font-family: var(--text-font);
+  font-size: var(--text-18-font-size);
+  line-height: var(--text-18-line-height);
+  font-weight: var(--bold-font-weight);
+  border-radius: 40px;
+  padding: 10px 0px;
+  color: #fcfaf9;
+}
+
+.subscribe__form-button:disabled {
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.subscribe-form__checkbox-wrapper {
+  display: flex;
+  gap: 16px;
+}
+
+.subscribe-form__checkbox-info {
+  font-family: var(--text-font);
+  font-size: var(--text-15-font-size);
+  font-weight: var(--regular-font-weight);
+  line-height: var(--text-15-line-height);
+  color: #fcfaf9;
+}
+
+.subscribe-form__checkbox-info a {
+  color: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.subscribe-form__success-submit-wrapper {
+  margin-top: 145px;
+}
+
+.subscribe-form__success-submit {
+  border-radius: 88px;
+  padding: 10px 24px;
+  background: #fcfaf9;
+  position: relative;
+  display: none;
+}
+
+.subscribe-form__success-submit::before {
+  content: '';
+  inline-size: 120px;
+  block-size: 120px;
+  background: url(/images/form-success-submit-sticker.png);
+  position: absolute;
+  top: -60px;
+  right: 65px;
+}
+
+.subscribe-form__success-message {
+  font-family: var(--text-font);
+  font-weight: var(--bold-font-weight);
+  font-size: var(--text-18-font-size);
+  line-height: var(--text-18-line-height);
+  color: #57acbc;
+}
+
+.active {
+  display: block;
+}
+
+.inactive {
+  display: none;
+}
+
+/* -----------Инпут------------ */
+
+.subscribe-form__input--valid {
+  border: 1.5px solid #bedb39;
+  background: url(/images/sections/subscribe-section/input-valid-icon.svg)
+    no-repeat right 16px center;
+  background-size: 25px;
+}
+
+.subscribe-form__input--invalid {
+  border: 1.5px solid #ffad20;
+  background: url(/images/sections/subscribe-section/input-invalid-icon.svg)
+    no-repeat right 16px center;
+  background-size: 25px;
+}
+
+/* ------------Чекбокс------------ */
+
+.subscribe-form__input-checkbox {
+  width: 0;
+  height: 0;
+}
+
+.subscribe-form__custom-checkbox {
+  display: inline-block;
+  inline-size: 24px;
+  block-size: 24px;
+  border: 1.5px solid #fcfaf9;
+  border-radius: 4px;
+  position: relative;
+  cursor: pointer;
+  transition:
+    border 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.subscribe-form__custom-checkbox:hover {
+  background-color: rgba(242, 242, 242, 0.2);
+}
+
+.subscribe-form__input-checkbox:disabled + .subscribe-form__custom-checkbox {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.subscribe-form__input-checkbox:checked + .subscribe-form__custom-checkbox {
+  background: url('/images/sections/subscribe-section/checkbox-checked-icon.svg')
+    no-repeat center center;
+  background-size: 14px 9px;
+  background-color: #fcfaf9;
+}
+
+.subscribe-form__input-checkbox:focus-visible
+  + .subscribe-form__custom-checkbox {
+  border: 2px solid #1b1f21;
+}
+
+.subscribe-form__input-checkbox:focus-visible:not(:checked)
+  + .subscribe-form__custom-checkbox {
+  border: 2px solid #1b1f21;
+}
+
+.subscribe-form__input-checkbox:focus-visible:checked
+  + .subscribe-form__custom-checkbox {
+  border: 2px solid #1b1f21;
+  background-color: rgba(242, 242, 242, 0.2);
+}

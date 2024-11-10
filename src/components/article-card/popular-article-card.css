@@ -1,6 +1,6 @@
 .popular-articles__card {
   position: relative;
-  /* z-index: 1; */
+  z-index: -1;
 }
 
 .popular-article-card__image-wrapper {
@@ -13,7 +13,7 @@
 .popular-article-card__mask {
   inline-size: 100%;
   block-size: 100%;
-  overflow: visible;
+  /* overflow: visible; */
   /* position: relative; */
 }
 

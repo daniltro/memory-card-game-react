@@ -5,7 +5,7 @@ import BackgroundLine from '../background-line/background-line';
 import MarqueeLine from '../marqueeLine/marqueeLine';
 
 const PopularArticles: React.FC<IArticlesProps> = ({
-  content,
+  content, ticker
 }) => {
   return (
     <section className="popular-articles">
