@@ -9,6 +9,7 @@ import PopularArticles from '../articles/popular-articles';
 import Webinars from '../webinars/webinars';
 import Subscribe from '../subscribe-section/subscribe-section';
 import SubscribeSection from '../subscribe-section/subscribe-section';
+import Footer from '../footer/footer';
 
 const Layout: React.FC = () => {
   const [menuData, setMenuData] = useState<IMenu | null>(null);
@@ -28,7 +29,8 @@ const Layout: React.FC = () => {
   }, []);
 
   if (menuData && sectionsData) {
-    const { logo, header } = menuData;
+    // const { logo, header } = menuData;
+    const { logo, header, footer } = menuData;
     const { main, content, proposals, subscription } = sectionsData;
 
     const mainTicker = main?.ticker;
@@ -95,6 +97,8 @@ const Layout: React.FC = () => {
             />
           )}
         </main>
+
+        {menuData && <Footer logo={logo} footer={footer} />}
       </>
     );
   }
