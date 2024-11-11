@@ -4,7 +4,6 @@ import WebinarCard from '../webinar-card/webinar-card';
 import BackgroundLine from '../background-line/background-line';
 import { backgroundLines } from '../../types/constants';
 import useWindowWidth from '../../hooks/useWindowWidth';
-import MarqueeLine from '../marqueeLine/marqueeLine';
 
 const Webinars: React.FC<IWebinarsProps> = ({
   title,
@@ -53,11 +52,6 @@ const Webinars: React.FC<IWebinarsProps> = ({
           zIndex={-1}
         />
       </div>
-      {/* <MarqueeLine
-        text={ticker.text}
-        backgroundColor={ticker.color}
-        className="marquee-line--subscribe"
-      /> */}
     </section>
   );
 };

@@ -1,8 +1,8 @@
 import React from 'react';
-import { HeaderProps } from '../../types/types';
+import { IHeaderProps } from '../../types/types';
 import { headerLinkClasses } from '../../types/constants';
 
-const Header: React.FC<HeaderProps> = ({ menuData }) => {
+const Header: React.FC<IHeaderProps> = ({ menuData }) => {
   return (
     <header className="header">
       <div className="container header--container">

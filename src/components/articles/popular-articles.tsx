@@ -4,9 +4,7 @@ import { IArticlesProps } from '../../types/types';
 import BackgroundLine from '../background-line/background-line';
 import MarqueeLine from '../marqueeLine/marqueeLine';
 
-const PopularArticles: React.FC<IArticlesProps> = ({
-  content, ticker
-}) => {
+const PopularArticles: React.FC<IArticlesProps> = ({ content }) => {
   return (
     <section className="popular-articles">
       <div className="container popular-articles--container">

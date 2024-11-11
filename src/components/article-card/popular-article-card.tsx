@@ -3,27 +3,7 @@ import { ImageWithMask } from '../image-with-mask/image-with-mask';
 import MetaInfo from '../meta-info/meta-info';
 import { getMaskUrl, getStickerOption } from '../../types/utils';
 import { stickerOptions, tagClasses } from '../../types/constants';
-
-interface IArticleCardProps {
-  article: {
-    title: string;
-    text: string;
-    accent: string;
-    date: string;
-    duration: number;
-    size: string;
-    tags: string[];
-    img: {
-      url: string;
-      shape: string;
-    };
-    stamp: {
-      word: string;
-      type: string;
-      position: string;
-    };
-  };
-}
+import { IArticleCardProps } from '../../types/types';
 
 const ArticleCard: React.FC<IArticleCardProps> = ({ article }) => {
   const { title, text, accent, date, duration, size, tags, img, stamp } =

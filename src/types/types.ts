@@ -4,10 +4,6 @@ export interface IMenu {
   footer: IFooterData[];
 }
 
-export interface IHeaderData {
-  header: IHeaderDataItem[];
-}
-
 export interface IHeaderDataItem {
   label: string;
   url: string;
@@ -18,13 +14,11 @@ export interface IFooterData {
   items: IHeaderDataItem[];
 }
 
-export interface HeaderProps {
-  menuData: {
-    logo: string;
-    header: IHeaderDataItem[];
-  };
-}
+// export interface IHeaderData {
+//   header: IHeaderDataItem[];
+// }
 
+// Типы данных
 export interface ISections {
   main: {
     items: ISectionItem[];
@@ -91,33 +85,17 @@ export interface ITicker {
   color: string;
 }
 
-export interface IHeroProps {
-  mainSectionData: ISections['main'];
-  ticker?: {
-    text: string;
-    color: string;
+// Типы пропсов секций
+
+export interface IHeaderProps {
+  menuData: {
+    logo: string;
+    header: IHeaderDataItem[];
   };
 }
 
-export interface IMarqueeLineProps {
-  text: string;
-  backgroundColor: string;
-  className: string;
-  isAccent?: boolean;
-}
-
-export interface IMetaInfoProps {
-  date: string;
-  duration: number | string;
-  className?: string;
-  dateClassName?: string;
-  durationClassName?: string;
-}
-
-export interface StickerOption {
-  stampWord: string;
-  stickerUrl: string;
-  modifierClass: string;
+export interface IHeroProps {
+  items: ISectionItem[];
 }
 
 export interface IArticlesProps {
@@ -141,21 +119,27 @@ export interface IArticlesProps {
       title: string;
     }[];
   };
-  ticker?: {
-    text: string;
-    color: string;
-  };
 }
 
-export interface ImageWithMaskProps {
-  src: string;
-  maskUrl: string;
-  stickerUrl?: string;
-  wrapperClassName?: string;
-  maskClassName?: string;
-  stickerClassName?: string;
-  imageClassName?: string;
-  children?: React.ReactNode;
+export interface IArticleCardProps {
+  article: {
+    title: string;
+    text: string;
+    accent: string;
+    date: string;
+    duration: number;
+    size: string;
+    tags: string[];
+    img: {
+      url: string;
+      shape: string;
+    };
+    stamp: {
+      word: string;
+      type: string;
+      position: string;
+    };
+  };
 }
 
 export interface IWebinarsProps {
@@ -174,18 +158,6 @@ export interface IWebinarsProps {
     date_to: string;
     time: string;
   }[];
-  ticker?: {
-    text: string;
-    color: string;
-  };
-}
-
-export interface IBackgroundLineProps {
-  imageUrl: string;
-  top?: string;
-  left?: string;
-  scale?: number;
-  zIndex?: number;
 }
 
 export interface IWebinarCardProps {
@@ -204,6 +176,66 @@ export interface IWebinarCardProps {
   };
   backgroundLine?: IBackgroundLineProps;
   index: number;
+}
+
+export interface ISubscribeSectionProps {
+  title: string;
+  text: string;
+  emailPlaceholder: string;
+  submitText: string;
+  agreementText: string;
+  ticker?: {
+    text: string;
+    color: string;
+  };
+}
+
+export interface ISubscribeFormProps {
+  placeholder: string;
+  submitText: string;
+  agreementText: string;
+}
+
+// Типы пропсов компонентов
+
+export interface IMarqueeLineProps {
+  text: string;
+  backgroundColor: string;
+  className: string;
+  isAccent?: boolean;
+}
+
+export interface IMetaInfoProps {
+  date: string;
+  duration: number | string;
+  className?: string;
+  dateClassName?: string;
+  durationClassName?: string;
+}
+
+export interface StickerOption {
+  stampWord: string;
+  stickerUrl: string;
+  modifierClass: string;
+}
+
+export interface ImageWithMaskProps {
+  src: string;
+  maskUrl: string;
+  stickerUrl?: string;
+  wrapperClassName?: string;
+  maskClassName?: string;
+  stickerClassName?: string;
+  imageClassName?: string;
+  children?: React.ReactNode;
+}
+
+export interface IBackgroundLineProps {
+  imageUrl: string;
+  top?: string;
+  left?: string;
+  scale?: number;
+  zIndex?: number;
 }
 
 // export interface SubscriptionData {

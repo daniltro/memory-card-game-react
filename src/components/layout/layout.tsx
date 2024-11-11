@@ -14,6 +14,7 @@ const Layout: React.FC = () => {
   const [menuData, setMenuData] = useState<IMenu | null>(null);
   const [sectionsData, setSectionsData] = useState<ISections | null>(null);
 
+  console.log(menuData);
   useEffect(() => {
     const fetchData = async () => {
       const menu = await fetchMenuData();
@@ -30,8 +31,6 @@ const Layout: React.FC = () => {
     const { logo, header } = menuData;
     const { main, content, proposals, subscription } = sectionsData;
 
-    console.log(subscription);
-    // Извлекаем тикеры для каждой секции
     const mainTicker = main?.ticker;
     const contentTicker = content?.ticker;
     const proposalsTicker = proposals?.ticker;
@@ -39,9 +38,10 @@ const Layout: React.FC = () => {
 
     return (
       <>
-        <Header menuData={{ logo, header }} />{' '}
+        <Header menuData={{ logo, header }} />
+
         <main className="main">
-          {main && <Hero mainSectionData={main} />}
+          {main && <Hero items={main.items} />}
 
           {mainTicker && (
             <MarqueeLine

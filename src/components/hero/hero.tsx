@@ -5,11 +5,9 @@ import MetaInfo from '../meta-info/meta-info';
 import { getMaskUrl, getStickerOption } from '../../types/utils';
 import BackgroundLine from '../background-line/background-line';
 
-const Hero: React.FC<IHeroProps> = ({ mainSectionData }) => {
-  const itemsData = mainSectionData.items[0]; // Берем первый элемент
-
+const Hero: React.FC<IHeroProps> = ({ items }) => {
+  const itemsData = items[0];
   const maskUrl = getMaskUrl(itemsData.img.shape);
-
   const stickerOption = getStickerOption(itemsData.stamp.word);
   const stickerUrl = stickerOption?.stickerUrl ?? '';
   const modifierClass = stickerOption?.modifierClass ?? '';
@@ -22,7 +20,7 @@ const Hero: React.FC<IHeroProps> = ({ mainSectionData }) => {
           maskUrl={maskUrl}
           stickerUrl={stickerUrl}
           wrapperClassName="hero-section__image-wrapper"
-          maskClassName="hero-section__mask "
+          maskClassName="hero-section__mask"
           stickerClassName={modifierClass}
           imageClassName="hero-section__image"
         />
@@ -67,6 +65,7 @@ const Hero: React.FC<IHeroProps> = ({ mainSectionData }) => {
           </button>
         </div>
       </div>
+
       <BackgroundLine
         imageUrl="/images/sections/line-bg/hero-line-bg.svg"
         top="274px"

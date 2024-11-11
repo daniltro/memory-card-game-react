@@ -1,10 +1,5 @@
 import React, { useState } from 'react';
-
-interface ISubscribeFormProps {
-  placeholder: string;
-  submitText: string;
-  agreementText: string;
-}
+import { ISubscribeFormProps } from '../../types/types';
 
 const SubscribeForm: React.FC<ISubscribeFormProps> = ({
   placeholder,
