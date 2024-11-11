@@ -10,8 +10,8 @@ const Header: React.FC<IHeaderProps> = ({ menuData }) => {
         <Logo
           containerClassName="header__logo"
           svgClassName="header__logo-svg"
-          inlineSize="109"
-          blockSize="40"
+          inlineSize="109px"
+          blockSize="40px"
         />
         <nav className="header__menu">
           <ul className="header__list">

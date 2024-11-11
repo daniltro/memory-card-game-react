@@ -192,7 +192,22 @@ export interface ISubscribeFormProps {
   agreementText: string;
 }
 
+export interface IFooterProps {
+  logo: string;
+  footer: {
+    label: string;
+    items: { label: string; url: string }[];
+  }[];
+}
+
 // Типы пропсов компонентов
+
+export interface LogoProps {
+  containerClassName: string;
+  svgClassName: string;
+  inlineSize: string;
+  blockSize: string;
+}
 
 export interface IMarqueeLineProps {
   text: string;

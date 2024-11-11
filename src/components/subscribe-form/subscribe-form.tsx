@@ -40,7 +40,6 @@ const SubscribeForm: React.FC<ISubscribeFormProps> = ({
     }
   };
 
-  console.log(isSubmitted);
   // Если форма была успешно отправлена, показываем только сообщение об успехе
   if (isSubmitted) {
     return (

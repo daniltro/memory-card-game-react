@@ -15,7 +15,6 @@ const Layout: React.FC = () => {
   const [menuData, setMenuData] = useState<IMenu | null>(null);
   const [sectionsData, setSectionsData] = useState<ISections | null>(null);
 
-  console.log(menuData);
   useEffect(() => {
     const fetchData = async () => {
       const menu = await fetchMenuData();
@@ -29,7 +28,6 @@ const Layout: React.FC = () => {
   }, []);
 
   if (menuData && sectionsData) {
-    // const { logo, header } = menuData;
     const { logo, header, footer } = menuData;
     const { main, content, proposals, subscription } = sectionsData;
 

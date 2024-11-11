@@ -20,7 +20,6 @@ body {
   position: relative;
   overflow: hidden;
   background-color: #fcfaf9;
-  /* z-index: -1; */
 }
 
 button {

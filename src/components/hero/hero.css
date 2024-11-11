@@ -17,8 +17,7 @@
 
 .hero-section__image-wrapper {
   position: relative;
-  flex-shrink: 0; 
-  /* overflow: visible; */
+  flex-shrink: 0;
   inline-size: 480px;
   block-size: 560px;
 }
@@ -26,7 +25,6 @@
 .hero-section__mask {
   inline-size: 100%;
   block-size: 100%;
-  /* overflow: visible; */
   position: relative;
 }
 

@@ -1,13 +1,7 @@
 import React from 'react';
 import Logo from '../logo/logo';
+import { IFooterProps } from '../../types/types';
 
-interface IFooterProps {
-  logo: string;
-  footer: {
-    label: string;
-    items: { label: string; url: string }[];
-  }[];
-}
 const Footer: React.FC<IFooterProps> = ({ logo, footer }) => {
   return (
     <footer className="footer">
@@ -16,8 +10,8 @@ const Footer: React.FC<IFooterProps> = ({ logo, footer }) => {
           <Logo
             containerClassName="footer__logo"
             svgClassName="footer__logo-svg"
-            inlineSize="224"
-            blockSize="82"
+            inlineSize="224px"
+            blockSize="82px"
           />
           <div className="footer__sertificate">
             <img
