@@ -40,6 +40,20 @@ const SubscribeForm: React.FC<ISubscribeFormProps> = ({
     }
   };
 
+  console.log(isSubmitted);
+  // Если форма была успешно отправлена, показываем только сообщение об успехе
+  if (isSubmitted) {
+    return (
+      <div className="subscribe-form__success-submit-wrapper">
+        <div className="subscribe-form__success-submit">
+          <p className="subscribe-form__success-message">
+            ¡Fantástico! Espera la primera carta
+          </p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <form className="subscribe__form" onSubmit={handleSubmit}>
       <div className="subscribe-form__controls-wrapper">
@@ -78,15 +92,6 @@ const SubscribeForm: React.FC<ISubscribeFormProps> = ({
           <p className="subscribe-form__checkbox-info">{agreementText}</p>
         </div>
       </div>
-      {isSubmitted && (
-        <div className="subscribe-form__success-submit-wrapper">
-          <div className="subscribe-form__success-submit">
-            <p className="subscribe-form__success-message">
-              ¡Fantástico! Espera la primera carta
-            </p>
-          </div>
-        </div>
-      )}
     </form>
   );
 };
