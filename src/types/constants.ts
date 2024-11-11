@@ -12,27 +12,39 @@ export const headerLinkClasses = [
 export const maskOptions = [
   {
     shape: 'arch',
-    maskUrl: '/images/sections/masks/hero-mask.svg',
+    maskUrlDesktop: '/images/sections/masks/desktop/hero-mask.svg',
+    maskUrlTablet: '/images/sections/masks/tablet/hero-mask-tablet.svg',
+    maskUrlMobile: '/images/sections/masks/mobile/hero-mask-mobile.svg',
   },
   {
     shape: 'semi-squared-rounded',
-    maskUrl: '/images/sections/masks/fashion-mask.svg',
+    maskUrlDesktop: '/images/sections/masks/desktop/fashion-mask.svg',
+    maskUrlTablet: '/images/sections/masks/tablet/fashion-mask-tablet.svg',
+    maskUrlMobile: '/images/sections/masks/mobile/fashion-mask-mobile.svg',
   },
   {
     shape: 'semi-squared-cloud',
-    maskUrl: '/images/sections/masks/design-mask.svg',
+    maskUrlDesktop: '/images/sections/masks/desktop/design-mask.svg',
+    maskUrlTablet: '/images/sections/masks/tablet/design-mask-tablet.svg',
+    maskUrlMobile: '/images/sections/masks/mobile/design-mask-mobile.svg',
   },
   {
     shape: 'cloud',
-    maskUrl: '/images/sections/masks/design-2-mask.svg',
+    maskUrlDesktop: '/images/sections/masks/desktop/design-large-mask.svg',
+    maskUrlTablet: '/images/sections/masks/tablet/design-large-mask-tablet.svg',
+    maskUrlMobile: '/images/sections/masks/mobile/design-large-mask-mobile.svg',
   },
   {
     shape: 'corner-squared-cloud',
-    maskUrl: '/images/sections/masks/marketing-mask.svg',
+    maskUrlDesktop: '/images/sections/masks/desktop/marketing-mask.svg',
+    maskUrlTablet: '/images/sections/masks/tablet/marketing-mask-tablet.svg',
+    maskUrlMobile: '/images/sections/masks/mobile/marketing-mask-mobile.svg',
   },
   {
     shape: 'corner-squared-rounded',
-    maskUrl: '/images/sections/masks/software-mask.svg',
+    maskUrlDesktop: '/images/sections/masks/desktop/software-mask.svg',
+    maskUrlTablet: '/images/sections/masks/tablet/software-mask-tablet.svg',
+    maskUrlMobile: '/images/sections/masks/mobile/software-mask-mobile.svg',
   },
 ];
 
@@ -102,8 +114,33 @@ export const monthNames = [
   'diciembre',
 ];
 
-// Массив настроек для фона карточек
-export const backgroundLines: IBackgroundLineProps[] = [
+export const backgroundLinesConfig = {
+  hero: {
+    mobile: {
+      imageUrl: '/images/sections/line-bg/mobile/hero-line-bg-mobile.svg',
+      top: '138px',
+      left: '17px',
+      scale: 5.5,
+      zIndex: -1,
+    },
+    tablet: {
+      imageUrl: '/images/sections/line-bg/tablet/hero-line-bg-tablet.svg',
+      top: '-109px',
+      left: '160px',
+      scale: 2.2,
+      zIndex: -1,
+    },
+    desktop: {
+      imageUrl: '/images/sections/line-bg/desktop/hero-line-bg-desktop.svg',
+      top: '257px',
+      left: '-53px',
+      scale: 1.65,
+      zIndex: -1,
+    },
+  },
+};
+
+export const backgroundLinesForCard: IBackgroundLineProps[] = [
   {
     imageUrl: '/images/sections/line-bg/webinar-card-line-1-bg.svg',
     top: '100px',

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { IWebinarsProps } from '../../types/types';
 import WebinarCard from '../webinar-card/webinar-card';
 import BackgroundLine from '../background-line/background-line';
-import { backgroundLines } from '../../types/constants';
+import { backgroundLinesForCard } from '../../types/constants';
 import useWindowWidth from '../../hooks/useWindowWidth';
 
 const Webinars: React.FC<IWebinarsProps> = ({
@@ -38,7 +38,9 @@ const Webinars: React.FC<IWebinarsProps> = ({
                 key={index}
                 cardData={item}
                 index={index}
-                backgroundLine={backgroundLines[index % backgroundLines.length]}
+                backgroundLine={
+                  backgroundLinesForCard[index % backgroundLinesForCard.length]
+                }
               />
             ))}
           </ul>

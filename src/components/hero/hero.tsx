@@ -2,8 +2,13 @@ import React from 'react';
 import { IHeroProps } from '../../types/types';
 import { ImageWithMask } from '../image-with-mask/image-with-mask';
 import MetaInfo from '../meta-info/meta-info';
-import { getMaskUrl, getStickerOption } from '../../types/utils';
+import {
+  getBackgroundLineConfig,
+  getMaskUrl,
+  getStickerOption,
+} from '../../types/utils';
 import BackgroundLine from '../background-line/background-line';
+import useWindowWidth from '../../hooks/useWindowWidth';
 
 const Hero: React.FC<IHeroProps> = ({ items }) => {
   const itemsData = items[0];
@@ -11,6 +16,9 @@ const Hero: React.FC<IHeroProps> = ({ items }) => {
   const stickerOption = getStickerOption(itemsData.stamp.word);
   const stickerUrl = stickerOption?.stickerUrl ?? '';
   const modifierClass = stickerOption?.modifierClass ?? '';
+
+  const windowWidth = useWindowWidth();
+  const backgroundLineConfig = getBackgroundLineConfig('hero', windowWidth);
 
   return (
     <section className="hero-section">
@@ -66,13 +74,15 @@ const Hero: React.FC<IHeroProps> = ({ items }) => {
         </div>
       </div>
 
-      <BackgroundLine
-        imageUrl="/images/sections/line-bg/hero-line-bg.svg"
-        top="274px"
-        left="-70px"
-        scale={1.7}
-        zIndex={-1}
-      />
+      {backgroundLineConfig && (
+        <BackgroundLine
+          imageUrl={backgroundLineConfig.imageUrl}
+          top={backgroundLineConfig.top}
+          left={backgroundLineConfig.left}
+          scale={backgroundLineConfig.scale}
+          zIndex={backgroundLineConfig.zIndex}
+        />
+      )}
     </section>
   );
 };

@@ -1,6 +1,7 @@
 @import url(./fonts.css);
 @import url(./variables.css);
 @import url(./common.css);
+
 @import url(../components/marqueeLine/marquee-line.css);
 @import url(../components/header/header.css);
 @import url(../components/hero/hero.css);
@@ -11,3 +12,6 @@
 @import url(../components/subscribe-section/subscribe-section.css);
 @import url(../components/subscribe-form/subscribe-form.css);
 @import url(../components/footer/footer.css);
+
+@import url(./tablet.css);
+@import url(./mobile.css);

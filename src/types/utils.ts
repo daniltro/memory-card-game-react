@@ -1,10 +1,44 @@
-import { maskOptions, stickerOptions } from './constants';
+import useWindowWidth from '../hooks/useWindowWidth';
+import {
+  backgroundLinesConfig,
+  maskOptions,
+  stickerOptions,
+} from './constants';
 import { monthNames } from './constants';
 
-// Функция для выбора правильной маски
 export const getMaskUrl = (shape: string): string => {
+  const windowWidth = useWindowWidth(); // Получаем текущую ширину экрана
+  let maskUrl = '';
+
+  // Определяем маску в зависимости от ширины экрана
   const mask = maskOptions.find((option) => option.shape === shape);
-  return mask ? mask.maskUrl : '';
+  if (mask) {
+    if (windowWidth < 768) {
+      // Маска для мобильных устройств
+      maskUrl = mask.maskUrlMobile;
+    } else if (windowWidth < 1280) {
+      // Маска для планшетов
+      maskUrl = mask.maskUrlTablet;
+    } else {
+      // Маска для десктопов
+      maskUrl = mask.maskUrlDesktop;
+    }
+  }
+
+  return maskUrl;
+};
+
+export const getBackgroundLineConfig = (
+  section: keyof typeof backgroundLinesConfig,
+  windowWidth: number
+) => {
+  if (windowWidth < 768) {
+    return backgroundLinesConfig[section].mobile;
+  } else if (windowWidth < 1280) {
+    return backgroundLinesConfig[section].tablet;
+  } else {
+    return backgroundLinesConfig[section].desktop;
+  }
 };
 
 export const getStickerOption = (stampWord: string) => {

@@ -27,12 +27,6 @@ button {
   cursor: pointer;
 }
 
-.section-tags-list {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
 .section-tag {
   display: inline-block;
   font-family: var(--text-font);
