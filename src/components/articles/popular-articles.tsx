@@ -3,8 +3,16 @@ import ArticleCard from '../article-card/popular-article-card';
 import { IArticlesProps } from '../../types/types';
 import BackgroundLine from '../background-line/background-line';
 import MarqueeLine from '../marqueeLine/marqueeLine';
+import useWindowWidth from '../../hooks/useWindowWidth';
+import { getBackgroundLineConfig } from '../../types/utils';
 
 const PopularArticles: React.FC<IArticlesProps> = ({ content }) => {
+  const windowWidth = useWindowWidth();
+  const backgroundLineConfig = getBackgroundLineConfig(
+    'popularArticles',
+    windowWidth
+  );
+  console.log(backgroundLineConfig)
   return (
     <section className="popular-articles">
       <div className="container popular-articles--container">
@@ -27,13 +35,15 @@ const PopularArticles: React.FC<IArticlesProps> = ({ content }) => {
           ))}
         </div>
       </div>
-      <BackgroundLine
-        imageUrl="/images/sections/line-bg/articles-line-bg.svg"
-        top="280px"
-        left="0px"
-        scale={1}
-        zIndex={-1}
-      />
+      {backgroundLineConfig && (
+        <BackgroundLine
+          imageUrl={backgroundLineConfig.imageUrl}
+          top={backgroundLineConfig.top}
+          left={backgroundLineConfig.left}
+          scale={backgroundLineConfig.scale}
+          zIndex={backgroundLineConfig.zIndex}
+        />
+      )}
     </section>
   );
 };

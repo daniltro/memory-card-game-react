@@ -209,20 +209,19 @@
 
   .popular-articles {
     position: relative;
-  }
-
-  .popular-articles::after {
-    top: 406px;
-    left: 0;
-    background: url(/images/tablet-articles-linebg.png) no-repeat;
+    padding-bottom: 60px;
   }
 
   .popular-articles--container {
-    padding-top: 272px;
+    padding-top: 192px;
   }
 
   .popular-articles__card:first-child {
     margin-right: 24px;
+  }
+
+  .popular-articles__cards-wrapper {
+    gap: 85px 25px;
   }
 
   .popular-article-card__image-wrapper {
@@ -234,7 +233,56 @@
   .card--full-image .popular-article-card__image-wrapper {
     inline-size: 704px;
     block-size: 320px;
+    margin-bottom: 24px;
   }
+
+  .card--full-image .popular-article__content {
+    grid-template-columns: 219px 1fr 1fr;
+    gap: 20px 25px;
+    grid-row: min-content;
+  }
+
+  .card--full-image .popular-article__card-title {
+    font-size: var(--h5-font-size);
+    line-height: var(--h5-line-height);
+  }
+
+  .card--full-image .popular-article__tags-list {
+    margin-top: -18px;
+    margin-left: -20px;
+  }
+
+  .card--full-image .popular-article__card-description {
+    margin-top: -27px;
+    padding-right: 0;
+    margin-bottom: 21px;
+  }
+
+  .card--full-image .popular-articles__meta {
+    margin-top: -2px;
+    margin-right: 26px;
+  }
+
+  .card--full-image .popular-article__tags-item:first-child,
+  .tag--design-main {
+    margin-right: -4px;
+  }
+
+  .tag--design-main {
+    margin-bottom: 0;
+  }
+
+  .card--full-image .design--sticker {
+    top: -22px;
+    left: 548px;
+    scale: .65;
+}
+
+  .card--full-image .popular-article__tags-item:last-child {
+    margin-right: -5px;
+  }
+
+  /* --------------- */
 
   .fashion--sticker,
   .design--sticker,
@@ -257,17 +305,12 @@
     rotate: 15deg;
   }
 
-  .card-image--large {
-    block-size: 320px;
-    margin-bottom: 23px;
-  }
-
-  .popular-articles__card-title {
+  .popular-article__card-title {
     font-size: 24px;
     line-height: var(--text-18-line-height);
   }
 
-  .popular-articles__card-description {
+  .popular-article__card-description {
     padding-right: 0;
     margin-bottom: 16px;
   }
@@ -296,26 +339,10 @@
   .tags-design__inner-wrapper .tag--design:first-child {
     margin-left: 7px;
   }
-
-  .meta--design {
-    margin-top: 16px;
-  }
-
-  .meta--design .meta-time::before {
-    left: 55px;
-  }
-
-  .card-title--accent {
-    padding-right: 0;
-    font-size: 26px;
-    line-height: 31.2px;
-    margin-bottom: 9px;
-  }
-
   /* ---------------- */
 
   .marquee-line--webinars {
-    top: 3237px;
+    top: 158px;
   }
 
   .webinars {
@@ -323,7 +350,7 @@
     padding-top: 120px;
     padding-bottom: 73px;
     padding-inline: 32px;
-    clip-path: polygon(0 4%, 100% 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 95%);
   }
 
   .webinars::after {
@@ -338,7 +365,7 @@
   }
 
   .webinars__content {
-    padding-top: 33px;
+    padding-top: 62px;
   }
 
   .webinars__title {

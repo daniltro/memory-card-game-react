@@ -27,6 +27,10 @@ button {
   cursor: pointer;
 }
 
+section {
+  overflow: hidden;
+}
+
 .section-tag {
   display: inline-block;
   font-family: var(--text-font);

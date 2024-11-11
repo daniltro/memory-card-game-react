@@ -96,7 +96,7 @@ const Layout: React.FC = () => {
           )}
         </main>
 
-        {menuData && <Footer logo={logo} footer={footer} />}
+        {/* {menuData && <Footer logo={logo} footer={footer} />} */}
       </>
     );
   }

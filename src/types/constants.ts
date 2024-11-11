@@ -1,3 +1,4 @@
+import PopularArticles from '../components/articles/popular-articles';
 import { IBackgroundLineProps, StickerOption } from './types';
 
 export const headerLinkClasses = [
@@ -135,6 +136,32 @@ export const backgroundLinesConfig = {
       top: '257px',
       left: '-53px',
       scale: 1.65,
+      zIndex: -1,
+    },
+  },
+  popularArticles: {
+    mobile: {
+      imageUrl:
+        '/images/sections/line-bg/mobile/popular-articles-line-bg-mobile.svg',
+      top: '138px',
+      left: '17px',
+      scale: 5.5,
+      zIndex: -1,
+    },
+    tablet: {
+      imageUrl:
+        '/images/sections/line-bg/tablet/popular-articles-line-bg-tablet.svg',
+      top: '158px',
+      left: '-131px',
+      scale: 4,
+      zIndex: -1,
+    },
+    desktop: {
+      imageUrl:
+        '/images/sections/line-bg/desktop/popular-articles-line-bg-desktop.svg',
+      top: '283px',
+      left: '236px',
+      scale: 1.83,
       zIndex: -1,
     },
   },
