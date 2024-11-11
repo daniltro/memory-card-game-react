@@ -14,10 +14,6 @@ export interface IFooterData {
   items: IHeaderDataItem[];
 }
 
-// export interface IHeaderData {
-//   header: IHeaderDataItem[];
-// }
-
 // Типы данных
 export interface ISections {
   main: {
@@ -237,16 +233,3 @@ export interface IBackgroundLineProps {
   scale?: number;
   zIndex?: number;
 }
-
-// export interface SubscriptionData {
-//   title: string;
-//   text: string;
-//   'email-placeholder': string;
-//   'submit-text': string;
-//   'agreement-text': string;
-//   ticker?: { text: string; color: string };
-// }
-
-// export interface SubscribeProps {
-//   data: SubscriptionData;
-// }
