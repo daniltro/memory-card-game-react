@@ -1,5 +1,9 @@
 import PopularArticles from '../components/articles/popular-articles';
-import { IBackgroundLineProps, StickerOption } from './types';
+import {
+  IBackgroundLineProps,
+  IBackgroundLinesForCard,
+  StickerOption,
+} from './types';
 
 export const headerLinkClasses = [
   'diseno--link',
@@ -165,28 +169,135 @@ export const backgroundLinesConfig = {
       zIndex: -1,
     },
   },
+  webinars: {
+    mobile: {
+      imageUrl: '/images/sections/line-bg/desktop/webinars-line-bg.svg',
+      top: '35px',
+      left: '-70px',
+      scale: 5.5,
+      zIndex: -1,
+    },
+    tablet: {
+      imageUrl: '/images/sections/line-bg/tablet/webinars-line-bg-tablet.svg',
+      top: '86px',
+      left: '94px',
+      scale: 1.95,
+      zIndex: -1,
+    },
+    desktop: {
+      imageUrl: '/images/sections/line-bg/desktop/webinars-line-bg-desktop.svg',
+      top: '65px',
+      left: '-70px',
+      scale: 1.6,
+      zIndex: -1,
+    },
+  },
+  subscribe: {
+    mobile: {
+      imageUrl:
+        '/images/sections/line-bg/desktop/subscribe-form-line-bg-desktop.svg',
+      top: '59px',
+      left: '-14px',
+      scale: 1.4,
+      zIndex: -1,
+    },
+    tablet: {
+      imageUrl:
+        '/images/sections/line-bg/tablet/subscribe-form-line-bg-tablet.svg',
+      top: '77px',
+      left: '92px',
+      scale: 1.7,
+      zIndex: 0,
+    },
+    desktop: {
+      imageUrl:
+        '/images/sections/line-bg/desktop/subscribe-form-line-bg-desktop.svg',
+      top: '59px',
+      left: '-14px',
+      scale: 1.4,
+      zIndex: -1,
+    },
+  },
 };
 
-export const backgroundLinesForCard: IBackgroundLineProps[] = [
+export const backgroundLinesForCard: IBackgroundLinesForCard[] = [
   {
-    imageUrl: '/images/sections/line-bg/webinar-card-line-1-bg.svg',
-    top: '100px',
-    left: '95px',
-    scale: 1,
-    zIndex: 0,
+    desktop: {
+      imageUrl:
+        '/images/sections/line-bg/desktop/webinar-card-line-1-bg-desktop.svg',
+      top: '100px',
+      left: '95px',
+      scale: 1,
+      zIndex: 0,
+    },
+    tablet: {
+      imageUrl:
+        '/images/sections/line-bg/desktop/webinar-card-line-1-bg-desktop.svg',
+      top: '86px',
+      left: '94px',
+      scale: 1.07,
+      zIndex: 0,
+    },
+    mobile: {
+      imageUrl:
+        '/images/sections/line-bg/mobile/webinar-card-line-1-bg-mobile.svg',
+      top: '100px',
+      left: '95px',
+      scale: 1,
+      zIndex: 0,
+    },
   },
   {
-    imageUrl: '/images/sections/line-bg/webinar-card-line-2-bg.svg',
-    top: '-15px',
-    left: '40px',
-    scale: 1.2,
-    zIndex: 0,
+    desktop: {
+      imageUrl:
+        '/images/sections/line-bg/desktop/webinar-card-line-2-bg-desktop.svg',
+      top: '-15px',
+      left: '40px',
+      scale: 1.2,
+      zIndex: 0,
+    },
+    tablet: {
+      imageUrl:
+        '/images/sections/line-bg/tablet/webinar-card-line-2-bg-tablet.svg',
+      top: '58px',
+      left: '95px',
+      scale: 1.3,
+      zIndex: 0,
+    },
+    mobile: {
+      imageUrl:
+        '/images/sections/line-bg/mobile/webinar-card-line-2-bg-mobile.svg',
+      top: '-15px',
+      left: '40px',
+      scale: 1.2,
+      zIndex: 0,
+    },
   },
   {
-    imageUrl: '/images/sections/line-bg/webinar-card-line-3-bg.svg',
-    top: '-5px',
-    left: '-85px',
-    scale: 1,
-    zIndex: 0,
+    desktop: {
+      imageUrl:
+        '/images/sections/line-bg/desktop/webinar-card-line-3-bg-desktop.svg',
+      top: '-5px',
+      left: '-85px',
+      scale: 1,
+      zIndex: 0,
+    },
+    tablet: {
+      imageUrl:
+        '/images/sections/line-bg/tablet/webinar-card-line-3-bg-tablet.svg',
+
+      top: '-40px',
+      left: '-23px',
+      scale: 1.65,
+      zIndex: 0,
+    },
+    mobile: {
+      imageUrl:
+        '/images/sections/line-bg/mobile/webinar-card-line-3-bg-mobile.svg',
+      top: '-5px',
+      left: '-85px',
+      scale: 1,
+      zIndex: 0,
+    },
   },
 ];

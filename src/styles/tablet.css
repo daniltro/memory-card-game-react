@@ -275,8 +275,8 @@
   .card--full-image .design--sticker {
     top: -22px;
     left: 548px;
-    scale: .65;
-}
+    scale: 0.65;
+  }
 
   .card--full-image .popular-article__tags-item:last-child {
     margin-right: -5px;
@@ -457,8 +457,8 @@
   }
 
   .subscribe {
-    padding-top: 147px;
-    padding-bottom: 151px;
+    padding-top: 67px;
+    padding-bottom: 109px;
   }
 
   .subscribe--container {
@@ -471,6 +471,7 @@
     inline-size: 530px;
     border-radius: 30px;
     block-size: 498px;
+    mask-image: initial;
   }
 
   .subscribe-wrapper:after {
@@ -481,9 +482,15 @@
   }
 
   .subscribe-wrapper::before {
-    background: url(/images/tablet-form-illustration.png) no-repeat;
+    background: url(/images/sections/subscribe-section/tablet-form-illustration.png)
+      no-repeat;
     top: 0;
     right: -302px;
+  }
+
+  .marquee-line--subscribe::after {
+    clip-path: polygon(0 0%, 100% 0, 100% 50%, 0 100%);
+    top: 80px;
   }
 
   .subscribe__title {
@@ -530,11 +537,6 @@
   }
 
   /* --------------- */
-
-  .marquee-line--footer {
-    top: -41px;
-  }
-
   .marquee-line--footer .marquee-line__text {
     font-size: 44px;
   }
@@ -549,18 +551,14 @@
 
   .footer--container {
     grid-column: repeat(3, 1fr);
-    padding-top: 103px;
+    padding-top: 64px;
   }
 
   .footer__logo {
     grid-column: 1 /2;
   }
 
-  .footer__logo-icon {
-    inline-size: 174px;
-  }
-
-  .footer__logo-image {
+  .footer__sertificate img {
     inline-size: 64px;
     block-size: 64px;
   }
@@ -583,8 +581,13 @@
     grid-row: 2/3;
   }
 
+  .footer__column-title {
+    margin-bottom: 32px;
+  }
+
   .footer__links:nth-child(1) {
-    margin-right: 72px;
+    margin-left: 3px;
+    margin-right: 70px;
   }
 
   .footer__links:nth-child(2) {
@@ -600,7 +603,8 @@
   }
 
   .footer__contacts-list {
-    margin-top: 78px;
+    margin-left: 2px;
+    margin-top: 79px;
   }
 
   .footer__contacts-socials {
@@ -611,7 +615,8 @@
   }
 
   .footer__contacts-confidentiality {
-    margin-top: -19px;
+    margin-left: 2px;
+    margin-top: -18px;
     gap: 25px;
   }
 

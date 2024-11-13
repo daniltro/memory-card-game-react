@@ -248,3 +248,9 @@ export interface IBackgroundLineProps {
   scale?: number;
   zIndex?: number;
 }
+
+export interface IBackgroundLinesForCard {
+  desktop: IBackgroundLineProps;
+  tablet: IBackgroundLineProps;
+  mobile: IBackgroundLineProps;
+}

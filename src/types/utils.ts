@@ -5,6 +5,7 @@ import {
   stickerOptions,
 } from './constants';
 import { monthNames } from './constants';
+import { IBackgroundLineProps, IBackgroundLinesForCard } from './types';
 
 export const getMaskUrl = (shape: string): string => {
   const windowWidth = useWindowWidth(); // Получаем текущую ширину экрана
@@ -38,6 +39,21 @@ export const getBackgroundLineConfig = (
     return backgroundLinesConfig[section].tablet;
   } else {
     return backgroundLinesConfig[section].desktop;
+  }
+};
+
+export const getCardBackgroundLineForCard = (
+  cardIndex: number,
+  windowWidth: number,
+  backgroundLinesForCard: IBackgroundLinesForCard[]
+): IBackgroundLineProps => {
+  const cardConfig = backgroundLinesForCard[cardIndex];
+  if (windowWidth < 768) {
+    return cardConfig.mobile;
+  } else if (windowWidth < 1280) {
+    return cardConfig.tablet; 
+  } else {
+    return cardConfig.desktop; 
   }
 };
 

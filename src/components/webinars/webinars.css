@@ -6,14 +6,6 @@
   clip-path: polygon(0 15%, 110% 0, 100% 100%, 0 90%);
 }
 
-@media (min-width: 1981px) and (max-width: 3840px) {
-  .webinars::after {
-    background: url(/images/webinars-4k-linebg.svg);
-    top: -541px;
-    left: -850px;
-  }
-}
-
 .webinars__content {
   inline-size: 100%;
   padding-top: 96px;

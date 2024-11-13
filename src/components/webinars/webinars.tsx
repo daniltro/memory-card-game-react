@@ -1,9 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import { IWebinarsProps } from '../../types/types';
+import {
+  IBackgroundLineProps,
+  IBackgroundLinesForCard,
+  IWebinarsProps,
+} from '../../types/types';
 import WebinarCard from '../webinar-card/webinar-card';
 import BackgroundLine from '../background-line/background-line';
 import { backgroundLinesForCard } from '../../types/constants';
 import useWindowWidth from '../../hooks/useWindowWidth';
+import {
+  getBackgroundLineConfig,
+  getCardBackgroundLineForCard,
+} from '../../types/utils';
 
 const Webinars: React.FC<IWebinarsProps> = ({
   title,
@@ -12,17 +20,7 @@ const Webinars: React.FC<IWebinarsProps> = ({
 }) => {
   const windowWidth = useWindowWidth();
 
-  const [backgroundImage, setBackgroundImage] = useState<string>(
-    '/images/sections/line-bg/webinars-line-bg.svg'
-  );
-
-  useEffect(() => {
-    if (windowWidth > 1980 && windowWidth <= 3840) {
-      setBackgroundImage('/images/sections/line-bg/webinars-line-bg-large.svg');
-    } else {
-      setBackgroundImage('/images/sections/line-bg/webinars-line-bg.svg');
-    }
-  }, [windowWidth]);
+  const backgroundLineConfig = getBackgroundLineConfig('webinars', windowWidth);
 
   return (
     <section className="webinars">
@@ -33,25 +31,29 @@ const Webinars: React.FC<IWebinarsProps> = ({
             {browseAllText}
           </button>
           <ul className="webinars__card-list">
-            {items.map((item, index) => (
-              <WebinarCard
-                key={index}
-                cardData={item}
-                index={index}
-                backgroundLine={
-                  backgroundLinesForCard[index % backgroundLinesForCard.length]
-                }
-              />
-            ))}
+            {items.map((item, index) => {
+              const backgroundLine = getCardBackgroundLineForCard(
+                index,
+                windowWidth,
+                backgroundLinesForCard
+              );
+              return (
+                <WebinarCard
+                  key={index}
+                  cardData={item}
+                  index={index}
+                  backgroundLine={backgroundLine}
+                />
+              );
+            })}
           </ul>
         </div>
-
         <BackgroundLine
-          imageUrl={backgroundImage}
-          top="35px"
-          left="-70px"
-          scale={1.7}
-          zIndex={-1}
+          imageUrl={backgroundLineConfig.imageUrl}
+          top={backgroundLineConfig.top}
+          left={backgroundLineConfig.left}
+          scale={backgroundLineConfig.scale}
+          zIndex={backgroundLineConfig.zIndex}
         />
       </div>
     </section>

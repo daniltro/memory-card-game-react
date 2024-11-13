@@ -2,7 +2,6 @@ import React from 'react';
 import ArticleCard from '../article-card/popular-article-card';
 import { IArticlesProps } from '../../types/types';
 import BackgroundLine from '../background-line/background-line';
-import MarqueeLine from '../marqueeLine/marqueeLine';
 import useWindowWidth from '../../hooks/useWindowWidth';
 import { getBackgroundLineConfig } from '../../types/utils';
 
@@ -45,6 +44,7 @@ const PopularArticles: React.FC<IArticlesProps> = ({ content }) => {
         />
       )}
     </section>
+    
   );
 };
 

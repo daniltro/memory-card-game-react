@@ -2,9 +2,11 @@ import React from 'react';
 import SubscribeForm from '../subscribe-form/subscribe-form'; // Импортируем компонент формы
 import BackgroundLine from '../background-line/background-line';
 import { ISubscribeSectionProps } from '../../types/types';
+import useWindowWidth from '../../hooks/useWindowWidth';
+import { getBackgroundLineConfig } from '../../types/utils';
 
-const SubscribeSectionLineBgUrl =
-  '/images/sections/line-bg/subscribe-form-line-bg.svg';
+// const SubscribeSectionLineBgUrl =
+//   '/images/sections/line-bg/desktop/subscribe-form-line-bg-desktop.svg';
 
 const SubscribeSection: React.FC<ISubscribeSectionProps> = ({
   title,
@@ -13,6 +15,11 @@ const SubscribeSection: React.FC<ISubscribeSectionProps> = ({
   submitText,
   agreementText,
 }) => {
+  const windowWidth = useWindowWidth();
+  const backgroundLineConfig = getBackgroundLineConfig(
+    'subscribe',
+    windowWidth
+  );
   return (
     <section className="subscribe">
       <div className="container container--subscribe">
@@ -25,11 +32,11 @@ const SubscribeSection: React.FC<ISubscribeSectionProps> = ({
             agreementText={agreementText}
           />
           <BackgroundLine
-            imageUrl={SubscribeSectionLineBgUrl}
-            top="59px"
-            left="-14px"
-            scale={1.4}
-            zIndex={-1}
+            imageUrl={backgroundLineConfig.imageUrl}
+            top={backgroundLineConfig.top}
+            left={backgroundLineConfig.left}
+            scale={backgroundLineConfig.scale}
+            zIndex={backgroundLineConfig.zIndex}
           />
         </div>
       </div>

@@ -1,8 +1,14 @@
 import React from 'react';
 import Logo from '../logo/logo';
 import { IFooterProps } from '../../types/types';
+import useWindowWidth from '../../hooks/useWindowWidth';
 
 const Footer: React.FC<IFooterProps> = ({ logo, footer }) => {
+  const windowWidth = useWindowWidth();
+
+  const logoInlineSize = windowWidth < 1440 ? '174px' : '224px';
+  const logoBlockSize = windowWidth < 1440 ? '64px' : '82px';
+
   return (
     <footer className="footer">
       <div className="container footer--container">
@@ -10,8 +16,8 @@ const Footer: React.FC<IFooterProps> = ({ logo, footer }) => {
           <Logo
             containerClassName="footer__logo"
             svgClassName="footer__logo-svg"
-            inlineSize="224px"
-            blockSize="82px"
+            inlineSize={logoInlineSize}
+            blockSize={logoBlockSize}
           />
           <div className="footer__sertificate">
             <img
