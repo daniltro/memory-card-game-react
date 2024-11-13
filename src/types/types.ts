@@ -136,6 +136,7 @@ export interface IArticleCardProps {
       position: string;
     };
   };
+  index: number;
 }
 
 export interface IWebinarsProps {

@@ -1,6 +1,5 @@
 .popular-articles__card {
   position: relative;
-  z-index: -1;
 }
 
 .popular-article-card__image-wrapper {
@@ -22,9 +21,9 @@
   object-position: 100% 45%;
 }
 
-.popular-articles__card:first-child {
+/* .popular-articles__card:first-child {
   margin-right: 40px;
-}
+} */
 
 .popular-article__stiker {
   inline-size: 180px;

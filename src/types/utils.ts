@@ -8,7 +8,7 @@ import { monthNames } from './constants';
 import { IBackgroundLineProps, IBackgroundLinesForCard } from './types';
 
 export const getMaskUrl = (shape: string): string => {
-  const windowWidth = useWindowWidth(); // Получаем текущую ширину экрана
+  const windowWidth = useWindowWidth(); 
   let maskUrl = '';
 
   // Определяем маску в зависимости от ширины экрана

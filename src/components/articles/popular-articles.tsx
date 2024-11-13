@@ -11,7 +11,6 @@ const PopularArticles: React.FC<IArticlesProps> = ({ content }) => {
     'popularArticles',
     windowWidth
   );
-  console.log(backgroundLineConfig)
   return (
     <section className="popular-articles">
       <div className="container popular-articles--container">
@@ -30,6 +29,7 @@ const PopularArticles: React.FC<IArticlesProps> = ({ content }) => {
                 img: item.img,
                 stamp: item.stamp,
               }}
+              index={index}
             />
           ))}
         </div>
@@ -44,7 +44,6 @@ const PopularArticles: React.FC<IArticlesProps> = ({ content }) => {
         />
       )}
     </section>
-    
   );
 };
 

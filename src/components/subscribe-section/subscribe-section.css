@@ -1,7 +1,8 @@
 .subscribe {
   display: flex;
   background-color: #f2f2f2;
-  padding: 57px 0 136px;
+  padding-top: 57px;
+  padding-bottom: 136px;
   position: relative;
 }
 
@@ -12,7 +13,7 @@
   block-size: 518px;
   padding: 64px 480px 64px 104px;
   position: relative;
-  mask-image: url(/images/sections/masks/subscribe-form-mask.svg);
+  mask-image: url(/images/sections/masks/desktop/subscribe-form-mask-desktop.svg);
 }
 
 .subscribe-wrapper::before {

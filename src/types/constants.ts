@@ -1,9 +1,4 @@
-import PopularArticles from '../components/articles/popular-articles';
-import {
-  IBackgroundLineProps,
-  IBackgroundLinesForCard,
-  StickerOption,
-} from './types';
+import { IBackgroundLinesForCard, StickerOption } from './types';
 
 export const headerLinkClasses = [
   'diseno--link',

@@ -5,29 +5,29 @@ import { getMaskUrl, getStickerOption } from '../../types/utils';
 import { stickerOptions, tagClasses } from '../../types/constants';
 import { IArticleCardProps } from '../../types/types';
 
-const ArticleCard: React.FC<IArticleCardProps> = ({ article }) => {
+const ArticleCard: React.FC<IArticleCardProps> = ({ article, index }) => {
   const { title, text, accent, date, duration, size, tags, img, stamp } =
     article;
   const maskUrl = getMaskUrl(img.shape);
 
   const stickerOption = getStickerOption(stamp.word);
   const stickerUrl = stickerOption?.stickerUrl ?? '';
-  const modifierClass = stickerOption?.modifierClass ?? '';
+  const stickerModifierClass = stickerOption?.modifierClass ?? '';
 
+  const imageModifierClass = `image--${index + 1}`;
   const tagClass = tagClasses[stamp.word as keyof typeof tagClasses] || {};
   const { mainTagClass, tagClass: tagClassName } = tagClass;
 
-
   return (
-    <article className={`popular-articles__card" card--${size}`}>
+    <article className={`popular-articles__card card--${size}`}>
       <ImageWithMask
         src={img.url}
         maskUrl={maskUrl}
         stickerUrl={stickerUrl}
         wrapperClassName="popular-article-card__image-wrapper"
         maskClassName="popular-article-card__mask"
-        stickerClassName={`popular-article__sticker ${modifierClass}`}
-        imageClassName="popular-article-card__image"
+        stickerClassName={`popular-article__sticker ${stickerModifierClass}`}
+        imageClassName={`popular-article-card__image ${imageModifierClass}`}
       />
       <div className={`popular-article__content`}>
         <div className="popular-article__tags">
