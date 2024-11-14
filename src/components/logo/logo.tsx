@@ -1,8 +1,6 @@
 import React from 'react';
 import { LogoProps } from '../../types/types';
 
-
-
 const Logo: React.FC<LogoProps> = ({
   containerClassName,
   svgClassName,

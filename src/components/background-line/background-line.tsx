@@ -8,7 +8,9 @@ const BackgroundLine: React.FC<IBackgroundLineProps> = ({
   left = '0px',
   scale = 1,
   zIndex = -1,
+  theme,
 }) => {
+  const opacity = theme === 'dark' ? .1 : 1;
   return (
     <div
       className="background-line"
@@ -18,6 +20,7 @@ const BackgroundLine: React.FC<IBackgroundLineProps> = ({
         left,
         transform: `scale(${scale})`,
         zIndex,
+        opacity,
       }}
     />
   );

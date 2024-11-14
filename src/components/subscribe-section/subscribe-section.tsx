@@ -1,12 +1,9 @@
 import React from 'react';
-import SubscribeForm from '../subscribe-form/subscribe-form'; // Импортируем компонент формы
+import SubscribeForm from '../subscribe-form/subscribe-form'; 
 import BackgroundLine from '../background-line/background-line';
 import { ISubscribeSectionProps } from '../../types/types';
 import useWindowWidth from '../../hooks/useWindowWidth';
 import { getBackgroundLineConfig } from '../../types/utils';
-
-// const SubscribeSectionLineBgUrl =
-//   '/images/sections/line-bg/desktop/subscribe-form-line-bg-desktop.svg';
 
 const SubscribeSection: React.FC<ISubscribeSectionProps> = ({
   title,

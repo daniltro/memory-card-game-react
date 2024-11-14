@@ -88,10 +88,12 @@ export interface IHeaderProps {
     logo: string;
     header: IHeaderDataItem[];
   };
+  theme: 'light' | 'dark';
 }
 
 export interface IHeroProps {
   items: ISectionItem[];
+  theme: string;
 }
 
 export interface IArticlesProps {
@@ -115,6 +117,7 @@ export interface IArticlesProps {
       title: string;
     }[];
   };
+  theme: 'dark' | 'light';
 }
 
 export interface IArticleCardProps {
@@ -248,6 +251,7 @@ export interface IBackgroundLineProps {
   left?: string;
   scale?: number;
   zIndex?: number;
+  theme?: string;
 }
 
 export interface IBackgroundLinesForCard {

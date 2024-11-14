@@ -6,7 +6,7 @@ import useWindowWidth from '../../hooks/useWindowWidth';
 import { getBackgroundLineConfig } from '../../types/utils';
 import { additionalMobileBackgroundConfig } from '../../types/constants';
 
-const PopularArticles: React.FC<IArticlesProps> = ({ content }) => {
+const PopularArticles: React.FC<IArticlesProps> = ({ content, theme }) => {
   const windowWidth = useWindowWidth();
   const backgroundLineConfig = getBackgroundLineConfig(
     'popularArticles',
@@ -43,6 +43,7 @@ const PopularArticles: React.FC<IArticlesProps> = ({ content }) => {
           left={backgroundLineConfig.left}
           scale={backgroundLineConfig.scale}
           zIndex={backgroundLineConfig.zIndex}
+          theme={theme}
         />
       )}
       {windowWidth < 769 && (
@@ -52,6 +53,7 @@ const PopularArticles: React.FC<IArticlesProps> = ({ content }) => {
           left={additionalMobileBackgroundConfig.left}
           scale={additionalMobileBackgroundConfig.scale}
           zIndex={additionalMobileBackgroundConfig.zIndex}
+          theme={theme}
         />
       )}
     </section>

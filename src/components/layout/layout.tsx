@@ -7,13 +7,54 @@ import { fetchSectionsData, fetchMenuData } from '../../api/api';
 import MarqueeLine from '../marqueeLine/marqueeLine';
 import PopularArticles from '../articles/popular-articles';
 import Webinars from '../webinars/webinars';
-import Subscribe from '../subscribe-section/subscribe-section';
 import SubscribeSection from '../subscribe-section/subscribe-section';
 import Footer from '../footer/footer';
+import ThemeToggleButton from '../theme-toggle-button/theme-toggle-button';
 
 const Layout: React.FC = () => {
   const [menuData, setMenuData] = useState<IMenu | null>(null);
   const [sectionsData, setSectionsData] = useState<ISections | null>(null);
+  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+  // Проверка предпочтений пользователя по теме при первоначальной загрузке
+  useEffect(() => {
+    const preferredTheme = window.matchMedia('(prefers-color-scheme: dark)')
+      .matches
+      ? 'dark'
+      : 'light';
+
+    const storedTheme = localStorage.getItem('theme');
+    if (storedTheme) {
+      setTheme(storedTheme as 'light' | 'dark');
+    } else {
+      setTheme(preferredTheme);
+    }
+  }, []);
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  // Слушатель для изменения системной темы
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const handleThemeChange = (e: MediaQueryListEvent) => {
+      setTheme(e.matches ? 'dark' : 'light');
+    };
+
+    // Слушаем изменения
+    mediaQuery.addEventListener('change', handleThemeChange);
+
+    // Очистка слушателя при размонтировании компонента
+    return () => {
+      mediaQuery.removeEventListener('change', handleThemeChange);
+    };
+  }, []);
+
+  // Тоггл для смены темы
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -38,10 +79,11 @@ const Layout: React.FC = () => {
 
     return (
       <>
-        <Header menuData={{ logo, header }} />
+        <Header menuData={{ logo, header }} theme={theme} />
+        <ThemeToggleButton theme={theme} toggleTheme={toggleTheme} />
 
         <main className="main">
-          {main && <Hero items={main.items} />}
+          {main && <Hero items={main.items} theme={theme} />}
 
           {mainTicker && (
             <MarqueeLine
@@ -51,7 +93,7 @@ const Layout: React.FC = () => {
             />
           )}
 
-          {content && <PopularArticles content={content} />}
+          {content && <PopularArticles content={content} theme={theme} />}
 
           {contentTicker && (
             <MarqueeLine

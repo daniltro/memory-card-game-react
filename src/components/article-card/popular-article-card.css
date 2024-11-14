@@ -21,10 +21,6 @@
   object-position: 100% 45%;
 }
 
-/* .popular-articles__card:first-child {
-  margin-right: 40px;
-} */
-
 .popular-article__stiker {
   inline-size: 180px;
   block-size: 180px;
@@ -32,7 +28,6 @@
   top: -47px;
   left: -40px;
   cursor: pointer;
-  /* z-index: 1; */
   transition: transform 3s ease;
 }
 
@@ -49,7 +44,7 @@
   font-family: var(--heading-font);
   font-weight: var(--regular-font-weight);
   font-size: var(--h4-font-size);
-  color: #1b1f21;
+  color: var(--title-color);
   margin-bottom: 15px;
   line-height: var(--h4-line-height);
 }
@@ -109,7 +104,7 @@
   font-weight: var(--regular-font-weight);
   font-size: var(--text-18-font-size);
   line-height: var(--text-18-line-height);
-  color: #757778;
+  color: var(--description-color);
   padding-right: 120px;
   margin-bottom: 18px;
 }

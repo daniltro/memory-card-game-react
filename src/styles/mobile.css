@@ -1,7 +1,6 @@
 @media (max-width: 767px) {
   .header {
     padding: 12px 8px;
-    /* max-inline-size: 100%; */
   }
   .container {
     max-inline-size: 304px;

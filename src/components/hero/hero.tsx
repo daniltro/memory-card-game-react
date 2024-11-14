@@ -10,7 +10,8 @@ import {
 import BackgroundLine from '../background-line/background-line';
 import useWindowWidth from '../../hooks/useWindowWidth';
 
-const Hero: React.FC<IHeroProps> = ({ items }) => {
+const Hero: React.FC<IHeroProps> = ({ items, theme }) => {
+  console.log(theme);
   const itemsData = items[0];
   const maskUrl = getMaskUrl(itemsData.img.shape);
   const stickerOption = getStickerOption(itemsData.stamp.word);
@@ -81,6 +82,7 @@ const Hero: React.FC<IHeroProps> = ({ items }) => {
           left={backgroundLineConfig.left}
           scale={backgroundLineConfig.scale}
           zIndex={backgroundLineConfig.zIndex}
+          theme={theme}
         />
       )}
     </section>

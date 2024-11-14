@@ -4,12 +4,16 @@
   top: 0;
   inline-size: 100%;
   z-index: 2;
-  transition: top 0.3s ease-in-out;
-  background-color: #fcfaf9;
+  transition: transform 0.3s ease-in-out;
+  background-color: var(--main-bg-color);
+}
+
+.header--visible {
+  transform: translateY(0);
 }
 
 .header--hidden {
-  top: -200px;
+  transform: translateY(-100%);
 }
 
 .header--container {
@@ -19,6 +23,7 @@
 
 .header__logo-svg path {
   transition: fill 0.3s ease;
+  fill: var(--accent-color);
 }
 
 .header__logo-svg:hover path {
@@ -42,7 +47,7 @@
 .header__link {
   font-family: var(--text-font);
   font-size: var(--text-15-font-size);
-  color: #1b1f21;
+  color: var(--accent-color);
   font-weight: var(--medium-font-weight);
 }
 
@@ -85,13 +90,13 @@
 }
 
 .header__search-link {
-  color: #1b1f21;
+  color: var(--accent-color);
   position: relative;
   margin-bottom: 7px;
 }
 
 .header__search-link::before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   bottom: -3px;
@@ -108,7 +113,7 @@
 }
 
 .header__search-link::after {
-  content: "";
+  content: '';
   inline-size: 16px;
   block-size: 16px;
   background: url(/images/arrow-Icon.svg) no-repeat;
