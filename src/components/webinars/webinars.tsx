@@ -6,7 +6,10 @@ import {
 } from '../../types/types';
 import WebinarCard from '../webinar-card/webinar-card';
 import BackgroundLine from '../background-line/background-line';
-import { backgroundLinesForCard } from '../../types/constants';
+import {
+  backgroundLinesForCard,
+  webinars4kBackgroundLineConfig,
+} from '../../types/constants';
 import useWindowWidth from '../../hooks/useWindowWidth';
 import {
   getBackgroundLineConfig,
@@ -20,7 +23,10 @@ const Webinars: React.FC<IWebinarsProps> = ({
 }) => {
   const windowWidth = useWindowWidth();
 
-  const backgroundLineConfig = getBackgroundLineConfig('webinars', windowWidth);
+  const backgroundLineConfig =
+    windowWidth > 1980
+      ? webinars4kBackgroundLineConfig
+      : getBackgroundLineConfig('webinars', windowWidth);
 
   return (
     <section className="webinars">

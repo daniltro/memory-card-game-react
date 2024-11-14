@@ -142,9 +142,9 @@ export const backgroundLinesConfig = {
     mobile: {
       imageUrl:
         '/images/sections/line-bg/mobile/popular-articles-line-bg-mobile.svg',
-      top: '138px',
-      left: '17px',
-      scale: 5.5,
+      top: '-1035px',
+      left: '111px',
+      scale: 3.1,
       zIndex: -1,
     },
     tablet: {
@@ -190,11 +190,11 @@ export const backgroundLinesConfig = {
   subscribe: {
     mobile: {
       imageUrl:
-        '/images/sections/line-bg/desktop/subscribe-form-line-bg-desktop.svg',
-      top: '59px',
-      left: '-14px',
-      scale: 1.4,
-      zIndex: -1,
+        '/images/sections/line-bg/mobile/subscribe-form-line-bg-mobile.svg',
+      top: '-70px',
+      left: '-61px',
+      scale: 3.1,
+      zIndex: 0,
     },
     tablet: {
       imageUrl:
@@ -213,6 +213,23 @@ export const backgroundLinesConfig = {
       zIndex: -1,
     },
   },
+};
+
+export const additionalMobileBackgroundConfig = {
+  imageUrl:
+    '/images/sections/line-bg/mobile/popular-articles-line-bg-mobile-2.svg',
+  top: '883px',
+  left: '-90px',
+  scale: 3.05,
+  zIndex: -2,
+};
+
+export const webinars4kBackgroundLineConfig = {
+  imageUrl: '/images/sections/line-bg/webinars-line-bg-large.svg',
+  top: '213px',
+  left: '2px',
+  scale: 2.38,
+  zIndex: -1,
 };
 
 export const backgroundLinesForCard: IBackgroundLinesForCard[] = [
@@ -236,9 +253,9 @@ export const backgroundLinesForCard: IBackgroundLinesForCard[] = [
     mobile: {
       imageUrl:
         '/images/sections/line-bg/mobile/webinar-card-line-1-bg-mobile.svg',
-      top: '100px',
-      left: '95px',
-      scale: 1,
+      top: '60px',
+      left: '93px',
+      scale: 1.2,
       zIndex: 0,
     },
   },
@@ -262,9 +279,9 @@ export const backgroundLinesForCard: IBackgroundLinesForCard[] = [
     mobile: {
       imageUrl:
         '/images/sections/line-bg/mobile/webinar-card-line-2-bg-mobile.svg',
-      top: '-15px',
-      left: '40px',
-      scale: 1.2,
+      top: '54px',
+      left: '91px',
+      scale: 1.32,
       zIndex: 0,
     },
   },
@@ -289,9 +306,9 @@ export const backgroundLinesForCard: IBackgroundLinesForCard[] = [
     mobile: {
       imageUrl:
         '/images/sections/line-bg/mobile/webinar-card-line-3-bg-mobile.svg',
-      top: '-5px',
-      left: '-85px',
-      scale: 1,
+      top: '72px',
+      left: '94px',
+      scale: 1.2,
       zIndex: 0,
     },
   },
