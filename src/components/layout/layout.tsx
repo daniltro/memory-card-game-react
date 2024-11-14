@@ -15,7 +15,6 @@ const Layout: React.FC = () => {
   const [menuData, setMenuData] = useState<IMenu | null>(null);
   const [sectionsData, setSectionsData] = useState<ISections | null>(null);
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
-  // Проверка предпочтений пользователя по теме при первоначальной загрузке
   useEffect(() => {
     const preferredTheme = window.matchMedia('(prefers-color-scheme: dark)')
       .matches
@@ -35,23 +34,19 @@ const Layout: React.FC = () => {
     localStorage.setItem('theme', theme);
   }, [theme]);
 
-  // Слушатель для изменения системной темы
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
     const handleThemeChange = (e: MediaQueryListEvent) => {
       setTheme(e.matches ? 'dark' : 'light');
     };
 
-    // Слушаем изменения
     mediaQuery.addEventListener('change', handleThemeChange);
 
-    // Очистка слушателя при размонтировании компонента
     return () => {
       mediaQuery.removeEventListener('change', handleThemeChange);
     };
   }, []);
 
-  // Тоггл для смены темы
   const toggleTheme = () => {
     setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
   };
