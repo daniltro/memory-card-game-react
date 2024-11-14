@@ -14,7 +14,6 @@ export interface IFooterData {
   items: IHeaderDataItem[];
 }
 
-// Типы данных
 export interface ISections {
   main: {
     items: ISectionItem[];
@@ -80,8 +79,6 @@ export interface ITicker {
   text: string;
   color: string;
 }
-
-// Типы пропсов секций
 
 export interface IHeaderProps {
   menuData: {
@@ -204,8 +201,6 @@ export interface IFooterProps {
   }[];
 }
 
-// Типы пропсов компонентов
-
 export interface LogoProps {
   containerClassName: string;
   svgClassName: string;
@@ -258,4 +253,8 @@ export interface IBackgroundLinesForCard {
   desktop: IBackgroundLineProps;
   tablet: IBackgroundLineProps;
   mobile: IBackgroundLineProps;
+}
+
+export interface ISearchButtonProps {
+  theme: 'light' | 'dark';
 }

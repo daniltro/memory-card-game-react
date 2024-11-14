@@ -1,9 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import {
-  IBackgroundLineProps,
-  IBackgroundLinesForCard,
-  IWebinarsProps,
-} from '../../types/types';
+import React from 'react';
+import { IWebinarsProps } from '../../types/types';
 import WebinarCard from '../webinar-card/webinar-card';
 import BackgroundLine from '../background-line/background-line';
 import {
@@ -55,13 +51,13 @@ const Webinars: React.FC<IWebinarsProps> = ({
           </ul>
         </div>
       </div>
-        <BackgroundLine
-          imageUrl={backgroundLineConfig.imageUrl}
-          top={backgroundLineConfig.top}
-          left={backgroundLineConfig.left}
-          scale={backgroundLineConfig.scale}
-          zIndex={backgroundLineConfig.zIndex}
-        />
+      <BackgroundLine
+        imageUrl={backgroundLineConfig.imageUrl}
+        top={backgroundLineConfig.top}
+        left={backgroundLineConfig.left}
+        scale={backgroundLineConfig.scale}
+        zIndex={backgroundLineConfig.zIndex}
+      />
     </section>
   );
 };

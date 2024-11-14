@@ -191,7 +191,6 @@
 .card--full-image .popular-article-card__image-wrapper {
   inline-size: 100%;
   block-size: 520px;
-  /* grid-column: span 3; */
 }
 
 .fashion--sticker {

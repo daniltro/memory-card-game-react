@@ -5,31 +5,24 @@ import Logo from '../logo/logo';
 import SearchButton from '../search-button/search-button';
 
 const Header: React.FC<IHeaderProps> = ({ menuData, theme }) => {
-  const [isVisible, setIsVisible] = useState(true); // Состояние для видимости хеддера
-  const [lastScrollY, setLastScrollY] = useState(0); // Хранение последней позиции прокрутки
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   const handleScroll = () => {
-    // Получаем текущее положение прокрутки
     const currentScrollY = window.scrollY;
 
-    // Если мы прокручиваем вниз, скрываем хеддер, если вверх, показываем его
     if (currentScrollY > lastScrollY) {
-      // Прокрутка вниз, скрыть хеддер
       setIsVisible(false);
     } else {
-      // Прокрутка вверх, показать хеддер
       setIsVisible(true);
     }
 
-    // Обновляем последнюю позицию прокрутки
     setLastScrollY(currentScrollY);
   };
 
   useEffect(() => {
-    // Добавляем обработчик события scroll при монтировании компонента
     window.addEventListener('scroll', handleScroll);
 
-    // Убираем обработчик события при размонтировании компонента
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };

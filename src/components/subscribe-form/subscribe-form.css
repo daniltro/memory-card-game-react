@@ -99,28 +99,6 @@
   text-decoration: underline;
   cursor: pointer;
 }
-/* 
-.subscribe-form__success-submit-wrapper {
-  margin-top: 145px;
-}
-
-.subscribe-form__success-submit {
-  border-radius: 88px;
-  padding: 10px 24px;
-  background: #fcfaf9;
-  position: relative;
-  display: none;
-}
-
-.subscribe-form__success-submit::before {
-  content: '';
-  inline-size: 120px;
-  block-size: 120px;
-  background: url(/images/form-success-submit-sticker.png);
-  position: absolute;
-  top: -60px;
-  right: 65px;
-} */
 
 .subscribe-form__success-message {
   font-family: var(--text-font);
@@ -138,8 +116,6 @@
   display: none;
 }
 
-/* -----------Инпут------------ */
-
 .subscribe-form__input--valid {
   border: 1.5px solid #bedb39;
   background: url(/images/sections/subscribe-section/input-valid-icon.svg)
@@ -153,8 +129,6 @@
     no-repeat right 16px center;
   background-size: 25px;
 }
-
-/* ------------Чекбокс------------ */
 
 .subscribe-form__input-checkbox {
   width: 0;
@@ -205,8 +179,6 @@
   border: 2px solid #1b1f21;
   background-color: rgba(242, 242, 242, 0.2);
 }
-
-/* --------------------------- */
 
 .subscribe-form__success-submit-wrapper {
   margin-top: 145px;

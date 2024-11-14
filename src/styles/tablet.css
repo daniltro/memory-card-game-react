@@ -1,5 +1,5 @@
 @media (max-width: 1279px) {
-  .theme-toggle-button  {
+  .theme-toggle-button {
     top: 130px;
   }
   .header {
@@ -42,8 +42,6 @@
     justify-self: end;
     margin-right: 25px;
   }
-
-  /* ------------------------------ */
 
   .hero-section {
     margin-top: 133px;
@@ -522,7 +520,6 @@
     scale: 0.86;
   }
 
-  /* --------------- */
   .marquee-line--footer .marquee-line__text {
     font-size: 44px;
   }

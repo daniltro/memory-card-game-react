@@ -18,10 +18,10 @@ const SubscribeForm: React.FC<ISubscribeFormProps> = ({
 
   const handleEmailBlur = () => {
     if (email === '') {
-      setIsEmailValid(null); 
+      setIsEmailValid(null);
     } else {
       const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      setIsEmailValid(emailPattern.test(email)); 
+      setIsEmailValid(emailPattern.test(email));
     }
   };
   const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -80,7 +80,7 @@ const SubscribeForm: React.FC<ISubscribeFormProps> = ({
               onChange={handleCheckboxChange}
               required
             />
-            <span className="subscribe-form__custom-checkbox"></span>
+            <span className="subscribe-form__custom-checkbox" />
           </label>
           <p className="subscribe-form__checkbox-info">{agreementText}</p>
         </div>

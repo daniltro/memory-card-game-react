@@ -3,18 +3,16 @@ import Logo from '../logo/logo';
 import { IFooterProps } from '../../types/types';
 import useWindowWidth from '../../hooks/useWindowWidth';
 
-const Footer: React.FC<IFooterProps> = ({ logo, footer }) => {
+const Footer: React.FC<IFooterProps> = ({ footer }) => {
   const windowWidth = useWindowWidth();
 
   const logoInlineSize = windowWidth < 1440 ? '174px' : '224px';
   const logoBlockSize = windowWidth < 1440 ? '64px' : '82px';
 
-  // Локальное состояние для отслеживания активных разделов в аккордеоне
   const [activeSections, setActiveSections] = useState<{
     [key: string]: boolean;
   }>({});
 
-  // Функция для переключения видимости раздела
   const toggleSection = (label: string) => {
     setActiveSections((prev) => ({
       ...prev,
@@ -93,6 +91,7 @@ const Footer: React.FC<IFooterProps> = ({ logo, footer }) => {
               className="footer__contacts-item-content"
               href="https://wa.me/525592252629"
               target="_blank"
+              rel="noreferrer"
             >
               +52 55 9225-2629
             </a>

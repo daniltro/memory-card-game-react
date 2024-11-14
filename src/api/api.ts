@@ -27,9 +27,9 @@ export const fetchData = async <T>(
 };
 
 export const fetchMenuData = async (): Promise<IMenu | null> => {
-  return await fetchData<IMenu>('http://localhost:5000/menu');
+  return fetchData<IMenu>('http://localhost:5000/menu');
 };
 
 export const fetchSectionsData = async (): Promise<ISections | null> => {
-  return await fetchData<ISections>('http://localhost:5000/sections');
+  return fetchData<ISections>('http://localhost:5000/sections');
 };

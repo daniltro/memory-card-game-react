@@ -313,4 +313,3 @@ export const backgroundLinesForCard: IBackgroundLinesForCard[] = [
     },
   },
 ];
-

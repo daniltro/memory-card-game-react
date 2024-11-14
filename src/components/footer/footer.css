@@ -21,12 +21,6 @@
   fill: #fff;
 }
 
-.footer__sertificate {
-}
-
-.footer__sertificate img {
-}
-
 .footer__subscribe {
   margin-top: -107px;
   grid-column: 1 / 2;
@@ -205,6 +199,7 @@
   top: 8px;
   right: -15px;
 }
+
 .footer__confidentiality-item:last-child::after {
   display: none;
 }

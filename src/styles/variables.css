@@ -23,7 +23,6 @@
   --text-15-line-height: 21px;
   --text-13-line-height: 20.8px;
   --text-13-sls-line-height: 18.2px;
-
   --main-bg-color: #fcfaf9;
   --title-color: #1b1f21;
   --description-color: #757778;
@@ -34,7 +33,6 @@
 [data-theme='dark'] {
   --main-bg-color: #1b1f21;
   --subscribe-bg-color: #1b1f21;
-
   --title-color: #cac3c3;
   --description-color: #a09898;
   --accent-color: #fff;

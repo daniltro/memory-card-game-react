@@ -2,7 +2,7 @@ import React from 'react';
 import { ImageWithMask } from '../image-with-mask/image-with-mask';
 import MetaInfo from '../meta-info/meta-info';
 import { getMaskUrl, getStickerOption } from '../../types/utils';
-import { stickerOptions, tagClasses } from '../../types/constants';
+import { tagClasses } from '../../types/constants';
 import { IArticleCardProps } from '../../types/types';
 
 const ArticleCard: React.FC<IArticleCardProps> = ({ article, index }) => {
@@ -29,11 +29,10 @@ const ArticleCard: React.FC<IArticleCardProps> = ({ article, index }) => {
         stickerClassName={`popular-article__sticker ${stickerModifierClass}`}
         imageClassName={`popular-article-card__image ${imageModifierClass}`}
       />
-      <div className={`popular-article__content`}>
+      <div className="popular-article__content">
         <div className="popular-article__tags">
           <div className="popular-article__tags-wrapper">
             <ul className="popular-article__tags-list section-tags-list">
-              {/* Первый тег с основным стилем */}
               <li className="popular-article__tags-item section-tags-item">
                 <a
                   href="#"
@@ -42,7 +41,6 @@ const ArticleCard: React.FC<IArticleCardProps> = ({ article, index }) => {
                   {tags[0]}
                 </a>
               </li>
-              {/* Остальные теги */}
               {tags.slice(1).map((tag, index) => (
                 <li
                   key={index}

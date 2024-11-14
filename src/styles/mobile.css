@@ -495,8 +495,6 @@
     padding-right: 65px;
   }
 
-  /* ------------------- */
-
   .footer--container {
     padding-top: 32px;
     max-block-size: 1700px;
@@ -579,8 +577,6 @@
     gap: 17px;
   }
 
-  /* ---------------------------------- */
-
   .footer__links .footer__links-item {
     display: none;
     margin-bottom: 16px;
@@ -625,8 +621,6 @@
   .footer__links.active .footer__links-item {
     display: block;
   }
-
-  /* ---------------------------------- */
 
   .footer__contacts-confidentiality::before {
     top: -26px;

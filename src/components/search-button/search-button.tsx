@@ -1,8 +1,6 @@
-interface SearchButtonProps {
-  theme: 'light' | 'dark';
-}
+import { ISearchButtonProps } from '../../types/types';
 
-export const SearchButton: React.FC<SearchButtonProps> = ({ theme }) => {
+export const SearchButton: React.FC<ISearchButtonProps> = ({ theme }) => {
   return (
     <button
       className="header__search-button"

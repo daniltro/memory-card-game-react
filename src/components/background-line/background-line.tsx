@@ -10,7 +10,7 @@ const BackgroundLine: React.FC<IBackgroundLineProps> = ({
   zIndex = -1,
   theme,
 }) => {
-  const opacity = theme === 'dark' ? .1 : 1;
+  const opacity = theme === 'dark' ? 0.1 : 1;
   return (
     <div
       className="background-line"
