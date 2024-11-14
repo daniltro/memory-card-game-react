@@ -221,7 +221,9 @@
   }
 
   .popular-articles__cards-wrapper {
-    gap: 85px 25px;
+    /* gap: 85px 25px;
+     */
+    gap: 44px 0;
   }
 
   .popular-article-card__image-wrapper {
@@ -316,7 +318,8 @@
   }
 
   .popular-articles__card:nth-child(3) {
-    margin-top: 101px;
+    margin-top: 61px;
+    margin-bottom: 41px;
   }
 
   .popular-article__content:nth-child(3) {
@@ -550,7 +553,6 @@
   }
 
   .footer--container {
-    grid-column: repeat(3, 1fr);
     padding-top: 64px;
   }
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Logo from '../logo/logo';
 import { IFooterProps } from '../../types/types';
 import useWindowWidth from '../../hooks/useWindowWidth';
@@ -8,6 +8,19 @@ const Footer: React.FC<IFooterProps> = ({ logo, footer }) => {
 
   const logoInlineSize = windowWidth < 1440 ? '174px' : '224px';
   const logoBlockSize = windowWidth < 1440 ? '64px' : '82px';
+
+  // Локальное состояние для отслеживания активных разделов в аккордеоне
+  const [activeSections, setActiveSections] = useState<{
+    [key: string]: boolean;
+  }>({});
+
+  // Функция для переключения видимости раздела
+  const toggleSection = (label: string) => {
+    setActiveSections((prev) => ({
+      ...prev,
+      [label]: !prev[label],
+    }));
+  };
 
   return (
     <footer className="footer">
@@ -47,9 +60,25 @@ const Footer: React.FC<IFooterProps> = ({ logo, footer }) => {
         <div className="footer__content-menu">
           {footer.map((section) => (
             <ul key={section.label} className="footer__links">
-              <h4 className="footer__column-title">{section.label}</h4>
+              <h4
+                className={`footer__column-title ${activeSections[section.label] ? 'active' : ''}`}
+                onClick={() =>
+                  windowWidth < 768 && toggleSection(section.label)
+                }
+              >
+                {section.label}
+              </h4>
               {section.items.map((item) => (
-                <li key={item.label} className="footer__links-item">
+                <li
+                  key={item.label}
+                  className="footer__links-item"
+                  style={{
+                    display:
+                      windowWidth < 768 && !activeSections[section.label]
+                        ? 'none'
+                        : 'block',
+                  }}
+                >
                   <a href={item.url}>{item.label}</a>
                 </li>
               ))}
