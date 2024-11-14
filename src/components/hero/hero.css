@@ -9,7 +9,9 @@
   display: flex;
   gap: 40px;
   justify-content: space-between;
-  margin-bottom: 127px;
+  /* margin-bottom: 127px; */
+  padding-bottom: 127px;
+  margin-bottom: 61px;
   position: relative;
 }
 
@@ -84,7 +86,6 @@
   font-weight: 400;
   font-size: var(--h3-font-size);
   line-height: var(--h3-line-height);
-  /* color: #1b1f21; */
   color: var(--title-color);
   margin-bottom: 16px;
 }

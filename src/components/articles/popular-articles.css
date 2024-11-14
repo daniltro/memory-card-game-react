@@ -4,14 +4,9 @@
   z-index: 0;
 }
 
-@media (min-width: 1981px) and (max-width: 3840px) {
-  .popular-articles::after {
-    background-size: contain;
-  }
-}
-
 .popular-articles--container {
-  padding-top: 203px;
+  padding-top: 143px;
+  /* padding-bottom: 107px; */
   position: relative;
   z-index: 0;
 }

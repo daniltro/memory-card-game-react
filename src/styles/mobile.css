@@ -431,6 +431,11 @@
     padding-bottom: 381px;
   }
 
+  .container--subscribe {
+    inline-size: 704px;
+    overflow: visible;
+  }
+
   .marquee-line--subscribe::after {
     clip-path: polygon(0 0%, 100% 0, 100% 60%, 0 100%);
     block-size: 95px;

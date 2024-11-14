@@ -54,6 +54,7 @@ const Webinars: React.FC<IWebinarsProps> = ({
             })}
           </ul>
         </div>
+      </div>
         <BackgroundLine
           imageUrl={backgroundLineConfig.imageUrl}
           top={backgroundLineConfig.top}
@@ -61,7 +62,6 @@ const Webinars: React.FC<IWebinarsProps> = ({
           scale={backgroundLineConfig.scale}
           zIndex={backgroundLineConfig.zIndex}
         />
-      </div>
     </section>
   );
 };

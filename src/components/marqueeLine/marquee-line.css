@@ -37,6 +37,10 @@
   margin-right: 43px;
 }
 
+.marquee-line--hero {
+  top: -60px;
+}
+
 .marquee-line--webinars {
   transform: rotate(-3deg) scale(1.01);
   top: 160px;
@@ -56,7 +60,7 @@
   block-size: 140px;
   top: 115px;
   position: absolute;
-  background-color: var(--);
+  background-color: var(--subscribe-bg-color);
   z-index: -2;
 }
 

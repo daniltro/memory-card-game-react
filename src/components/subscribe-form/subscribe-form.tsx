@@ -12,27 +12,22 @@ const SubscribeForm: React.FC<ISubscribeFormProps> = ({
 
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  // Обработчик изменения значения в поле email
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
   };
 
-  // Обработчик события blur (потеря фокуса на поле email)
   const handleEmailBlur = () => {
     if (email === '') {
-      setIsEmailValid(null); // Если поле пустое, сбрасываем валидацию
+      setIsEmailValid(null); 
     } else {
-      // Логика валидации email
       const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      setIsEmailValid(emailPattern.test(email)); // Устанавливаем валидность
+      setIsEmailValid(emailPattern.test(email)); 
     }
   };
-  // Обработчик изменения состояния чекбокса
   const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setIsCheckboxChecked(e.target.checked);
   };
 
-  // Обработчик отправки формы
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (isEmailValid && isCheckboxChecked && email !== '') {
@@ -40,7 +35,6 @@ const SubscribeForm: React.FC<ISubscribeFormProps> = ({
     }
   };
 
-  // Если форма была успешно отправлена, показываем только сообщение об успехе
   if (isSubmitted) {
     return (
       <div className="subscribe-form__success-submit-wrapper">

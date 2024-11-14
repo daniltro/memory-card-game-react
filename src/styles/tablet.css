@@ -50,14 +50,9 @@
     padding: 48px 32px;
   }
 
-  /* .hero-section::after {
-    background: url(/images/tablet-hero-linebg.svg) no-repeat;
-    top: -184px;
-    left: -322px;
-  } */
-
   .hero--container {
     display: block;
+    padding-bottom: 0;
   }
 
   .hero-section__image-wrapper {
@@ -101,12 +96,6 @@
     align-self: start;
     margin-left: 5px;
   }
-
-  /* .hero-section__meta {
-    grid-column: 1 / 2;
-    grid-row: 2 / 3;
-    align-self: start;
-  } */
 
   .hero-section__description {
     grid-column: 2 / 4;
@@ -162,11 +151,6 @@
     margin-left: 2px;
   }
 
-  /* .hero-section--meta-date,
-  .hero-section--meta-time {
-    display: inline-block;
-  } */
-
   .hero-section--meta-date {
     margin-left: 40px;
     margin-bottom: 10px;
@@ -207,8 +191,6 @@
     top: 12px;
     transform: rotate(-3deg);
   }
-
-  /* -------------- */
 
   .popular-articles {
     position: relative;
@@ -287,8 +269,6 @@
     margin-right: -5px;
   }
 
-  /* --------------- */
-
   .fashion--sticker,
   .design--sticker,
   .software--sticker {
@@ -345,7 +325,6 @@
   .tags-design__inner-wrapper .tag--design:first-child {
     margin-left: 7px;
   }
-  /* ---------------- */
 
   .marquee-line--webinars {
     top: 158px;
@@ -467,8 +446,9 @@
     padding-bottom: 109px;
   }
 
-  .subscribe--container {
+  .container--subscribe {
     inline-size: 704px;
+    overflow: hidden;
   }
 
   .subscribe-wrapper {

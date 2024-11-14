@@ -132,9 +132,9 @@ export const backgroundLinesConfig = {
     },
     desktop: {
       imageUrl: '/images/sections/line-bg/desktop/hero-line-bg-desktop.svg',
-      top: '257px',
-      left: '-53px',
-      scale: 1.65,
+      top: '197px',
+      left: '-46px',
+      scale: 1.15,
       zIndex: -1,
     },
   },
@@ -158,7 +158,7 @@ export const backgroundLinesConfig = {
     desktop: {
       imageUrl:
         '/images/sections/line-bg/desktop/popular-articles-line-bg-desktop.svg',
-      top: '283px',
+      top: '250px',
       left: '236px',
       scale: 1.83,
       zIndex: -1,
@@ -191,9 +191,9 @@ export const backgroundLinesConfig = {
     mobile: {
       imageUrl:
         '/images/sections/line-bg/mobile/subscribe-form-line-bg-mobile.svg',
-      top: '-70px',
-      left: '-61px',
-      scale: 3.1,
+      top: '-20px',
+      left: '-2px',
+      scale: 1,
       zIndex: 0,
     },
     tablet: {

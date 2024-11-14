@@ -1,5 +1,5 @@
 import React from 'react';
-import SubscribeForm from '../subscribe-form/subscribe-form'; 
+import SubscribeForm from '../subscribe-form/subscribe-form';
 import BackgroundLine from '../background-line/background-line';
 import { ISubscribeSectionProps } from '../../types/types';
 import useWindowWidth from '../../hooks/useWindowWidth';
