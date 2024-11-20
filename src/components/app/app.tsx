@@ -26,15 +26,14 @@ const svgToBase64 = (svg: string) => {
 const generateRandomSeed = () => {
   const characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
   let seed = '';
-  for (let i = 0; i < 8; i++) {
+  for (let i = 0; i < 8; i += 1) {
     seed += characters.charAt(Math.floor(Math.random() * characters.length));
   }
   return seed;
 };
 
-const App = () => {
+function App() {
   const [cards, setCards] = useState<string[]>([]);
-  console.log(cards);
 
   useEffect(() => {
     const fetchAllImages = async () => {
@@ -69,7 +68,7 @@ const App = () => {
           cards.map((svg, index) => (
             <img
               className="card"
-              key={index}
+              key={svg}
               src={svgToBase64(svg)}
               alt={`Card ${index}`}
             />
@@ -80,6 +79,6 @@ const App = () => {
       </div>
     </div>
   );
-};
+}
 
 export default App;
