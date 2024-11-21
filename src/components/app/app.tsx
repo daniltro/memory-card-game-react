@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { fetchImage } from '../../api/api';
-import { generateNewSeeds, svgToBase64 } from '../../utils';
+import { generateNewSeeds, shuffleArray, svgToBase64 } from '../../utils';
 import { ICard } from '../../types';
 
 function App() {
@@ -19,8 +19,9 @@ function App() {
     );
 
     const pairedCards = [...fetchedCards, ...fetchedCards];
+    const shuffledCards = shuffleArray(pairedCards as ICard[]);
 
-    setCards(pairedCards as ICard[]);
+    setCards(shuffledCards);
   };
 
   useEffect(() => {
@@ -29,8 +30,13 @@ function App() {
   }, []);
 
   const flipCard = (index: number) => {
-    setOpenedCards((opened) => [...opened, index]);
-    setSteps((prevSteps) => prevSteps + 1);
+    if (
+      openedCards[openedCards.length - 1] !== index &&
+      openedCards.length < 2
+    ) {
+      setOpenedCards((opened) => [...opened, index]);
+      setSteps((prevSteps) => prevSteps + 1);
+    }
   };
 
   useEffect(() => {
