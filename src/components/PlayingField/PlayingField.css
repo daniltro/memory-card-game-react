@@ -1,0 +1,87 @@
+.playing-field {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.playing-field__title {
+  color: #313030;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.card {
+  border-radius: 5px;
+  background-color: #444343;
+  cursor: pointer;
+  padding: 10px;
+  inline-size: 100px;
+  block-size: 100px;
+}
+
+.card--flipped .card__inner {
+  transform: rotateY(180deg);
+}
+
+.card__inner {
+  position: relative;
+  inline-size: 100%;
+  block-size: 100%;
+  transform-style: preserve-3d;
+  transition: 0.5s cubic-bezier(0.38, 0.02, 0.09, 1.66) all;
+}
+
+.card-image {
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.card__front-side,
+.card__back-side {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  inline-size: 100%;
+  block-size: 100%;
+  backface-visibility: hidden;
+  border-radius: 3px;
+}
+
+.card__front-side {
+  border: 2px solid #000;
+  background-color: #fff;
+  transform: rotateY(180deg);
+}
+
+.card__back-side {
+  background-color: #b8d357;
+  font-size: 100px;
+  transition: 0.3s ease all;
+}
+
+.card__back-side:hover {
+  background: #c79018;
+  transform: scale(1.1);
+}
+
+.game-info {
+  inline-size: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.count-steps,
+.count-score {
+  color: #313030;
+  font-size: 20px;
+  font-weight: bold;
+}

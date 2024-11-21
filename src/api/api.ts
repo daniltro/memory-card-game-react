@@ -1,4 +1,4 @@
-export async function fetchImage(seed: string) {
+export default async function fetchImage(seed: string) {
   const url = `https://api.dicebear.com/9.x/pixel-art/svg?seed=${seed}`;
 
   try {
