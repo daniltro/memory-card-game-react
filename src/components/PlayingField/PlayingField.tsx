@@ -1,5 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { generateNewSeeds, shuffleArray, svgToBase64 } from '../../utils';
+import {
+  generateNewSeeds,
+  getMaxHistoryScore,
+  getSessionBestScore,
+  setMaxHistoryScore,
+  setSessionBestScore,
+  shuffleArray,
+  svgToBase64,
+} from '../../utils';
 import fetchImage from '../../api/api';
 import { ICard } from '../../types';
 import BackButton from '../BackButton/BackButton';
@@ -24,22 +32,63 @@ export default function PlayingField({
   const [isGameOver, setIsGameOver] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(true); // Флаг загрузки
 
+  const [maxHistoryScore, setMaxHistoryScoreState] = useState<number>(0); // Максимальный счет за всю историю
+  const [sessionBestScore, setSessionBestScoreState] = useState<number>(0); // Лучший счет за текущую сессию
+
   const { safeMoves, pointsPerMatch, penaltyPerError } =
     difficultyLevels[difficulty];
 
-  //Запрос карточек
+  const fetchAllImages = async (seeds: string[]) => {
+    const fetchedCards = await Promise.all(
+      seeds.map(async (seed) => {
+        const svg = await fetchImage(seed);
+        return { id: seed, svg };
+      }),
+    );
+
+    const pairedCards = [...fetchedCards, ...fetchedCards];
+    const shuffledCards = shuffleArray(pairedCards as ICard[]);
+
+    setCards(shuffledCards);
+    setIsLoading(false); // Завершение загрузки
+  };
+  // Запрос карточек
   useEffect(() => {
     const seeds = generateNewSeeds();
+
+    const sessionScore = getSessionBestScore;
+    setSessionBestScoreState(sessionScore);
+
+    const maxScore = getMaxHistoryScore;
+    setMaxHistoryScoreState(maxScore);
     fetchAllImages(seeds);
   }, []);
 
   // Проверка на победу
   useEffect(() => {
     if (matchedCards.length === cards.length / 2 && cards.length > 0) {
+      // Сохраняем лучший счет за сессию в sessionStorage
+      if (score > sessionBestScore) {
+        setSessionBestScore(score); // Сохраняем лучший счет в sessionStorage
+        const sessionScore = getSessionBestScore;
+        setSessionBestScoreState(sessionScore); // Сохраняем лучший счет в state
+      }
+
+      // Обновляем максимальный счет, если новый лучший
+      if (score > maxHistoryScore) {
+        setMaxHistoryScoreState(score);
+        setMaxHistoryScore(score); // Сохраняем максимальный счет в localStorage
+      }
+
+      if (sessionBestScore > maxHistoryScore) {
+        setMaxHistoryScoreState(sessionBestScore);
+        setMaxHistoryScore(sessionBestScore); // Сохраняем новый максимальный счет в localStorage
+      }
+
       setIsGameOver(true);
       setGameMessage('Поздравляем! Вы нашли все пары!');
     }
-  }, [matchedCards, cards]);
+  }, [matchedCards, cards, score]);
 
   // Управление таймером
   useEffect(() => {
@@ -79,21 +128,6 @@ export default function PlayingField({
     }
   }, [openedCards]);
 
-  const fetchAllImages = async (seeds: string[]) => {
-    const fetchedCards = await Promise.all(
-      seeds.map(async (seed) => {
-        const svg = await fetchImage(seed);
-        return { id: seed, svg };
-      }),
-    );
-
-    const pairedCards = [...fetchedCards, ...fetchedCards];
-    const shuffledCards = shuffleArray(pairedCards as ICard[]);
-
-    setCards(shuffledCards);
-    setIsLoading(false); // Завершение загрузки
-  };
-
   const flipCard = (index: number) => {
     if (
       openedCards[openedCards.length - 1] !== index &&
@@ -126,17 +160,8 @@ export default function PlayingField({
     setTimeLeft(120); // Сброс таймера
   };
 
-  const handleRestartGameKeyDown = (
-    e: React.KeyboardEvent<HTMLButtonElement>,
-  ) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      handleRestartGame();
-    }
-  };
-
   return (
     <div className="playing-field">
-      {/* Если идет загрузка, показываем лоадер */}
       {isLoading ? (
         <Loader />
       ) : (
@@ -150,6 +175,12 @@ export default function PlayingField({
             <p className="count-score">Набрано очков: {score}</p>
             <p className="timer">Оставшееся время: {timeLeft} секунд</p>
             <p className="count-game">Сыграно игр: {countGame}</p>
+            <p className="session-best-score">
+              Лучший счет за сессию: {sessionBestScore}
+            </p>{' '}
+            <p className="max-history-score">
+              Лучший счет за всю историю: {maxHistoryScore}
+            </p>{' '}
           </div>
           <div className="cards-container">
             {cards.length > 0 ? (

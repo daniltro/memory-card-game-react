@@ -12,8 +12,8 @@ export default function GameOverModal({
   onRestart,
   message,
 }: GameOverModalProps): JSX.Element | null {
-  if (!isOpen) return null;
   const navigate = useNavigate();
+  if (!isOpen) return null;
   return (
     <div className="modal-overlay">
       <div className="modal">

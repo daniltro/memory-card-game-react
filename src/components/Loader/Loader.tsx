@@ -1,14 +1,11 @@
-// Loader.tsx
 import React from 'react';
 import './Loader.css'; // Вы можете стилизовать лоадер через CSS.
 
-const Loader: React.FC = () => {
+export default function Loader(): JSX.Element {
   return (
     <div className="loader">
-      <div className="loader__spinner"></div>
+      <div className="loader__spinner" />
       <p>Загрузка...</p>
     </div>
   );
-};
-
-export default Loader;
+}

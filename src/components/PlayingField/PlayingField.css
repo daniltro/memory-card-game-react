@@ -82,7 +82,11 @@
 }
 
 .count-steps,
-.count-score, .timer {
+.count-score,
+.timer,
+.count-game,
+.session-best-score,
+.max-history-score {
   color: #313030;
   font-size: 20px;
   font-weight: bold;

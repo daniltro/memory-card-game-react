@@ -37,3 +37,21 @@ export const shuffleArray = (array: ICard[]) => {
   }
   return arrayCopy;
 };
+
+export const getMaxHistoryScore = (): number => {
+  const score = localStorage.getItem('maxHistoryScore');
+  return score ? parseInt(score, 10) : 0; // Если в хранилище нет значения, возвращаем 0
+};
+
+export const setMaxHistoryScore = (score: number): void => {
+  localStorage.setItem('maxHistoryScore', score.toString()); // Сохраняем максимальный счет за всю историю в локальном хранилище
+};
+
+export const getSessionBestScore = (): number => {
+  const score = sessionStorage.getItem('sessionBestScore');
+  return score ? parseInt(score, 10) : 0; // Если в sessionStorage нет значения, возвращаем 0
+};
+
+export const setSessionBestScore = (score: number): void => {
+  sessionStorage.setItem('sessionBestScore', score.toString()); // Сохраняем лучший счет текущей сессии в sessionStorage
+};
