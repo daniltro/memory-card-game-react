@@ -3,6 +3,8 @@
 @import url(../components/MainMenu/MainMenu.css);
 @import url(../components/StatisticsPage/StatisticPage.css);
 @import url(../components/SettingsPage/SettingsPage.css);
+@import url(../components/Modal/Modal.css);
+@import url(../components/Loader/Loader.css);
 
 * {
   padding: 0;
