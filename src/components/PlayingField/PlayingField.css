@@ -1,9 +1,10 @@
 .playing-field {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 20px;
+  block-size: 100%;
 }
 
 .playing-field__title {
@@ -81,6 +82,10 @@
   align-items: center;
 }
 
+.game-info__title {
+  color: #313030;
+}
+
 .progress,
 .count-steps,
 .count-score,
@@ -89,7 +94,8 @@
 .timer,
 .count-game,
 .session-best-score,
-.max-history-score {
+.max-history-score,
+.current-difficult p {
   color: #313030;
   font-size: 20px;
   font-weight: bold;

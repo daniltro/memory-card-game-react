@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import {
   generateNewSeeds,
+  getDifficultyTranslation,
   getMaxHistoryScore,
   getSessionBestScore,
   setMaxHistoryScore,
@@ -14,14 +15,20 @@ import BackButton from '../BackButton/BackButton';
 import { difficultyLevels } from '../../constants';
 import GameOverModal from '../Modal/Modal';
 import Loader from '../Loader/Loader';
+import { StatisticsContext } from '../StatContext/StatContext';
+import { useDifficulty } from '../DifficultContext/DifficultContext';
 
-export default function PlayingField({
-  difficulty,
-}: {
-  difficulty: 'easy' | 'medium' | 'hard';
-}) {
-  const { pointsPerMatch, penaltyPerError, safeMoves } =
-    difficultyLevels[difficulty];
+export default function PlayingField() {
+  const { difficulty } = useDifficulty();
+
+  const {
+    pointsPerMatch,
+    penaltyPerError,
+    safeMoves,
+    numSeeds,
+    time,
+    maxErrors,
+  } = difficultyLevels[difficulty]; // Получаем значение numSeeds для выбранного уровня сложности
 
   const [cards, setCards] = useState<ICard[]>([]);
   const [openedCards, setOpenedCards] = useState<number[]>([]);
@@ -33,11 +40,20 @@ export default function PlayingField({
     useState<number>(safeMoves); // Инициализируем из уровня сложности
   const [countGame, setCountGame] = useState<number>(0);
   const [gameMessage, setGameMessage] = useState<string>(''); // Сообщение для модального окна
-  const [timeLeft, setTimeLeft] = useState<number>(120); // Таймер
+  const [timeLeft, setTimeLeft] = useState<number>(time); // Таймер
   const [isGameOver, setIsGameOver] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(true); // Флаг загрузки
   const [maxHistoryScore, setMaxHistoryScoreState] = useState<number>(0); // Максимальный счет за всю историю
   const [sessionBestScore, setSessionBestScoreState] = useState<number>(0); // Лучший счет за текущую сессию
+
+  // Создаём контекст статистики
+  const context = useContext(StatisticsContext);
+  if (!context) {
+    throw new Error(
+      'StatisticsContext должен быть обернут в StatisticsProvider',
+    );
+  }
+  const { addStat } = context; // Деструктурируем функцию добавления статистики
 
   const fetchAllImages = async (seeds: string[]) => {
     const fetchedCards = await Promise.all(
@@ -55,7 +71,18 @@ export default function PlayingField({
   };
 
   // Логика окончания игры
-  const handleEndGame = (reason: 'win' | 'timeout') => {
+  const handleEndGame = (reason: 'win' | 'timeout' | 'loss') => {
+    // Добавляем статистику
+    const newStat = {
+      date: new Date().toLocaleDateString(), // Дата окончания игры
+      completionTime: `${120 - timeLeft} секунд`, // Время завершения игры
+      errors: errors,
+      difficulty: difficulty,
+      score: score,
+    };
+
+    addStat(newStat); // Добавляем статистику в контекст
+
     // Обновляем счеты
     if (score > sessionBestScore) {
       setSessionBestScore(score); // Обновляем лучший счет за сессию
@@ -73,6 +100,8 @@ export default function PlayingField({
       setGameMessage('Поздравляем! Вы нашли все пары!');
     } else if (reason === 'timeout') {
       setGameMessage('Время вышло! Попробуйте ещё раз!');
+    } else if (reason === 'loss') {
+      setGameMessage('Превышено количество ошибок! Попробуйте ещё раз!');
     }
 
     setIsGameOver(true); // Устанавливаем флаг окончания игры
@@ -106,10 +135,10 @@ export default function PlayingField({
     setErrors(0);
     setRemainingSafeMoves(safeMoves); // Сброс безопасных ошибок
     setIsGameOver(false);
-    const newSeeds = generateNewSeeds();
+    const newSeeds = generateNewSeeds(numSeeds);
     setIsLoading(true);
     await fetchAllImages(newSeeds);
-    setTimeLeft(120); // Сброс таймера
+    setTimeLeft(timeLeft); // Сброс таймера
   };
 
   // Вычисление процента прохождения
@@ -120,7 +149,7 @@ export default function PlayingField({
 
   // Запрос карточек
   useEffect(() => {
-    const seeds = generateNewSeeds();
+    const seeds = generateNewSeeds(numSeeds);
 
     const sessionScore = getSessionBestScore();
     setSessionBestScoreState(sessionScore);
@@ -139,19 +168,24 @@ export default function PlayingField({
 
   // Управление таймером
   useEffect(() => {
-    if (isLoading || timeLeft <= 0) {
-      if (timeLeft <= 0) {
-        handleEndGame('timeout');
-      }
+    if (isLoading || isGameOver || timeLeft <= 0) {
+      // Если игра завершена, или таймер уже на нуле, не запускаем обновление
       return;
     }
 
+    // Важно запомнить таймер
     const timerId = setInterval(() => {
-      setTimeLeft((prev) => prev - 1);
+      setTimeLeft((prev) => {
+        if (prev <= 1) {
+          handleEndGame('timeout'); // Завершаем игру, если время истекает
+          return 0; // Устанавливаем время в 0
+        }
+        return prev - 1; // Уменьшаем таймер на 1
+      });
     }, 1000);
 
     return () => clearInterval(timerId); // Очистка таймера
-  }, [timeLeft, isLoading]);
+  }, [timeLeft, isLoading, isGameOver]); // Добавляем isGameOver в зависимости
 
   // Логика начисления очков
   useEffect(() => {
@@ -169,7 +203,13 @@ export default function PlayingField({
         setRemainingSafeMoves((prev) => prev - 1); // Уменьшаем количество безопасных ошибок
       } else {
         setScore((prevScore) => Math.max(prevScore - penaltyPerError, 0)); // Штраф за ошибку
-        setErrors((prevErrors) => prevErrors + 1); // Увеличиваем количество ошибок
+        setErrors((prevErrors) => {
+          const newErrors = prevErrors + 1;
+          if (newErrors > maxErrors) {
+            handleEndGame('loss'); // Завершаем игру, если превышено количество ошибок
+          }
+          return newErrors;
+        });
       }
     }
 
@@ -191,15 +231,18 @@ export default function PlayingField({
           </div>
           <h1 className="playing-field__title">Запомни пары</h1>
           <div className="game-info">
-            <p className="progress">Прогресс: {progressPercentage}%</p>
+            {/* <h2 className="game-info__title">Статистика</h2> */}
+            <p className="progress">Прогресс игры: {progressPercentage}%</p>
             <p className="count-steps">Сделано ходов: {steps}</p>
-            <p className="count-errors">Сделано ошибок: {errors}</p>
-            <p className="safe-moves">
-              Оставшиеся безопасные ошибки: {remainingSafeMoves}
+            <p className="count-errors">
+              Сделано ошибок: {errors} / {maxErrors}
             </p>
+            <p className="safe-moves">Безопасных ходов: {remainingSafeMoves}</p>
             <p className="count-score">Набрано очков: {score}</p>
             <p className="timer">Оставшееся время: {timeLeft} секунд</p>
-            <p className="count-game">Сыграно игр: {countGame}</p>
+            <p className="count-game">
+              Сыграно игр в текущей сессии: {countGame}
+            </p>
             <p className="session-best-score">
               Лучший счет за сессию: {sessionBestScore}
             </p>
@@ -252,6 +295,11 @@ export default function PlayingField({
               <p>Loading...</p>
             )}
           </div>
+          <div className="current-difficult">
+            <p>
+              Текущий уровень сложности: {getDifficultyTranslation(difficulty)}
+            </p>
+          </div>
           <button
             type="button"
             className="restart-game-button button"
@@ -261,7 +309,6 @@ export default function PlayingField({
             Сыграть ещё
           </button>
 
-          {/* Модальное окно */}
           <GameOverModal
             isOpen={isGameOver}
             onRestart={handleRestartGame}

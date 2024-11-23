@@ -1,7 +1,7 @@
 @import url(../components/PlayingField/PlayingField.css);
 @import url(../components/BackButton/BackButton.css);
 @import url(../components/MainMenu/MainMenu.css);
-@import url(../components/StatisticsPage/StatisticPage.css);
+@import url(../components/ResultsPage/ResultsPage.css);
 @import url(../components/SettingsPage/SettingsPage.css);
 @import url(../components/Modal/Modal.css);
 @import url(../components/Loader/Loader.css);
@@ -18,6 +18,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 20px;
 }
 
 .button {

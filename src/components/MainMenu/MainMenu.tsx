@@ -18,8 +18,8 @@ export default function MainMenu() {
             </Link>
           </li>
           <li className="main-menu__list">
-            <Link className="main-menu__link" to="/statistics">
-              Статистика
+            <Link className="main-menu__link" to="/results">
+              Результаты
             </Link>
           </li>
         </ul>

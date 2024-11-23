@@ -3,4 +3,40 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 20px;
+}
+
+.settings {
+  color: #313030;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.settings label {
+  margin-right: 10px;
+}
+
+.settings__select {
+  background-color: #f0f0f0;
+  color: #333;
+  font-size: 16px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  width: 200px;
+  cursor: pointer;
+}
+
+.settings__select {
+  border-color: #888;
+}
+
+.settings__select:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 5px rgba(0, 122, 255, 0.5);
+}
+
+.settings__select option {
+  cursor: pointer;
 }

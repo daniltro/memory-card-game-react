@@ -1,4 +1,4 @@
-import { ICard } from './types';
+import { ICard, TDifficultyLevel } from './types';
 
 export const svgToBase64 = (svg: string) => {
   return `data:image/svg+xml;base64,${window.btoa(unescape(encodeURIComponent(svg)))}`;
@@ -13,9 +13,9 @@ export const generateRandomSeed = () => {
   return seed;
 };
 
-export const generateNewSeeds = () => {
+export const generateNewSeeds = (numSeeds: number) => {
   const newSeeds = [];
-  for (let i = 0; i < 8; i += 1) {
+  for (let i = 0; i < numSeeds; i += 1) {
     newSeeds.push(generateRandomSeed());
   }
   return newSeeds;
@@ -56,3 +56,16 @@ export const setSessionBestScore = (score: number): void => {
   sessionStorage.setItem('sessionBestScore', score.toString()); // Сохраняем лучший счет текущей сессии в sessionStorage
 };
 
+export const getDifficultyTranslation = (
+  difficulty: TDifficultyLevel,
+): string => {
+  const translations: Record<TDifficultyLevel, string> = {
+    easy: 'Легкий',
+    medium: 'Средний',
+    hard: 'Трудный',
+    veryHard: 'Очень трудный',
+    extreme: 'Экстремальный',
+  };
+
+  return translations[difficulty] || 'Уроввень сложности не выбран';
+};
