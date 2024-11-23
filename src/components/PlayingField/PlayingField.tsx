@@ -230,10 +230,8 @@ export default function PlayingField() {
           <div className="playing-field__button-box">
             <BackButton />
           </div>
-          <h1 className="playing-field__title">Запомни пары</h1>
-          {/*--------------------- */}
+          {/* <h1 className="playing-field__title">Запомни пары</h1> */}
           <Timer timer={timeLeft} />
-          {/* ---------------------------- */}
           <div className="game-info">
             <p className="progress">Прогресс игры: {progressPercentage}%</p>
             <p className="count-steps">Сделано ходов: {steps}</p>

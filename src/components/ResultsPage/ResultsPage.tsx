@@ -13,26 +13,78 @@ export default function ResultPage() {
   }
   const { stats } = context;
 
+  // Количество результатов на одной странице
+  const resultsPerPage = 10;
+
+  // Состояние текущей страницы
+  const [currentPage, setCurrentPage] = useState(1);
+
+  // Вычисляем общее количество страниц
+  const totalPages = Math.ceil(stats.length / resultsPerPage);
+
+  // Определяем индексы для отображения текущей страницы
+  const startIndex = (currentPage - 1) * resultsPerPage;
+  const endIndex = startIndex + resultsPerPage;
+  const currentPageStats = stats.slice(startIndex, endIndex);
+
+  // Обработчики для изменения страницы
+  const nextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage((prevPage) => prevPage + 1);
+    }
+  };
+
+  const prevPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage((prevPage) => prevPage - 1);
+    }
+  };
+
   return (
     <>
       <BackButton />
       <div className="result-page">
         <h1 className="result-page__title">Результаты</h1>
-        <ul className="result-page__list">
-          {stats.map((stat, index) => (
-            <li className="result-page__list-item" key={index}>
-              <p>Дата: {stat.date}</p>
-              <p>Время завершения: {stat.completionTime}</p>
-              <p>Ошибки: {stat.errors}</p>
-              <p>
-                Сложность:{' '}
-                {getDifficultyTranslation(stat.difficulty as TDifficultyLevel)}
-              </p>
 
-              <p>Очки: {stat.score}</p>
-            </li>
-          ))}
-        </ul>
+        {/* Таблица с результатами */}
+        <table className="result-page__table">
+          <thead>
+            <tr>
+              <th>Дата и время</th>
+              <th>Время прохождения</th>
+              <th>Ошибки</th>
+              <th>Сложность</th>
+              <th>Очки</th>
+            </tr>
+          </thead>
+          <tbody>
+            {currentPageStats.map((stat, index) => (
+              <tr key={index}>
+                <td>{stat.date}</td>
+                <td>{stat.completionTime}</td>
+                <td>{stat.errors}</td>
+                <td>
+                  {getDifficultyTranslation(
+                    stat.difficulty as TDifficultyLevel,
+                  )}
+                </td>
+                <td>{stat.score}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+
+        <div className="pagination">
+          <button onClick={prevPage} disabled={currentPage === 1}>
+            Предыдущая
+          </button>
+          <span>
+            Страница {currentPage} из {totalPages}
+          </span>
+          <button onClick={nextPage} disabled={currentPage === totalPages}>
+            Следующая
+          </button>
+        </div>
       </div>
     </>
   );

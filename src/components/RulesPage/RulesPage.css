@@ -54,12 +54,6 @@
   margin-left: 5px;
 }
 
-.about-difficult {
-}
-
-/* .about-difficult__title {
-} */
-
 .about-difficult__description {
   text-align: center;
 }
@@ -82,10 +76,4 @@
 
 .difficulty-level__subtitle {
   margin-bottom: 10px;
-}
-
-/* .difficulty-level__list {
-} */
-
-.difficulty-level__list-item {
 }
