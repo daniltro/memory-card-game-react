@@ -17,6 +17,7 @@ import GameOverModal from '../Modal/Modal';
 import Loader from '../Loader/Loader';
 import { StatisticsContext } from '../StatContext/StatContext';
 import { useDifficulty } from '../DifficultContext/DifficultContext';
+import Timer from '../Timer/Timer';
 
 export default function PlayingField() {
   const { difficulty } = useDifficulty();
@@ -138,7 +139,7 @@ export default function PlayingField() {
     const newSeeds = generateNewSeeds(numSeeds);
     setIsLoading(true);
     await fetchAllImages(newSeeds);
-    setTimeLeft(timeLeft); // Сброс таймера
+    setTimeLeft(time); // Сброс таймера
   };
 
   // Вычисление процента прохождения
@@ -230,8 +231,10 @@ export default function PlayingField() {
             <BackButton />
           </div>
           <h1 className="playing-field__title">Запомни пары</h1>
+          {/*--------------------- */}
+          <Timer timer={timeLeft} />
+          {/* ---------------------------- */}
           <div className="game-info">
-            {/* <h2 className="game-info__title">Статистика</h2> */}
             <p className="progress">Прогресс игры: {progressPercentage}%</p>
             <p className="count-steps">Сделано ходов: {steps}</p>
             <p className="count-errors">
@@ -239,7 +242,7 @@ export default function PlayingField() {
             </p>
             <p className="safe-moves">Безопасных ходов: {remainingSafeMoves}</p>
             <p className="count-score">Набрано очков: {score}</p>
-            <p className="timer">Оставшееся время: {timeLeft} секунд</p>
+            {/* <p className="timer">Оставшееся время: {timeLeft} секунд</p> */}
             <p className="count-game">
               Сыграно игр в текущей сессии: {countGame}
             </p>

@@ -5,6 +5,8 @@
 @import url(../components/SettingsPage/SettingsPage.css);
 @import url(../components/Modal/Modal.css);
 @import url(../components/Loader/Loader.css);
+@import url(../components/Timer/Timer.css);
+@import url(../components/RulesPage/RulesPage.css);
 
 * {
   padding: 0;

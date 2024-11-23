@@ -6,6 +6,7 @@ import ResultssPage from '../ResultsPage/ResultsPage';
 import MainMenu from '../MainMenu/MainMenu';
 import { StatisticsProvider } from '../StatContext/StatContext';
 import { DifficultyProvider } from '../DifficultContext/DifficultContext';
+import RulesPage from '../RulesPage/RulesPage';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
                 <Route path="/new-game" element={<PlayingField />} />
                 <Route path="/settings" element={<SettingsPage />} />
                 <Route path="/results" element={<ResultssPage />} />
+                <Route path="/rules" element={<RulesPage />} />
               </Routes>
             </main>
           </div>

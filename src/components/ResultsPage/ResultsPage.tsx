@@ -16,11 +16,11 @@ export default function ResultPage() {
   return (
     <>
       <BackButton />
-      <div className="statistic-page">
-        <h1>Результаты</h1>
-        <ul className="statistic-page__list">
+      <div className="result-page">
+        <h1 className="result-page__title">Результаты</h1>
+        <ul className="result-page__list">
           {stats.map((stat, index) => (
-            <li className="statistic-page__list-item" key={index}>
+            <li className="result-page__list-item" key={index}>
               <p>Дата: {stat.date}</p>
               <p>Время завершения: {stat.completionTime}</p>
               <p>Ошибки: {stat.errors}</p>

@@ -22,3 +22,7 @@ export type TDifficultyLevel =
   | 'hard'
   | 'veryHard'
   | 'extreme';
+
+export interface ITimerProps {
+  timer: number;
+}

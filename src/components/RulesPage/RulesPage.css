@@ -1,0 +1,91 @@
+.rules-container {
+  block-size: 90vb;
+}
+
+.rules__title,
+.about-difficult__title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.rules__list {
+  max-inline-size: fit-content;
+  margin: 0 auto;
+}
+
+.rules__list,
+.difficulty-level__list {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.rules__list-item,
+.difficulty-level__list-item {
+  position: relative;
+  padding-left: 15px;
+}
+
+.rules__list-item::before,
+.difficulty-level__list-item::before {
+  content: '';
+  inline-size: 7px;
+  block-size: 2px;
+  background-color: #000;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.rules__description,
+.about-difficult__description {
+  margin-bottom: 10px;
+}
+
+.rules__description span {
+  text-align: center;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.rules__description .first-letter,
+.about-difficult__description .first-letter {
+  display: inline;
+  margin-left: 5px;
+}
+
+.about-difficult {
+}
+
+/* .about-difficult__title {
+} */
+
+.about-difficult__description {
+  text-align: center;
+}
+
+.difficulty-levels {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+}
+
+.difficulty-level {
+  max-inline-size: 200px;
+}
+
+.difficulty-level__title {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.difficulty-level__subtitle {
+  margin-bottom: 10px;
+}
+
+/* .difficulty-level__list {
+} */
+
+.difficulty-level__list-item {
+}
