@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import {
   generateNewSeeds,
   getMaxHistoryScore,
@@ -20,23 +20,24 @@ export default function PlayingField({
 }: {
   difficulty: 'easy' | 'medium' | 'hard';
 }) {
+  const { pointsPerMatch, penaltyPerError, safeMoves } =
+    difficultyLevels[difficulty];
+
   const [cards, setCards] = useState<ICard[]>([]);
   const [openedCards, setOpenedCards] = useState<number[]>([]);
   const [matchedCards, setMatchedCards] = useState<string[]>([]);
   const [steps, setSteps] = useState<number>(0);
   const [score, setScore] = useState<number>(0);
+  const [errors, setErrors] = useState<number>(0); // Количество ошибок
+  const [remainingSafeMoves, setRemainingSafeMoves] =
+    useState<number>(safeMoves); // Инициализируем из уровня сложности
   const [countGame, setCountGame] = useState<number>(0);
   const [gameMessage, setGameMessage] = useState<string>(''); // Сообщение для модального окна
-  // Таймер
-  const [timeLeft, setTimeLeft] = useState<number>(120);
+  const [timeLeft, setTimeLeft] = useState<number>(120); // Таймер
   const [isGameOver, setIsGameOver] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(true); // Флаг загрузки
-
   const [maxHistoryScore, setMaxHistoryScoreState] = useState<number>(0); // Максимальный счет за всю историю
   const [sessionBestScore, setSessionBestScoreState] = useState<number>(0); // Лучший счет за текущую сессию
-
-  const { safeMoves, pointsPerMatch, penaltyPerError } =
-    difficultyLevels[difficulty];
 
   const fetchAllImages = async (seeds: string[]) => {
     const fetchedCards = await Promise.all(
@@ -52,81 +53,31 @@ export default function PlayingField({
     setCards(shuffledCards);
     setIsLoading(false); // Завершение загрузки
   };
-  // Запрос карточек
-  useEffect(() => {
-    const seeds = generateNewSeeds();
 
-    const sessionScore = getSessionBestScore;
-    setSessionBestScoreState(sessionScore);
+  // Логика окончания игры
+  const handleEndGame = (reason: 'win' | 'timeout') => {
+    // Обновляем счеты
+    if (score > sessionBestScore) {
+      setSessionBestScore(score); // Обновляем лучший счет за сессию
+      const sessionScore = getSessionBestScore();
+      setSessionBestScoreState(sessionScore);
+    }
 
-    const maxScore = getMaxHistoryScore;
-    setMaxHistoryScoreState(maxScore);
-    fetchAllImages(seeds);
-  }, []);
+    if (score > maxHistoryScore) {
+      setMaxHistoryScore(score); // Обновляем лучший исторический счет
+      setMaxHistoryScoreState(score);
+    }
 
-  // Проверка на победу
-  useEffect(() => {
-    if (matchedCards.length === cards.length / 2 && cards.length > 0) {
-      // Сохраняем лучший счет за сессию в sessionStorage
-      if (score > sessionBestScore) {
-        setSessionBestScore(score); // Сохраняем лучший счет в sessionStorage
-        const sessionScore = getSessionBestScore;
-        setSessionBestScoreState(sessionScore); // Сохраняем лучший счет в state
-      }
-
-      // Обновляем максимальный счет, если новый лучший
-      if (score > maxHistoryScore) {
-        setMaxHistoryScoreState(score);
-        setMaxHistoryScore(score); // Сохраняем максимальный счет в localStorage
-      }
-
-      if (sessionBestScore > maxHistoryScore) {
-        setMaxHistoryScoreState(sessionBestScore);
-        setMaxHistoryScore(sessionBestScore); // Сохраняем новый максимальный счет в localStorage
-      }
-
-      setIsGameOver(true);
+    // Сообщение о завершении игры
+    if (reason === 'win') {
       setGameMessage('Поздравляем! Вы нашли все пары!');
-    }
-  }, [matchedCards, cards, score]);
-
-  // Управление таймером
-  useEffect(() => {
-    if (timeLeft <= 0) {
-      setIsGameOver(true); // Игра заканчивается
+    } else if (reason === 'timeout') {
       setGameMessage('Время вышло! Попробуйте ещё раз!');
-      setCountGame((prevCountGame) => prevCountGame + 1);
-      return;
     }
 
-    const timerId = setInterval(() => {
-      setTimeLeft((prev) => prev - 1);
-    }, 1000);
-
-    return () => clearInterval(timerId); // Очистка таймера
-  }, [timeLeft]);
-
-  // Логика начисления очков
-  useEffect(() => {
-    if (openedCards.length < 2) {
-      return;
-    }
-    const firstMatched = cards[openedCards[0]];
-    const secondMatched = cards[openedCards[1]];
-
-    if (secondMatched && firstMatched.id === secondMatched.id) {
-      setMatchedCards([...matchedCards, firstMatched.id]);
-      setScore((prevScore) => prevScore + pointsPerMatch); // Очки за совпадение
-    } else if (steps >= safeMoves) {
-      setScore((prevScore) => Math.max(prevScore - penaltyPerError, 0)); // Штраф, но не меньше 0
-    }
-
-    setSteps((prevSteps) => prevSteps + 1);
-
-    if (openedCards.length === 2) {
-      setTimeout(() => setOpenedCards([]), 1000);
-    }
-  }, [openedCards]);
+    setIsGameOver(true); // Устанавливаем флаг окончания игры
+    setCountGame((prevCount) => prevCount + 1); // Увеличиваем счетчик игр
+  };
 
   const flipCard = (index: number) => {
     if (
@@ -145,20 +96,89 @@ export default function PlayingField({
       flipCard(index);
     }
   };
+
   const handleRestartGame = async () => {
     setCards([]);
     setOpenedCards([]);
     setMatchedCards([]);
     setSteps(0);
     setScore(0);
+    setErrors(0);
+    setRemainingSafeMoves(safeMoves); // Сброс безопасных ошибок
     setIsGameOver(false);
-
     const newSeeds = generateNewSeeds();
     setIsLoading(true);
     await fetchAllImages(newSeeds);
-
     setTimeLeft(120); // Сброс таймера
   };
+
+  // Вычисление процента прохождения
+  const progressPercentage =
+    cards.length > 0
+      ? Math.round((matchedCards.length / (cards.length / 2)) * 100)
+      : 0;
+
+  // Запрос карточек
+  useEffect(() => {
+    const seeds = generateNewSeeds();
+
+    const sessionScore = getSessionBestScore();
+    setSessionBestScoreState(sessionScore);
+
+    const maxScore = getMaxHistoryScore();
+    setMaxHistoryScoreState(maxScore);
+    fetchAllImages(seeds);
+  }, []);
+
+  // Проверка на победу
+  useEffect(() => {
+    if (matchedCards.length === cards.length / 2 && cards.length > 0) {
+      handleEndGame('win');
+    }
+  }, [matchedCards, cards]);
+
+  // Управление таймером
+  useEffect(() => {
+    if (isLoading || timeLeft <= 0) {
+      if (timeLeft <= 0) {
+        handleEndGame('timeout');
+      }
+      return;
+    }
+
+    const timerId = setInterval(() => {
+      setTimeLeft((prev) => prev - 1);
+    }, 1000);
+
+    return () => clearInterval(timerId); // Очистка таймера
+  }, [timeLeft, isLoading]);
+
+  // Логика начисления очков
+  useEffect(() => {
+    if (openedCards.length < 2) {
+      return;
+    }
+    const firstMatched = cards[openedCards[0]];
+    const secondMatched = cards[openedCards[1]];
+
+    if (secondMatched && firstMatched.id === secondMatched.id) {
+      setMatchedCards([...matchedCards, firstMatched.id]);
+      setScore((prevScore) => prevScore + pointsPerMatch); // Очки за совпадение
+    } else {
+      if (remainingSafeMoves > 0) {
+        setRemainingSafeMoves((prev) => prev - 1); // Уменьшаем количество безопасных ошибок
+      } else {
+        setScore((prevScore) => Math.max(prevScore - penaltyPerError, 0)); // Штраф за ошибку
+        setErrors((prevErrors) => prevErrors + 1); // Увеличиваем количество ошибок
+      }
+    }
+
+    setSteps((prevSteps) => prevSteps + 1);
+
+    if (openedCards.length === 2) {
+      setTimeout(() => setOpenedCards([]), 1000);
+    }
+  }, [openedCards]);
 
   return (
     <div className="playing-field">
@@ -171,16 +191,21 @@ export default function PlayingField({
           </div>
           <h1 className="playing-field__title">Запомни пары</h1>
           <div className="game-info">
+            <p className="progress">Прогресс: {progressPercentage}%</p>
             <p className="count-steps">Сделано ходов: {steps}</p>
+            <p className="count-errors">Сделано ошибок: {errors}</p>
+            <p className="safe-moves">
+              Оставшиеся безопасные ошибки: {remainingSafeMoves}
+            </p>
             <p className="count-score">Набрано очков: {score}</p>
             <p className="timer">Оставшееся время: {timeLeft} секунд</p>
             <p className="count-game">Сыграно игр: {countGame}</p>
             <p className="session-best-score">
               Лучший счет за сессию: {sessionBestScore}
-            </p>{' '}
+            </p>
             <p className="max-history-score">
               Лучший счет за всю историю: {maxHistoryScore}
-            </p>{' '}
+            </p>
           </div>
           <div className="cards-container">
             {cards.length > 0 ? (

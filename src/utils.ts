@@ -55,3 +55,4 @@ export const getSessionBestScore = (): number => {
 export const setSessionBestScore = (score: number): void => {
   sessionStorage.setItem('sessionBestScore', score.toString()); // Сохраняем лучший счет текущей сессии в sessionStorage
 };
+

@@ -81,8 +81,11 @@
   align-items: center;
 }
 
+.progress,
 .count-steps,
 .count-score,
+.count-errors,
+.safe-moves,
 .timer,
 .count-game,
 .session-best-score,

@@ -9,12 +9,12 @@ export const difficultyLevels = {
     penaltyPerError: 2,
   },
   medium: {
-    safeMoves: 3,
+    safeMoves: 5,
     pointsPerMatch: 10,
     penaltyPerError: 5,
   },
   hard: {
-    safeMoves: 4,
+    safeMoves: 3,
     pointsPerMatch: 20,
     penaltyPerError: 10,
   },
