@@ -40,20 +40,20 @@ export const shuffleArray = (array: ICard[]) => {
 
 export const getMaxHistoryScore = (): number => {
   const score = localStorage.getItem('maxHistoryScore');
-  return score ? parseInt(score, 10) : 0; // Если в хранилище нет значения, возвращаем 0
+  return score ? parseInt(score, 10) : 0;
 };
 
 export const setMaxHistoryScore = (score: number): void => {
-  localStorage.setItem('maxHistoryScore', score.toString()); // Сохраняем максимальный счет за всю историю в локальном хранилище
+  localStorage.setItem('maxHistoryScore', score.toString());
 };
 
 export const getSessionBestScore = (): number => {
   const score = sessionStorage.getItem('sessionBestScore');
-  return score ? parseInt(score, 10) : 0; // Если в sessionStorage нет значения, возвращаем 0
+  return score ? parseInt(score, 10) : 0;
 };
 
 export const setSessionBestScore = (score: number): void => {
-  sessionStorage.setItem('sessionBestScore', score.toString()); // Сохраняем лучший счет текущей сессии в sessionStorage
+  sessionStorage.setItem('sessionBestScore', score.toString());
 };
 
 export const getDifficultyTranslation = (
@@ -70,7 +70,6 @@ export const getDifficultyTranslation = (
   return translations[difficulty] || 'Уроввень сложности не выбран';
 };
 
-// Утилита для преобразования даты для сортирвки
 export function parseDateDDMMYYYY(dateString: string): number {
   const [day, month, year] = dateString.split('.').map(Number);
   if (!day || !month || !year) return NaN;
@@ -78,18 +77,17 @@ export function parseDateDDMMYYYY(dateString: string): number {
 }
 
 export function parseTimeToSeconds(timeString: string): number {
-  // Удаляем все нечисловые символы, кроме пробела, и пытаемся извлечь число
   const secondsMatch = timeString.match(/(\d+)\s*секунд/);
   if (secondsMatch) {
-    return parseInt(secondsMatch[1], 10); // Возвращаем число секунд
+    return parseInt(secondsMatch[1], 10);
   }
 
   console.warn(`Unrecognized time format: ${timeString}`);
-  return 0; // Если формат не соответствует, возвращаем 0
+  return 0;
 }
 
 export function generateId(): string {
-  const timestamp = Date.now(); // Получаем текущее время в миллисекундах
-  const randomNum = Math.floor(Math.random() * 1000); // Генерируем случайное число от 0 до 999
-  return `${timestamp}-${randomNum}`; // Комбинируем метку времени и случайное число
+  const timestamp = Date.now();
+  const randomNum = Math.floor(Math.random() * 1000);
+  return `${timestamp}-${randomNum}`;
 }

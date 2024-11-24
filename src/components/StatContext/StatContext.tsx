@@ -24,12 +24,10 @@ export function StatisticsProvider({ children }: { children: ReactNode }) {
     }
   }, []);
 
-  // Функция добавления статистики
   const addStat = (newStat: IGameStat) => {
     const updatedStats = [...stats, newStat];
     setStats(updatedStats);
 
-    // Сохраняем обновленную статистику в localStorage
     localStorage.setItem('gameStats', JSON.stringify(updatedStats));
   };
 

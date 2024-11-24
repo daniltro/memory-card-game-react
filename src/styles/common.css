@@ -9,24 +9,40 @@ body {
   min-block-size: 100vb;
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 20px;
 }
 
 .button {
   transition: 0.3s ease all;
   cursor: pointer;
   border: none;
+  font-family: var(--title-font);
   font-size: 16px;
   padding: 5px 10px;
-  border-radius: 5px;
-  background-color: #d2cfd3;
-  color: rgb(116, 111, 111);
+  background-color: var(--main-color);
+  color: var(--secondary-color);
   font-weight: bold;
+  position: relative;
 }
 
-.button:hover {
-  background: #5e5c5c;
+.button::after {
+  content: '';
+  inline-size: 0;
+  block-size: 100%;
+  background-color: var(--accent-color);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  transition: inline-size 0.3s ease;
+  z-index: -1;
+}
+
+.button:not(:disabled):hover {
+  color: var(--main-color);
+  opacity: 0.9;
   transform: scale(1.1);
-  color: #d2cfd3;
+}
+
+.button:hover::after {
+  inline-size: 100%;
 }

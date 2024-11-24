@@ -7,6 +7,8 @@
 @import url(../components/Loader/Loader.css);
 @import url(../components/Timer/Timer.css);
 @import url(../components/RulesPage/RulesPage.css);
+@import url(../components/ProgressBar/ProgressBar.css);
+@import url(../components/CustomSelect/CustomSelect.css);
 @import url(./common.css);
 @import url(./variables.css);
 @import url(./fonts.css);

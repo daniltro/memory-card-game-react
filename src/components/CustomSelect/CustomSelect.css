@@ -1,0 +1,49 @@
+.custom-select {
+  position: relative;
+  width: 200px;
+  margin: auto;
+}
+
+.select-box {
+  padding: 10px;
+  background-color: var(--main-color);
+  color: var(--secondary-color);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  text-shadow: 1px 1px 1px var(--accent-color);
+}
+
+.options {
+  position: absolute;
+  width: 100%;
+  background-color: var(--main-color);
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  top: 100%;
+  left: 0;
+  z-index: 10;
+}
+
+.option {
+  padding: 10px;
+  color: var(--secondary-color);
+  text-shadow: 1px 1px 1px var(--accent-color);
+  cursor: pointer;
+}
+
+.option:hover {
+  color: var(--accent-color);
+}
+
+.arrow {
+  margin-left: 10px;
+  transition: transform 0.3s ease;
+}
+
+.select-box:hover .arrow {
+  transform: translateY(10%);
+}

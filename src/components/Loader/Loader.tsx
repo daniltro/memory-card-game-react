@@ -5,7 +5,7 @@ export default function Loader(): JSX.Element {
   return (
     <div className="loader">
       <div className="loader__spinner" />
-      <p>Загрузка...</p>
+      <p className="loader-message">Загрузка...</p>
     </div>
   );
 }

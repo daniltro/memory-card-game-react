@@ -1,42 +1,33 @@
 .settings-page {
+  margin-top: 200px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 20px;
+  background-color: var(--accent-color);
+  padding: 40px;
+  border-radius: 2px;
+}
+
+.settings-page__title {
+  font-family: var(--title-font);
+  color: var(--main-color);
+  text-shadow: 3px 3px 2px var(--secondary-color);
 }
 
 .settings {
-  color: #313030;
+  font-family: var(--subtitle-font);
+  color: var(--main-color);
+  text-shadow: 3px 3px 2px var(--secondary-color);
   font-size: 20px;
   font-weight: bold;
 }
 
-.settings label {
-  margin-right: 10px;
+.difficulty__subtitle {
+  margin-bottom: 10px;
 }
 
-.settings__select {
-  background-color: #f0f0f0;
-  color: #333;
-  font-size: 16px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  outline: none;
-  width: 200px;
-  cursor: pointer;
-}
-
-.settings__select {
-  border-color: #888;
-}
-
-.settings__select:focus {
-  border-color: #4a90e2;
-  box-shadow: 0 0 5px rgba(0, 122, 255, 0.5);
-}
-
-.settings__select option {
-  cursor: pointer;
+.button.start-game-button::after {
+  background-color: var(--secondary-color);
 }

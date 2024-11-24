@@ -1,18 +1,6 @@
 .button.back-button {
-  position: absolute;
+  position: fixed;
   top: 20px;
   left: 20px;
-  padding-left: 24px;
   font-size: 18px;
-}
-
-.back-button::after {
-  content: '';
-  inline-size: 15px;
-  block-size: 15px;
-  background: url(./images/back-arrow.png);
-  background-size: contain;
-  position: absolute;
-  top: 7px;
-  left: 5px;
 }

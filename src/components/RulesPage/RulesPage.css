@@ -1,11 +1,32 @@
 .rules-container {
-  block-size: 90vb;
+  padding: 20px;
+  margin-top: 60px;
+  max-inline-size: 1100px;
+  background-color: var(--accent-color);
+  border-radius: 2px;
 }
 
 .rules__title,
 .about-difficult__title {
+  font-family: var(--title-font);
+  color: var(--main-color);
+  text-shadow: 4px 4px 2px var(--secondary-color);
+  font-size: 32px;
   text-align: center;
   margin-bottom: 20px;
+}
+
+.rules__description,
+.about-difficult__description {
+  color: var(--main-color);
+  font-size: 16px;
+  font-family: var(--description-font-medium);
+  text-shadow: 2px 2px 2px var(--secondary-color);
+}
+
+.rules__description span {
+  margin-top: 20px;
+  font-size: 20px;
 }
 
 .rules__list {
@@ -23,6 +44,11 @@
 .difficulty-level__list-item {
   position: relative;
   padding-left: 15px;
+  color: var(--main-color);
+  font-family: var(--description-font-medium);
+  font-size: 16px;
+  font-family: var(--description-font-medium);
+  text-shadow: 2px 2px 2px var(--secondary-color);
 }
 
 .rules__list-item::before,
@@ -30,7 +56,8 @@
   content: '';
   inline-size: 7px;
   block-size: 2px;
-  background-color: #000;
+  background-color: var(--main-color);
+  box-shadow: 2px 2px 2px var(--secondary-color);
   position: absolute;
   top: 50%;
   left: 0;
@@ -59,21 +86,36 @@
 }
 
 .difficulty-levels {
+  background-color: var(--accent-color);
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 50px;
+  flex-wrap: wrap;
+  gap: 20px 30px;
 }
 
 .difficulty-level {
-  max-inline-size: 200px;
+  background-color: var(--secondary-color);
+  padding: 10px;
+  border-radius: 2px;
 }
 
 .difficulty-level__title {
+  inline-size: 250px;
+  margin-top: 15px;
+  font-family: var(--title-font);
+  color: var(--main-color);
+  text-shadow: 4px 4px 2px var(--accent-color);
   text-align: center;
   margin-bottom: 10px;
 }
 
 .difficulty-level__subtitle {
+  inline-size: 250px;
+
   margin-bottom: 10px;
+  color: var(--main-color);
+  font-family: var(--description-font-medium);
+  font-size: 16px;
+  font-family: var(--description-font-medium);
+  text-shadow: 2px 2px 2px var(--secondary-color);
 }

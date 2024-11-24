@@ -1,17 +1,12 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-
-interface GameOverModalProps {
-  isOpen: boolean;
-  onRestart: () => void;
-  message: string;
-}
+import { IGameOverModalProps } from '../../types';
 
 export default function GameOverModal({
   isOpen,
   onRestart,
   message,
-}: GameOverModalProps): JSX.Element | null {
+}: IGameOverModalProps): JSX.Element | null {
   const navigate = useNavigate();
   if (!isOpen) return null;
   return (

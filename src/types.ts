@@ -3,21 +3,13 @@ export interface ICard {
   svg: string;
 }
 
-// export interface IGameStat {
-//   date: string;
-//   completionTime: string;
-//   errors: number;
-//   difficulty: string;
-//   score: number;
-// }
-
 export interface IGameStat {
   date: string;
   completionTime: string;
   errors: number;
   difficulty: string;
   score: number;
-  [key: string]: string | number; // Добавление индексной сигнатуры
+  [key: string]: string | number;
 }
 
 export interface IStatisticsContext {
@@ -35,3 +27,15 @@ export type TDifficultyLevel =
 export interface ITimerProps {
   timer: number;
 }
+
+export interface ProgressBarProps {
+  progressPercentage: number;
+}
+
+export interface IGameOverModalProps {
+  isOpen: boolean;
+  onRestart: () => void;
+  message: string;
+}
+
+export type Difficulty = 'easy' | 'medium' | 'hard' | 'veryHard' | 'extreme';

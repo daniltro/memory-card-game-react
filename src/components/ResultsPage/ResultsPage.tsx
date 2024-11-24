@@ -9,7 +9,6 @@ import {
 import { IGameStat, TDifficultyLevel } from '../../types';
 
 export default function ResultPage() {
-  // Получаем данные из контекста
   const context = useContext(StatisticsContext);
   if (!context) {
     throw new Error(
@@ -18,15 +17,11 @@ export default function ResultPage() {
   }
   const { stats } = context;
 
-  // Параметры для пагинации
   const resultsPerPage = 10;
   const [currentPage, setCurrentPage] = useState(1);
-
-  // Параметры для сортировки
   const [sortColumn, setSortColumn] = useState<keyof IGameStat | null>(null);
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
 
-  // Порядок сортировки для сложности
   const difficultyOrder: Record<string, number> = {
     easy: 0,
     medium: 1,
@@ -35,7 +30,6 @@ export default function ResultPage() {
     extreme: 4,
   };
 
-  // Функция сортировки
   const sortStats = (data: typeof stats) => {
     if (!sortColumn) return data;
 
@@ -49,21 +43,18 @@ export default function ResultPage() {
       }
 
       if (typeof aValue === 'string' && typeof bValue === 'string') {
-        // Сортировка по колонке "Дата"
         if (sortColumn === 'date') {
           const dateA = parseDateDDMMYYYY(aValue) || 0;
           const dateB = parseDateDDMMYYYY(bValue) || 0;
           return sortOrder === 'asc' ? dateA - dateB : dateB - dateA;
         }
 
-        // Сортировка по колонке "Время прохождения"
         if (sortColumn === 'completionTime') {
           const timeA = parseTimeToSeconds(aValue as string) || 0;
           const timeB = parseTimeToSeconds(bValue as string) || 0;
           return sortOrder === 'asc' ? timeA - timeB : timeB - timeA;
         }
 
-        // Сортировка по сложности
         if (sortColumn === 'difficulty') {
           const difficultyA = difficultyOrder[aValue] || 0;
           const difficultyB = difficultyOrder[bValue] || 0;
@@ -72,7 +63,6 @@ export default function ResultPage() {
             : difficultyB - difficultyA;
         }
 
-        // Строковые значения: сортировка по алфавиту
         return sortOrder === 'asc'
           ? aValue.localeCompare(bValue)
           : bValue.localeCompare(aValue);
@@ -82,10 +72,8 @@ export default function ResultPage() {
     });
   };
 
-  // Сортированные данные
   const sortedStats = sortStats(stats);
 
-  // Обработчик клика для сортировки
   const handleSort = (column: keyof IGameStat) => {
     if (sortColumn === column) {
       setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
@@ -95,27 +83,23 @@ export default function ResultPage() {
     }
   };
 
-  // Пагинация: вычисление общего числа страниц и отображение текущей страницы
   const totalPages = Math.ceil(stats.length / resultsPerPage);
   const startIndex = (currentPage - 1) * resultsPerPage;
   const endIndex = startIndex + resultsPerPage;
   const currentPageStats = sortedStats.slice(startIndex, endIndex);
 
-  // Переход на следующую страницу
   const nextPage = () => {
     if (currentPage < totalPages) {
       setCurrentPage((current) => current + 1);
     }
   };
 
-  // Переход на предыдущую страницу
   const prevPage = () => {
     if (currentPage > 1) {
       setCurrentPage((current) => current - 1);
     }
   };
 
-  // Функция для возврата класса сортировки
   const getSortClass = (column: keyof IGameStat) => {
     if (sortColumn === column) {
       return sortOrder === 'asc' ? 'ascending' : 'descending';
@@ -177,7 +161,6 @@ export default function ResultPage() {
             </tr>
           </thead>
           <tbody>
-            {/* Отображение отсортированных данных с пагинацией */}
             {currentPageStats.map((stat) => (
               <tr key={stat.id}>
                 <td>{stat.date}</td>

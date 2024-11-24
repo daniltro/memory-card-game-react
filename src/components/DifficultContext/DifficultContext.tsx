@@ -5,8 +5,7 @@ import React, {
   ReactNode,
   useMemo,
 } from 'react';
-
-type Difficulty = 'easy' | 'medium' | 'hard' | 'veryHard' | 'extreme';
+import { Difficulty } from '../../types';
 
 interface DifficultyContextType {
   difficulty: Difficulty;
@@ -20,7 +19,6 @@ const DifficultyContext = createContext<DifficultyContextType | undefined>(
 export function DifficultyProvider({ children }: { children: ReactNode }) {
   const [difficulty, setDifficulty] = useState<Difficulty>('easy'); // Изначально установим "easy"
 
-  // Используем useMemo для мемоизации значения контекста
   const value = useMemo(
     () => ({ difficulty, setDifficulty }),
     [difficulty, setDifficulty],

@@ -9,13 +9,11 @@ export default function RulesPage() {
         <div className="rules">
           <h2 className="rules__title">Правила игры</h2>
           <p className="rules__description">
-            <span>
-              <span className="first-letter">Игра </span>&quot;Запомни
-              пары&quot; — это тренировка памяти и внимания. Ваша задача — найти
-              все пары одинаковых карт. Каждая найденная пара приносит очки, но
-              за ошибки вы теряете очки. На каждом уровне сложности есть
-              определенное количество безопасных ходов и ошибок.
-            </span>
+            <span className="first-letter">Игра </span>&quot;Запомни пары&quot;
+            — это тренировка памяти и внимания. Ваша задача — найти все пары
+            одинаковых карт. Каждая найденная пара приносит очки, но за ошибки
+            вы теряете очки. На каждом уровне сложности есть определенное
+            количество безопасных ходов и ошибок.
             <span>Игра завершается, когда:</span>
           </p>
           <ul className="rules__list">
@@ -42,10 +40,18 @@ export default function RulesPage() {
                 карт:
               </p>
               <ul className="difficulty-level__list">
-                <li>Количество пар: 4</li>
-                <li>Время: 60 секунд</li>
-                <li>Допустимые ошибки: 1</li>
-                <li>Безопасных ходов: 5</li>
+                <li className="difficulty-level__list-item">
+                  Количество пар: 4
+                </li>
+                <li className="difficulty-level__list-item">
+                  Время: 60 секунд
+                </li>
+                <li className="difficulty-level__list-item">
+                  Допустимые ошибки: 1
+                </li>
+                <li className="difficulty-level__list-item">
+                  Безопасных ходов: 5
+                </li>
               </ul>
             </div>
 

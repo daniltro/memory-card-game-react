@@ -3,12 +3,19 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  gap: 20px;
+  gap: 50px;
   block-size: 100%;
+  padding: 20px 0;
 }
 
 .playing-field__title {
   color: #313030;
+}
+
+.game-container {
+  inline-size: 100%;
+  display: flex;
+  justify-content: space-around;
 }
 
 .cards-container {
@@ -18,12 +25,12 @@
 }
 
 .card {
-  border-radius: 5px;
-  background-color: #444343;
+  background-color: var(--main-color);
   cursor: pointer;
   padding: 10px;
   inline-size: 100px;
   block-size: 100px;
+  border-radius: 2px;
 }
 
 .card--flipped .card__inner {
@@ -54,23 +61,22 @@
   inline-size: 100%;
   block-size: 100%;
   backface-visibility: hidden;
-  border-radius: 3px;
 }
 
 .card__front-side {
-  border: 2px solid #000;
-  background-color: #fff;
+  background-color: var(--secondary-color);
   transform: rotateY(180deg);
 }
 
 .card__back-side {
-  background-color: #b8d357;
+  background-color: var(--accent-color);
   font-size: 100px;
   transition: 0.3s ease all;
+  border-radius: 2px;
 }
 
 .card__back-side:hover {
-  background: #c79018;
+  background: var(--accent-color);
   transform: scale(1.1);
 }
 
@@ -80,6 +86,11 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  gap: 5px;
+  border-radius: 5px;
+  padding: 10px;
+  opacity: 0.9;
+  position: relative;
 }
 
 .game-info__title {
@@ -94,9 +105,38 @@
 .timer,
 .count-game,
 .session-best-score,
-.max-history-score,
+.max-history-score {
+  color: var(--main-color);
+  text-shadow: 0.5px 0.5px 1px var(--accent-color);
+  font-family: var(--title-font);
+  font-size: 16px;
+  border-bottom: 1px solid var(--secondary-color);
+  inline-size: 100%;
+  margin-left: 10px;
+}
+
 .current-difficult p {
-  color: #313030;
+  font-family: var(--title-font);
   font-size: 20px;
-  font-weight: bold;
+  color: var(--main-color);
+  text-shadow: 1px 1px 2px var(--accent-color);
+}
+
+.current-difficult__value {
+  color: var(--secondary-color);
+  text-shadow: 1px 1px 2px var(--secondary-color);
+  position: relative;
+}
+
+.current-difficult__value::after {
+  content: '';
+  inline-size: 115%;
+  block-size: 115%;
+  background-color: var(--main-color);
+  position: absolute;
+  top: 50%;
+  left: -10px;
+  transform: translateY(-50%);
+  transition: inline-size 0.3s ease;
+  z-index: -1;
 }
