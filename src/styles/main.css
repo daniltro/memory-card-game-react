@@ -7,36 +7,6 @@
 @import url(../components/Loader/Loader.css);
 @import url(../components/Timer/Timer.css);
 @import url(../components/RulesPage/RulesPage.css);
-
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background-color: #969393;
-  min-block-size: 100vb;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-}
-
-.button {
-  transition: 0.3s ease all;
-  cursor: pointer;
-  border: none;
-  font-size: 16px;
-  padding: 5px 10px;
-  border-radius: 5px;
-  background-color: #d2cfd3;
-  color: rgb(116, 111, 111);
-  font-weight: bold;
-}
-
-.button:hover {
-  background: #5e5c5c;
-  transform: scale(1.1);
-  color: #d2cfd3;
-}
+@import url(./common.css);
+@import url(./variables.css);
+@import url(./fonts.css);

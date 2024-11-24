@@ -1,5 +1,17 @@
 :root {
-  --main-color: #7b9e00;
-  --secondary-color: #3a0470;
+  /* --main-color: #7b9e00; */
+  --main-color: #98b72e;
+  /* --secondary-color: #3a0470; */
+  --secondary-color: #542881;
+  /* --secondary-color: #9f69d6; */
   --accent--color: #b12c49;
+
+  --title-font: 'PressStart2P-Regular', sans-serif;
+
+  --subtitle-font: 'Roboto-Bold', sans-serif;
+
+  --description-font-medium: 'Roboto-Medium', sans-serif;
+  --description-font-regular: 'Roboto-Regular', sans-serif;
+
+  --hover-primary-color: #dbf970;
 }
