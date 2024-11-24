@@ -27,10 +27,12 @@ body {
   transition: 0.3s ease all;
   cursor: pointer;
   border: none;
-  font-size: 20px;
+  font-size: 16px;
   padding: 5px 10px;
   border-radius: 5px;
   background-color: #d2cfd3;
+  color: rgb(116, 111, 111);
+  font-weight: bold;
 }
 
 .button:hover {

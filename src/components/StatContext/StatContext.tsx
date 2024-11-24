@@ -1,9 +1,15 @@
-import { createContext, ReactNode, useEffect, useState } from 'react';
+import React, {
+  useMemo,
+  createContext,
+  ReactNode,
+  useEffect,
+  useState,
+} from 'react';
 import { IGameStat, IStatisticsContext } from '../../types';
 
 export const StatisticsContext = createContext<IStatisticsContext | null>(null);
 
-export const StatisticsProvider = ({ children }: { children: ReactNode }) => {
+export function StatisticsProvider({ children }: { children: ReactNode }) {
   const [stats, setStats] = useState<IGameStat[]>([]);
 
   // Загружаем статистику из localStorage при монтировании компонента
@@ -23,9 +29,11 @@ export const StatisticsProvider = ({ children }: { children: ReactNode }) => {
     localStorage.setItem('gameStats', JSON.stringify(updatedStats));
   };
 
+  const value = useMemo(() => ({ stats, addStat }), [stats]);
+
   return (
-    <StatisticsContext.Provider value={{ stats, addStat }}>
+    <StatisticsContext.Provider value={value}>
       {children}
     </StatisticsContext.Provider>
   );
-};
+}

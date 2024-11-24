@@ -45,3 +45,11 @@ export const difficultyLevels = {
     penaltyPerError: 10,
   },
 };
+
+export const difficultyOrder: Record<string, number> = {
+  easy: 0,
+  medium: 1,
+  hard: 2,
+  veryHard: 3,
+  extreme: 4,
+};

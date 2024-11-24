@@ -1,128 +1,98 @@
-/* .result-page {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 20px;
-}
-
-.result-page__title {
-  margin-bottom: 20px;
-  font-size: 24px;
-  font-weight: bold;
-  color: #1e3c72;
-}
-
-.result-page__table {
-  inline-size: 100%;
-  border-collapse: collapse;
-  margin-bottom: 20px;
-}
-
-.result-page__table th,
-.result-page__table td {
-  padding: 10px;
-  border: 1px solid #ccc;
-  text-align: center;
-}
-
-.result-page__table th {
-  background-color: #f4f4f4;
-  font-weight: bold;
-}
-
-.pagination {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  bottom: 170px;
-}
-
-.pagination button {
-  padding: 10px;
-  margin: 0 10px;
-  font-size: 16px;
-  cursor: pointer;
-  background-color: #b8d357;
-  border: none;
-  border-radius: 5px;
-  color: white;
-}
-
-.pagination button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
-}
-
-.pagination span {
-  font-size: 16px;
-} */
-
 .result-page {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* Оставляем контент в верхней части */
+  justify-content: flex-start;
   align-items: center;
   margin: 20px;
-  min-height: 100vh; /* Обеспечиваем, что контейнер заполняет весь экран */
-  padding-bottom: 100px; /* Чтобы не перекрывать кнопки пагинации */
+  padding-bottom: 100px;
 }
 
 .result-page__title {
   margin-top: 100px;
   margin-bottom: 20px;
-  font-size: 24px;
+  font-size: 26px;
   font-weight: bold;
-  color: #1e3c72;
+  color: #313030;
 }
 
 .result-page__table {
-  width: 100%;
-  border-collapse: collapse;
+  border: none;
+  inline-size: 100%;
+  border-spacing: 0;
   margin-bottom: 20px;
+  border-radius: 10px;
+  background-color: #f4f4f4;
+  opacity: 0.8;
+  overflow: hidden;
 }
 
 .result-page__table th,
 .result-page__table td {
   padding: 10px;
-  border: 1px solid #ccc;
+  border-top: 1px solid #ccc;
   text-align: center;
+  color: #313030;
 }
 
 .result-page__table th {
-  background-color: #f4f4f4;
+  padding-right: 25px;
+  cursor: pointer;
+  position: relative;
   font-weight: bold;
+  border: none;
+  font-size: 18px;
 }
 
-/* Пагинация */
+.result-page__table tbody {
+  border: none;
+}
+
 .pagination {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: fixed;
-  bottom: 200px; /* Фиксируем кнопки пагинации внизу экрана */
-  width: 100%;
   padding: 10px 0;
-  z-index: 2;
 }
 
-.pagination button {
-  padding: 10px;
+.pagination__info {
+  color: #313030;
+}
+
+.button.pagination__button {
   margin: 0 10px;
-  font-size: 16px;
-  cursor: pointer;
-  background-color: #b8d357;
-  border: none;
-  border-radius: 5px;
-  color: white;
+  font-weight: bold;
 }
 
-.pagination button:disabled {
-  background-color: #ccc;
+.pagination__button:disabled {
   cursor: not-allowed;
 }
 
 .pagination span {
   font-size: 16px;
+}
+
+.sort-icon {
+  inline-size: 20px;
+  block-size: 20px;
+  position: absolute;
+  top: 50%;
+  right: 4px;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: 0.3s opacity ease;
+  background-size: contain;
+}
+
+.sort-icon.ascending {
+  background-image: url('./images/sort-asc.png');
+  opacity: 1;
+}
+
+.sort-icon.descending {
+  background-image: url('./images/sort-desc.png');
+  opacity: 1;
+}
+
+.result-page__table th.active-column {
+  background-color: #afadad;
 }

@@ -3,12 +3,21 @@ export interface ICard {
   svg: string;
 }
 
+// export interface IGameStat {
+//   date: string;
+//   completionTime: string;
+//   errors: number;
+//   difficulty: string;
+//   score: number;
+// }
+
 export interface IGameStat {
   date: string;
   completionTime: string;
   errors: number;
   difficulty: string;
   score: number;
+  [key: string]: string | number; // Добавление индексной сигнатуры
 }
 
 export interface IStatisticsContext {

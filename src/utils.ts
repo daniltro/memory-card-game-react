@@ -69,3 +69,21 @@ export const getDifficultyTranslation = (
 
   return translations[difficulty] || 'Уроввень сложности не выбран';
 };
+
+// Утилита для преобразования даты для сортирвки
+export function parseDateDDMMYYYY(dateString: string): number {
+  const [day, month, year] = dateString.split('.').map(Number);
+  if (!day || !month || !year) return NaN;
+  return new Date(year, month - 1, day).getTime();
+}
+
+export function parseTimeToSeconds(timeString: string): number {
+  // Удаляем все нечисловые символы, кроме пробела, и пытаемся извлечь число
+  const secondsMatch = timeString.match(/(\d+)\s*секунд/);
+  if (secondsMatch) {
+    return parseInt(secondsMatch[1], 10); // Возвращаем число секунд
+  }
+
+  console.warn(`Unrecognized time format: ${timeString}`);
+  return 0; // Если формат не соответствует, возвращаем 0
+}

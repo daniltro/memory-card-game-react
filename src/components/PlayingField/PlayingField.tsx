@@ -77,9 +77,9 @@ export default function PlayingField() {
     const newStat = {
       date: new Date().toLocaleDateString(), // Дата окончания игры
       completionTime: `${120 - timeLeft} секунд`, // Время завершения игры
-      errors: errors,
-      difficulty: difficulty,
-      score: score,
+      errors,
+      difficulty,
+      score,
     };
 
     addStat(newStat); // Добавляем статистику в контекст
@@ -199,19 +199,17 @@ export default function PlayingField() {
     if (secondMatched && firstMatched.id === secondMatched.id) {
       setMatchedCards([...matchedCards, firstMatched.id]);
       setScore((prevScore) => prevScore + pointsPerMatch); // Очки за совпадение
+    } else if (remainingSafeMoves > 0) {
+      setRemainingSafeMoves((prev) => prev - 1); // Уменьшаем количество безопасных ошибок
     } else {
-      if (remainingSafeMoves > 0) {
-        setRemainingSafeMoves((prev) => prev - 1); // Уменьшаем количество безопасных ошибок
-      } else {
-        setScore((prevScore) => Math.max(prevScore - penaltyPerError, 0)); // Штраф за ошибку
-        setErrors((prevErrors) => {
-          const newErrors = prevErrors + 1;
-          if (newErrors > maxErrors) {
-            handleEndGame('loss'); // Завершаем игру, если превышено количество ошибок
-          }
-          return newErrors;
-        });
-      }
+      setScore((prevScore) => Math.max(prevScore - penaltyPerError, 0)); // Штраф за ошибку
+      setErrors((prevErrors) => {
+        const newErrors = prevErrors + 1;
+        if (newErrors > maxErrors) {
+          handleEndGame('loss'); // Завершаем игру, если превышено количество ошибок
+        }
+        return newErrors;
+      });
     }
 
     setSteps((prevSteps) => prevSteps + 1);

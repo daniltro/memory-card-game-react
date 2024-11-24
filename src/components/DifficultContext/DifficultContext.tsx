@@ -1,4 +1,10 @@
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import React, {
+  createContext,
+  useContext,
+  useState,
+  ReactNode,
+  useMemo,
+} from 'react';
 
 type Difficulty = 'easy' | 'medium' | 'hard' | 'veryHard' | 'extreme';
 
@@ -11,15 +17,21 @@ const DifficultyContext = createContext<DifficultyContextType | undefined>(
   undefined,
 );
 
-export const DifficultyProvider = ({ children }: { children: ReactNode }) => {
+export function DifficultyProvider({ children }: { children: ReactNode }) {
   const [difficulty, setDifficulty] = useState<Difficulty>('easy'); // Изначально установим "easy"
 
+  // Используем useMemo для мемоизации значения контекста
+  const value = useMemo(
+    () => ({ difficulty, setDifficulty }),
+    [difficulty, setDifficulty],
+  );
+
   return (
-    <DifficultyContext.Provider value={{ difficulty, setDifficulty }}>
+    <DifficultyContext.Provider value={value}>
       {children}
     </DifficultyContext.Provider>
   );
-};
+}
 
 export const useDifficulty = (): DifficultyContextType => {
   const context = useContext(DifficultyContext);

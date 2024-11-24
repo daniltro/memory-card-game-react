@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export default function MainMenu() {
   return (
     <div className="main-menu">
-      <h1 className="playing-field__title"> Игра "Запомни пары"</h1>
+      <h1 className="playing-field__title"> Игра &quot;Запомни пары&quot;</h1>
 
       <nav className="main-menu__nav">
         <ul className="main-menu__list">
