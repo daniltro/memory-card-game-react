@@ -6,17 +6,21 @@ import React, {
   useState,
 } from 'react';
 import { IGameStat, IStatisticsContext } from '../../types';
+import { generateId } from '../../utils';
 
 export const StatisticsContext = createContext<IStatisticsContext | null>(null);
 
 export function StatisticsProvider({ children }: { children: ReactNode }) {
   const [stats, setStats] = useState<IGameStat[]>([]);
 
-  // Загружаем статистику из localStorage при монтировании компонента
   useEffect(() => {
     const storedStats = localStorage.getItem('gameStats');
     if (storedStats) {
-      setStats(JSON.parse(storedStats));
+      const statsWithId = JSON.parse(storedStats).map((stat: IGameStat) => ({
+        ...stat,
+        id: stat.id || generateId(),
+      }));
+      setStats(statsWithId);
     }
   }, []);
 

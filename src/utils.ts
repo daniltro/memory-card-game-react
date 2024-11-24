@@ -87,3 +87,9 @@ export function parseTimeToSeconds(timeString: string): number {
   console.warn(`Unrecognized time format: ${timeString}`);
   return 0; // Если формат не соответствует, возвращаем 0
 }
+
+export function generateId(): string {
+  const timestamp = Date.now(); // Получаем текущее время в миллисекундах
+  const randomNum = Math.floor(Math.random() * 1000); // Генерируем случайное число от 0 до 999
+  return `${timestamp}-${randomNum}`; // Комбинируем метку времени и случайное число
+}

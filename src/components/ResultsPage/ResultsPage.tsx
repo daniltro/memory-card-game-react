@@ -179,7 +179,7 @@ export default function ResultPage() {
           <tbody>
             {/* Отображение отсортированных данных с пагинацией */}
             {currentPageStats.map((stat) => (
-              <tr key={stat.date}>
+              <tr key={stat.id}>
                 <td>{stat.date}</td>
                 <td>{stat.completionTime}</td>
                 <td>{stat.errors}</td>

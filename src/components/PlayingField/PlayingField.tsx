@@ -228,7 +228,6 @@ export default function PlayingField() {
           <div className="playing-field__button-box">
             <BackButton />
           </div>
-          {/* <h1 className="playing-field__title">Запомни пары</h1> */}
           <Timer timer={timeLeft} />
           <div className="game-info">
             <p className="progress">Прогресс игры: {progressPercentage}%</p>
@@ -238,7 +237,6 @@ export default function PlayingField() {
             </p>
             <p className="safe-moves">Безопасных ходов: {remainingSafeMoves}</p>
             <p className="count-score">Набрано очков: {score}</p>
-            {/* <p className="timer">Оставшееся время: {timeLeft} секунд</p> */}
             <p className="count-game">
               Сыграно игр в текущей сессии: {countGame}
             </p>
