@@ -1,2 +1,2 @@
-import './styles/maingcss'
+import './styles/main.css'
 
