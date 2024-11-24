@@ -90,13 +90,13 @@
 }
 
 .sort-icon.ascending {
-  background: url('./images/sort-asc.png') no-repeat;
+  background: url('/images/sort-asc.png') no-repeat;
   background-size: cover;
   opacity: 1;
 }
 
 .sort-icon.descending {
-  background-image: url('./images/sort-desc.png');
+  background-image: url('/images/sort-desc.png');
   opacity: 1;
 }
 
