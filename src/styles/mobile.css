@@ -1,0 +1,121 @@
+@media screen and (max-width: 769px) {
+  .main-menu::before {
+    top: 100px;
+    left: 20px;
+  }
+
+  .main-menu::after {
+    top: 100px;
+    right: 20px;
+  }
+
+  .main-menu__title {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .main-menu__link {
+    font-size: 22px;
+  }
+
+  .playing-field {
+    padding-inline: 5px;
+  }
+
+  .button.back-button {
+    font-size: 14px;
+  }
+
+  .card {
+    inline-size: 70px;
+    block-size: 70px;
+  }
+  .progress,
+  .count-steps,
+  .count-score,
+  .count-errors,
+  .safe-moves,
+  .timer,
+  .count-game,
+  .session-best-score,
+  .max-history-score {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+
+  div .timer-container {
+    top: -18%;
+    right: 1.1%;
+  }
+
+  .timer-container .timer-clock {
+    inline-size: 70px;
+    block-size: 70px;
+  }
+
+  .timer-container .timer-clock__circle {
+    inline-size: 50px;
+    block-size: 50px;
+  }
+
+  .timer-container .timer-clock__time {
+    font-size: 14px;
+  }
+
+  .current-difficult p {
+    text-align: center;
+    margin-left: 10px;
+    line-height: 120%;
+  }
+
+  .settings-page {
+    max-inline-size: 90%;
+    margin-inline: auto;
+  }
+
+  .settings-page__title {
+    font-size: 26px;
+  }
+
+  .result-page {
+    max-inline-size: 100%;
+    overflow: auto;
+  }
+
+  .result-page__table th,
+  .result-page__table td {
+    padding-inline: 0;
+  }
+
+  .rules-container {
+    padding-inline: 5px;
+  }
+
+  .result-page {
+    margin: 0;
+  }
+
+  .result-page__table {
+    max-inline-size: 320px;
+  }
+
+  .result-page__table th,
+  .result-page__table td {
+    font-size: 10px;
+  }
+
+  .rules__title,
+  about-difficult__title {
+    font-size: 28px;
+  }
+  .pagination {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .sort-icon.ascending,
+  .sort-icon.descending {
+    position: relative;
+    left: 25%;
+  }
+}
